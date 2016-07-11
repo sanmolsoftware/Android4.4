@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_patch_white"
+    android:orientation="vertical" >
+
+    <com.ulta.core.widgets.flyin.TitleBar
+        android:id="@+id/titlebar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        custom:done_visible="false"
+        custom:logo_ulta="false" >
+    </com.ulta.core.widgets.flyin.TitleBar>
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <include
+                android:id="@+id/toolbar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/toolbar" />
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <LinearLayout
+                    android:id="@+id/brands_body_layout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:background="@color/background"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    android:weightSum="1" >
+
+                    <FrameLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.93" >
+
+                        <ListView
+                            android:id="@+id/lvbrandsList"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:background="@drawable/bg_patch_white"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:visibility="visible" >
+                        </ListView>
+
+                        <FrameLayout
+                            android:id="@+id/toast_layout_root2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center|center_vertical"
+                            android:background="@drawable/bg_patch_white"
+                            android:orientation="horizontal"
+                            android:padding="10dp"
+                            android:visibility="invisible" >
+
+                            <TextView
+                                android:id="@+id/text2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|center_vertical"
+                                android:text="@string/brand_activity_text" />
+                        </FrameLayout>
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:id="@+id/sideIndex"
+                        android:layout_width="0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="right"
+                        android:layout_weight="0.07"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:paddingLeft="3dip"
+                        android:paddingRight="2dip" >
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/brands_loadingDialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical|center_horizontal|center"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingBottom="50dp"
+                    android:visibility="gone" >
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center"
+                            android:padding="5dp"
+                            android:src="@drawable/logo_spinner" />
+
+                        <ProgressBar
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:indeterminate="true"
+                            android:indeterminateTint="#F00"
+                            android:indeterminateTintMode="src_in" />
+                    </FrameLayout>
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+
+        <include
+            android:id="@+id/navigation_drawer"
+            android:layout_width="@dimen/side_menu_width"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            layout="@layout/navigation_menu" />
+    </android.support.v4.widget.DrawerLayout>
+
+</LinearLayout>

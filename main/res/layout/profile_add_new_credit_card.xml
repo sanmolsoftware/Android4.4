@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_patch_white">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/bg_patch_white"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <com.ulta.core.widgets.flyin.TitleBar
+            android:id="@+id/titlebar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            custom:done_visible="false"
+            custom:logo_ulta="false"
+            custom:title_ulta="New Card Detail"></com.ulta.core.widgets.flyin.TitleBar>
+
+        <android.support.v4.widget.DrawerLayout
+            android:id="@+id/drawer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/toolbar"
+                    layout="@layout/toolbar"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" />
+
+                <ScrollView
+                    style="@style/layout_margin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:overScrollMode="never">
+
+                    <LinearLayout
+                        android:id="@+id/new_credit_card_details_profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            style="@style/textview_form_header"
+                            android:background="@drawable/bg_headline_big"
+                            android:paddingTop="5dp"
+                            android:text="@string/credit_card_details"></TextView>
+
+                        <EditText
+                            android:id="@+id/profile_card_nick_name"
+                            style="@style/full_width_edit_text"
+                            android:digits=" ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,-"
+                            android:hint="@string/credit_nick_name"
+                            android:singleLine="true">
+
+                            <requestFocus></requestFocus>
+                        </EditText>
+
+                        <TextView
+                            android:id="@+id/nickNameErrorText"
+                            style="@style/textview_errortext" />
+
+                        <EditText
+                            android:id="@+id/profile_card_name"
+                            style="@style/full_width_edit_text"
+                            android:digits=" ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,-"
+                            android:hint="@string/name_on_card"
+                            android:singleLine="true"></EditText>
+
+                        <TextView
+                            android:id="@+id/nameErrorText"
+                            style="@style/textview_errortext" />
+
+
+                        <FrameLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/profile_card_number"
+                                style="@style/full_width_edit_text"
+                                android:digits="0123456789"
+                                android:drawablePadding="5dp"
+                                android:drawableRight="@drawable/creditcard_default"
+                                android:hint="@string/card_number"
+                                android:inputType="number"
+                                android:maxLength="16"
+                                android:singleLine="true"></EditText>
+
+                        </FrameLayout>
+
+                        <TextView
+                            android:id="@+id/cardNumberErrorText"
+                            style="@style/textview_errortext" />
+
+                        <LinearLayout
+                            android:id="@+id/acceptedCardTypesLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                style="@style/rate_ulta_message"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/accepted_card_types" />
+
+                            <LinearLayout
+                                android:id="@+id/cardImageLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginTop="5dp"
+                                android:orientation="horizontal"></LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ExpiryLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:baselineAligned="false"
+                            android:orientation="horizontal"
+                            android:weightSum="100">
+
+                            <LinearLayout
+                                android:layout_width="0dip"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="2dip"
+                                android:layout_weight="50"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical">
+
+                                <Spinner
+                                    android:id="@+id/profile_card_exp_month"
+                                    style="@style/Widget.AppCompat.Spinner.Underlined"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="@dimen/edit_text_height"
+                                    android:paddingTop="@dimen/normal_text_padding_top"></Spinner>
+
+                                <TextView
+                                    android:id="@+id/expiryMonthErrorText"
+                                    style="@style/textview_errortext" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dip"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="2dip"
+                                android:layout_weight="50"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical">
+
+                                <Spinner
+                                    android:id="@+id/profile_card_exp_year"
+                                    style="@style/Widget.AppCompat.Spinner.Underlined"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="@dimen/edit_text_height"
+                                    android:paddingTop="@dimen/normal_text_padding_top"></Spinner>
+
+                                <TextView
+                                    android:id="@+id/expiryYearErrorText"
+                                    style="@style/textview_errortext" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/textview_form_header"
+                            android:layout_marginTop="15dp"
+                            android:background="@drawable/bg_headline_big"
+                            android:paddingTop="5dp"
+                            android:text="@string/credit_card_billing_address"></TextView>
+
+                        <LinearLayout
+                            android:id="@+id/new_billing_address_form_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/profile_f_name"
+                                style="@style/full_width_edit_text"
+                                android:digits=" ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,-"
+                                android:hint="@string/first_name"
+                                android:singleLine="true"></EditText>
+
+                            <TextView
+                                android:id="@+id/firstnameErrorText"
+                                style="@style/textview_errortext" />
+
+                            <EditText
+                                android:id="@+id/profile_n_name"
+                                style="@style/full_width_edit_text"
+                                android:digits=" ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,-"
+                                android:hint="@string/nick_name"
+                                android:singleLine="true"></EditText>
+
+                            <TextView
+                                android:id="@+id/profilenickNameErrorText"
+                                style="@style/textview_errortext" />
+
+                            <EditText
+                                android:id="@+id/profile_l_name"
+                                style="@style/full_width_edit_text"
+                                android:digits=" ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,-"
+                                android:hint="@string/last_name"
+                                android:singleLine="true"></EditText>
+
+                            <TextView
+                                android:id="@+id/lastNameErrorText"
+                                style="@style/textview_errortext" />
+
+                            <EditText
+                                android:id="@+id/profile_phone"
+                                style="@style/full_width_edit_text"
+                                android:digits="0123456789"
+                                android:hint="@string/phone"
+                                android:inputType="phone"
+                                android:maxLength="10"
+                                android:singleLine="true"></EditText>
+
+                            <TextView
+                                android:id="@+id/phoneErrorText"
+                                style="@style/textview_errortext" />
+
+                            <EditText
+                                android:id="@+id/profile_al_1"
+                                style="@style/full_width_edit_text"
+                                android:digits=" ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,-"
+                                android:hint="@string/address_line1"
+                                android:singleLine="true"></EditText>
+
+                            <TextView
+                                android:id="@+id/address1ErrorText"
+                                style="@style/textview_errortext" />
+
+                            <EditText
+                                android:id="@+id/profile_a2_1"
+                                style="@style/full_width_edit_text"
+                                android:digits=" ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,-"
+                                android:hint="@string/address_line2"
+                                android:singleLine="true"></EditText>
+
+                            <EditText
+                                android:id="@+id/profile_city"
+                                style="@style/full_width_edit_text"
+                                android:digits=" ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,-"
+                                android:hint="@string/city"
+                                android:singleLine="true"></EditText>
+
+                            <TextView
+                                android:id="@+id/cityErrorText"
+                                style="@style/textview_errortext" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:baselineAligned="false"
+                                android:orientation="horizontal"
+                                android:weightSum="100">
+
+                                <LinearLayout
+                                    android:id="@+id/linearLayout10"
+                                    android:layout_width="0dip"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="2dip"
+                                    android:layout_weight="60"
+                                    android:gravity="center_vertical"
+                                    android:orientation="vertical">
+
+                                    <Spinner
+                                        android:id="@+id/profile_stateSpinner"
+                                        style="@style/spinner_state"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="@dimen/edit_text_height"
+                                        android:paddingTop="@dimen/normal_text_padding_top"></Spinner>
+
+                                    <TextView
+                                        android:id="@+id/stateErrorText"
+                                        style="@style/textview_errortext" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dip"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="2dip"
+                                    android:layout_weight="40"
+                                    android:gravity="center_vertical"
+                                    android:orientation="vertical">
+
+                                    <EditText
+                                        android:id="@+id/profile_zip_code"
+                                        style="@style/full_width_edit_text"
+                                        android:digits="0123456789"
+                                        android:hint="@string/zip"
+                                        android:imeOptions="actionDone"
+                                        android:inputType="number"
+                                        android:maxLength="5"
+                                        android:singleLine="true"></EditText>
+
+                                    <TextView
+                                        android:id="@+id/zipErrorText"
+                                        style="@style/textview_errortext" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/setDefaultcard"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="15dp"
+                            android:layout_marginTop="15dp"
+                            android:button="@drawable/custom_checkbox"
+                            android:text="@string/default_credit_card"
+                            android:textColor="@color/riverBed"
+                            android:textSize="15sp" />
+
+                        <Button
+                            android:id="@+id/doneBtn"
+                            style="@style/buttonStyle_prelollipop_full_width"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="15dp"
+                            android:text="@string/done" />
+                    </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
+
+            <include
+                android:id="@+id/navigation_drawer"
+                layout="@layout/navigation_menu"
+                android:layout_width="@dimen/side_menu_width"
+                android:layout_height="match_parent"
+                android:layout_gravity="start" />
+        </android.support.v4.widget.DrawerLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/profileAddCardloadingDialog"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="50dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/description"
+            android:padding="5dp"
+            android:src="@drawable/logo_spinner" />
+
+        <ProgressBar
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:indeterminateTint="#F00"
+            android:indeterminateTintMode="src_in" />
+    </FrameLayout>
+
+</FrameLayout>

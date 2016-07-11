@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_patch_white" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/bg_patch_white"
+        android:orientation="vertical"
+        android:weightSum="1" >
+
+        <com.ulta.core.widgets.flyin.TitleBar
+            android:id="@+id/titlebar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            custom:done_visible="true"
+            custom:menu_option="true"
+            custom:title_ulta="New Card Details" >
+        </com.ulta.core.widgets.flyin.TitleBar>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:orientation="vertical"
+            android:overScrollMode="never" >
+
+            <LinearLayout
+                android:id="@+id/new_credit_card_details_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textView2"
+                    style="@style/RiverBedBold22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/credit_card_details"
+                    android:textSize="18sp"
+                    android:textStyle="bold" >
+                </TextView>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="5dp" >
+
+                    <TextView
+                        android:id="@+id/nick_name"
+                        style="@style/RiverBedRegular20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dip"
+                        android:text="@string/credit_nick_name" >
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/profile_card_nick_name"
+                        style="@style/FormEdit"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dip"
+                        android:singleLine="true"
+                        android:textSize="13sp" >
+
+                        <requestFocus>
+                        </requestFocus>
+                    </EditText>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="5dp" >
+
+                    <TextView
+                        android:id="@+id/first_name"
+                        style="@style/RiverBedRegular20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dip"
+                        android:text="@string/name_on_card" >
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/profile_card_name"
+                        style="@style/FormEdit"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dip"
+                        android:singleLine="true"
+                        android:textSize="13sp" >
+
+                        <requestFocus>
+                        </requestFocus>
+                    </EditText>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="5dp" >
+
+                    <TextView
+                        style="@style/RiverBedRegular20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dip"
+                        android:text="@string/card_number" >
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/profile_card_number"
+                        style="@style/FormEdit"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dip"
+                        android:maxLength="16"
+                        android:numeric="integer"
+                        android:singleLine="true"
+                        android:textSize="13sp" >
+                    </EditText>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="5dp" >
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        style="@style/RiverBedRegular20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dip"
+                        android:text="@string/new_cc_cardType" >
+                    </TextView>
+
+                    <Spinner
+                        android:id="@+id/profile_card_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dip"
+                        android:layout_marginRight="5dip"
+                        android:background="@drawable/spiner"
+                        android:paddingBottom="3dip"
+                        android:paddingLeft="5dip"
+                        android:paddingRight="30dip"
+                        android:paddingTop="3dip"
+                        android:prompt="@string/cardtype_prompt" >
+                    </Spinner>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="5dp"
+                        android:visibility="gone" >
+
+                        <TextView
+                            style="@style/RiverBedRegular20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dip"
+                            android:text="@string/new_cc_cardType" >
+                        </TextView>
+
+                        <Spinner
+                            android:id="@+id/profile_card_type_spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dip"
+                            android:layout_marginRight="5dip"
+                            android:background="@drawable/spiner"
+                            android:paddingBottom="3dip"
+                            android:paddingLeft="3dip"
+                            android:paddingRight="30dip"
+                            android:paddingTop="3dip"
+                            android:prompt="@string/cardtype_prompt" >
+                        </Spinner>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="5dp" >
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            style="@style/RiverBedRegular20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dip"
+                            android:text="@string/card_exp_month" >
+                        </TextView>
+
+                        <Spinner
+                            android:id="@+id/profile_card_exp_month"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dip"
+                            android:layout_marginRight="5dip"
+                            android:background="@drawable/spiner"
+                            android:paddingBottom="3dip"
+                            android:paddingLeft="3dip"
+                            android:paddingRight="40dip"
+                            android:paddingTop="3dip"
+                            android:prompt="@string/month_prompt" >
+                        </Spinner>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="5dp" >
+
+                        <TextView
+                            style="@style/RiverBedRegular20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dip"
+                            android:text="@string/card_exp_year" >
+                        </TextView>
+
+                        <Spinner
+                            android:id="@+id/profile_card_exp_year"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dip"
+                            android:layout_marginRight="5dip"
+                            android:background="@drawable/spiner"
+                            android:paddingBottom="3dip"
+                            android:paddingLeft="3dip"
+                            android:paddingRight="30dip"
+                            android:paddingTop="3dip"
+                            android:prompt="@string/year_prompt" >
+                        </Spinner>
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/RiverBedBold22"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="5dp"
+                        android:text="@string/credit_card_billing_address"
+                        android:textSize="18sp"
+                        android:textStyle="bold" >
+                    </TextView>
+
+                    <LinearLayout
+                        android:id="@+id/new_billing_address_form_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout12"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="5dip" >
+
+                            <TextView
+                                style="@style/RiverBedRegular20"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dip"
+                                android:text="@string/billing_addr_firstname" >
+                            </TextView>
+
+                            <EditText
+                                android:id="@+id/profile_f_name"
+                                style="@style/FormEdit"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dip"
+                                android:singleLine="true"
+                                android:textSize="13sp" >
+                            </EditText>
+
+                            <TextView
+                                android:id="@+id/add_nick_name"
+                                style="@style/RiverBedRegular20"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dip"
+                                android:text="@string/nick_name" >
+                            </TextView>
+
+                            <EditText
+                                android:id="@+id/profile_n_name"
+                                style="@style/FormEdit"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dip"
+                                android:singleLine="true"
+                                android:textSize="13sp" >
+                            </EditText>
+
+                            <TextView
+                                android:id="@+id/last_name"
+                                style="@style/RiverBedRegular20"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dip"
+                                android:text="@string/billing_addr_last_name" >
+                            </TextView>
+
+                            <EditText
+                                android:id="@+id/profile_l_name"
+                                style="@style/FormEdit"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dip"
+                                android:singleLine="true"
+                                android:textSize="13sp" >
+                            </EditText>
+
+                            <TextView
+                                android:id="@+id/textView5"
+                                style="@style/RiverBedRegular20"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dip"
+                                android:text="@string/phone" >
+                            </TextView>
+
+                            <EditText
+                                android:id="@+id/profile_phone"
+                                style="@style/FormEdit"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dip"
+                                android:inputType="numberDecimal"
+                                android:maxLength="10"
+                                android:singleLine="true"
+                                android:textSize="13sp" >
+                            </EditText>
+
+                            <TextView
+                                style="@style/RiverBedRegular20"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dip"
+                                android:text="@string/address_line1" >
+                            </TextView>
+
+                            <EditText
+                                android:id="@+id/profile_al_1"
+                                style="@style/FormEdit"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dip"
+                                android:textSize="13sp" >
+                            </EditText>
+
+                            <TextView
+                                android:id="@+id/textView7"
+                                style="@style/RiverBedRegular20"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dip"
+                                android:text="@string/city" >
+                            </TextView>
+
+                            <EditText
+                                android:id="@+id/profile_city"
+                                style="@style/FormEdit"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dip"
+                                android:singleLine="true"
+                                android:textSize="13sp" >
+                            </EditText>
+
+                            <TextView
+                                style="@style/RiverBedRegular20"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dip"
+                                android:text="@string/state"
+                                android:visibility="gone" >
+                            </TextView>
+
+                            <Spinner
+                                android:layout_width="match_parent"
+                                android:layout_height="45dip"
+                                android:layout_marginRight="5dip"
+                                android:background="@drawable/spiner"
+                                android:paddingBottom="3dip"
+                                android:paddingLeft="3dip"
+                                android:paddingRight="30dip"
+                                android:paddingTop="3dip"
+                                android:prompt="@string/stateselect_prompt"
+                                android:visibility="gone" >
+                            </Spinner>
+
+                            <TextView
+                                style="@style/RiverBedRegular20"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dip"
+                                android:text="@string/city"
+                                android:visibility="gone" >
+                            </TextView>
+
+                            <EditText
+                                android:id="@+id/profile_city_ET"
+                                style="@style/FormEdit"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dip"
+                                android:singleLine="true"
+                                android:textSize="13sp"
+                                android:visibility="gone" >
+                            </EditText>
+
+                            <TextView
+                                style="@style/RiverBedRegular20"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dip"
+                                android:text="@string/state" >
+                            </TextView>
+
+                            <Spinner
+                                android:id="@+id/profile_stateSpinner"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dip"
+                                android:layout_marginRight="5dip"
+                                android:background="@drawable/spiner"
+                                android:paddingBottom="3dip"
+                                android:paddingLeft="3dip"
+                                android:paddingRight="30dip"
+                                android:paddingTop="3dip"
+                                android:prompt="@string/stateselect_prompt" >
+                            </Spinner>
+
+                            <TextView
+                                style="@style/RiverBedRegular20"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dip"
+                                android:text="@string/country"
+                                android:visibility="gone" >
+                            </TextView>
+
+                            <EditText
+                                android:id="@+id/profile_country"
+                                style="@style/FormEdit"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dip"
+                                android:singleLine="true"
+                                android:textSize="13sp"
+                                android:visibility="gone" >
+                            </EditText>
+
+                            <TextView
+                                android:id="@+id/textView8"
+                                style="@style/RiverBedRegular20"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dip"
+                                android:text="@string/zip" >
+                            </TextView>
+
+                            <EditText
+                                android:id="@+id/profile_zip_code"
+                                style="@style/FormEdit"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dip"
+                                android:maxLength="5"
+                                android:numeric="integer"
+                                android:singleLine="true"
+                                android:textSize="13sp" >
+                            </EditText>
+                        </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/setDefaultcard"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:button="@drawable/custom_checkbox"
+                            android:text="@string/default_credit_card"
+                            android:textColor="@color/riverBed"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/profileAddCardloadingDialog"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical|center_horizontal|center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <ProgressBar
+            style="@android:style/Widget.ProgressBar.Small.Inverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            style="@style/RiverBedRegular20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loading_text" />
+    </LinearLayout>
+
+</FrameLayout>

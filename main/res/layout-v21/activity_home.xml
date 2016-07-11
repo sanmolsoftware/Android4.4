@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <com.ulta.core.widgets.flyin.TitleBar
+        android:id="@+id/titlebar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        custom:done_visible="false"
+        custom:logo_ulta="true"
+        custom:title_ulta="" >
+    </com.ulta.core.widgets.flyin.TitleBar>
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <include
+                android:id="@+id/toolbar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/toolbar" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent" >
+
+                <ScrollView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:fadeScrollbars="true" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <FrameLayout
+                            android:id="@+id/home_top"
+                            android:layout_width="fill_parent"
+                            android:layout_height="120dp"
+                            android:background="@drawable/bg_dashboard_top" >
+
+                            <ProgressBar
+                                android:id="@+id/progressBar"
+                                style="@android:style/Widget.ProgressBar.Small.Inverse"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical|center_horizontal|center" />
+
+                            <ImageView
+                                android:id="@+id/homePromoImage"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:contentDescription="@string/description"
+                                android:scaleType="fitXY"
+                                android:visibility="gone" />
+
+                            <com.ulta.core.activity.CustomGallery
+                                android:id="@+id/gallery1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:fadingEdge="none" >
+                            </com.ulta.core.activity.CustomGallery>
+
+                            <LinearLayout
+                                android:id="@+id/bubbles_layout"
+                                android:layout_width="fill_parent"
+                                android:layout_height="8dp"
+                                android:layout_gravity="bottom|center_horizontal"
+                                android:layout_marginBottom="4dp"
+                                android:layout_marginTop="5dp"
+                                android:gravity="center_horizontal"
+                                android:orientation="horizontal"
+                                android:visibility="gone" >
+                            </LinearLayout>
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#323232" >
+
+                            <com.ulta.core.activity.CustomGallery
+                                android:id="@+id/offersGallery"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#323232"
+                                android:fadingEdge="none" >
+                            </com.ulta.core.activity.CustomGallery>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/shop_layout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingBottom="16dp"
+                            android:paddingLeft="16dp"
+                            android:paddingTop="16dp" >
+
+                            <TextView
+                                android:id="@+id/shopTextView"
+                                style="@style/homeScreenTextSize"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/home_shop" />
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:paddingTop="10dp" >
+
+                                <TextView
+                                    android:id="@+id/shopSubText"
+                                    style="@style/homeScreenSubTextSize"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/home_shop_total_prod" />
+
+                                <TextView
+                                    style="@style/homeScreenSubTextSize"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="2dp"
+                                    android:text="@string/home_shop_prod_waiting_msg"
+                                    android:visibility="gone" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/shopLayoutView"
+                            android:layout_width="fill_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginTop="10dp"
+                            android:background="#919191" />
+
+                        <LinearLayout
+                            android:id="@+id/my_rewards_layout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingBottom="16dp"
+                            android:paddingLeft="16dp"
+                            android:paddingTop="16dp" >
+
+                            <TextView
+                                android:id="@+id/myRewardsTextView"
+                                style="@style/homeScreenTextSize"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/my_rewards_msg"
+                                android:visibility="visible" />
+
+                            <LinearLayout
+                                android:id="@+id/myrewardsMessageLayout"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:paddingTop="10dp"
+                                android:visibility="invisible" >
+
+                                <TextView
+                                    android:id="@+id/my_rewards_msg"
+                                    style="@style/homeScreenSubTextSize"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/my_rewards_sign_in_msg"
+                                    android:textColor="@color/melon"
+                                    android:visibility="visible" />
+
+                                <TextView
+                                    android:id="@+id/my_rewards_second_msg"
+                                    style="@style/homeScreenSubTextSize"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingLeft="4dp"
+                                    android:textColor="@color/melon"
+                                    android:visibility="visible" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/myRewardsLayoutView"
+                            android:layout_width="fill_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginTop="10dp"
+                            android:background="#919191" />
+
+                        <LinearLayout
+                            android:id="@+id/weekly_ad_layout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingBottom="16dp"
+                            android:paddingLeft="16dp"
+                            android:paddingTop="16dp" >
+
+                            <TextView
+                                android:id="@+id/weeklyAdsTextView"
+                                style="@style/homeScreenTextSize"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/weekly_ad" />
+
+                            <TextView
+                                android:id="@+id/weeklyAdsSubText"
+                                style="@style/homeScreenSubTextSize"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="10dp"
+                                android:text="@string/weekly_ad_copyText" />
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/weeklyAdLayoutView"
+                            android:layout_width="fill_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginTop="10dp"
+                            android:background="#919191" />
+
+                        <LinearLayout
+                            android:id="@+id/now_trending_layout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingBottom="16dp"
+                            android:paddingLeft="16dp"
+                            android:paddingTop="16dp" >
+
+                            <TextView
+                                android:id="@+id/newArrivalsTextView"
+                                style="@style/homeScreenTextSize"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/new_arrivals" />
+
+                            <TextView
+                                android:id="@+id/newArrivalsSubText"
+                                style="@style/homeScreenSubTextSize"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="10dp"
+                                android:text="@string/checkout_whats_new" />
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/newArrivalsLayoutView"
+                            android:layout_width="fill_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginTop="10dp"
+                            android:background="#919191" />
+
+                        <LinearLayout
+                            android:id="@+id/sale_layout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingBottom="16dp"
+                            android:paddingLeft="16dp"
+                            android:paddingTop="16dp" >
+
+                            <TextView
+                                android:id="@+id/saleTextView"
+                                style="@style/homeScreenTextSize"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/sale" />
+
+                            <TextView
+                                android:id="@+id/saleSubText"
+                                style="@style/homeScreenSubTextSize"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="10dp"
+                                android:text="@string/saleOfferText" />
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/saleLayoutView"
+                            android:layout_width="fill_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginTop="10dp"
+                            android:background="#919191" />
+
+                        <LinearLayout
+                            android:id="@+id/giftCard_layout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingBottom="16dp"
+                            android:paddingLeft="16dp"
+                            android:paddingTop="16dp"
+                            android:visibility="gone" >
+
+                            <TextView
+                                android:id="@+id/giftCardTextView"
+                                style="@style/homeScreenTextSize"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/gift_card_home" />
+
+                            <TextView
+                                android:id="@+id/giftCardSubText"
+                                style="@style/homeScreenSubTextSize"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="10dp"
+                                android:text="@string/gitfcardText" />
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/giftcardLayoutView"
+                            android:layout_width="fill_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginTop="10dp"
+                            android:background="#919191"
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:id="@+id/olapic_gallery_layout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingBottom="16dp"
+                            android:paddingLeft="16dp"
+                            android:paddingTop="16dp"
+                            android:visibility="gone" >
+
+                            <TextView
+                                android:id="@+id/olapicGalleryTextView"
+                                style="@style/homeScreenTextSize"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/haul" />
+
+                            <TextView
+                                android:id="@+id/olapicSubText"
+                                style="@style/homeScreenSubTextSize"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="10dp"
+                                android:text="@string/olapicSubText" />
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/olapicLayoutView"
+                            android:layout_width="fill_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginTop="10dp"
+                            android:background="#919191"
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:id="@+id/homePageSectionLayout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical" >
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="10dp"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp" >
+
+                            <Button
+                                android:id="@+id/btnLogin"
+                                style="@style/Button_Full_width"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginTop="38dp"
+                                android:layout_weight="1"
+                                android:text="@string/login_btn_signIn"
+                                android:textSize="14sp" >
+                            </Button>
+
+                            <Button
+                                android:id="@+id/btnCreateAccount"
+                                style="@style/Button_Full_width"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="38dp"
+                                android:layout_weight="1"
+                                android:text="@string/create_account"
+                                android:textSize="14sp" >
+                            </Button>
+                        </LinearLayout>
+                    </LinearLayout>
+                </ScrollView>
+
+                <LinearLayout
+                    android:id="@+id/homeloadingDialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical|center_horizontal|center"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingBottom="50dp"
+                    android:visibility="visible" >
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center"
+                            android:padding="5dp"
+                            android:src="@drawable/logo_spinner" />
+
+                        <ProgressBar
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:indeterminate="true"
+                            android:indeterminateTint="#F00"
+                            android:indeterminateTintMode="src_in" />
+                    </FrameLayout>
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+
+        <include
+            android:id="@+id/navigation_drawer"
+            android:layout_width="@dimen/side_menu_width"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            layout="@layout/navigation_menu" />
+    </android.support.v4.widget.DrawerLayout>
+
+</LinearLayout>

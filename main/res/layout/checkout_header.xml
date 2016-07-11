@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:clickable="true"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/headerTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primaryColor"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="@string/checkout"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="27dp"
+        android:background="@color/olapic_detail_caption"
+        android:clickable="true"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/checkout_shipping"
+            style="@style/check_out_header"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/olapic_detail_caption"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/checkout_shipping"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/checkout_payment"
+            style="@style/check_out_header"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/olapic_detail_caption"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/checkout_payment"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/checkout_review_order"
+            style="@style/check_out_header"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/olapic_detail_caption"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/checkout_review_order"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</LinearLayout>

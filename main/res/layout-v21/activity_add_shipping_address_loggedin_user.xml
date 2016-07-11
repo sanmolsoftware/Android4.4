@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <com.ulta.core.widgets.flyin.TitleBar
+        android:id="@+id/titlebar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        custom:done_visible="false"
+        custom:title_ulta="Checkout" >
+    </com.ulta.core.widgets.flyin.TitleBar>
+
+    <!-- Progress Dialog -->
+
+    <FrameLayout
+        android:id="@+id/loadingDialog"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="50dp"
+        android:visibility="gone" >
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/description"
+            android:padding="5dp"
+            android:src="@drawable/logo_spinner" />
+
+        <ProgressBar
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:indeterminateTint="#F00"
+            android:indeterminateTintMode="src_in" />
+    </FrameLayout>
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <include
+                android:id="@+id/checkoutHeader"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/checkout_header" />
+
+            <ScrollView
+                android:id="@+id/scrollview"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/checkoutHeader"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="110dip"
+                android:overScrollMode="never" >
+
+                <LinearLayout
+                    android:id="@+id/new_shipping_form_layout"
+                    style="@style/layout_margin"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/textview_sipping_checkout_form_header"
+                        android:gravity="center_vertical"
+                        android:text="@string/shipping_address" />
+
+                    <LinearLayout
+                        android:id="@+id/linearFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dip"
+                        android:layout_marginTop="5dip"
+                        android:orientation="vertical"
+                        android:visibility="gone" >
+
+                        <fragment
+                            android:id="@+id/addressFragmentForShipping"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            class="com.ulta.core.fragments.checkout.ShippingAddressFragment" >
+                        </fragment>
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/enterNewShippingAddressLayout"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/enterNewShippingAddressTV"
+                            style="@style/textview_form_switch"
+                            android:layout_alignParentStart="true"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/enter_shipping_address" >
+                        </TextView>
+
+                        <Switch
+                            android:id="@+id/enter_new_shipping_address_switch"
+                            android:layout_width="85dip"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_toEndOf="@id/enterNewShippingAddressTV"
+                            android:checked="false"
+                            android:maxHeight="40dp"
+                            android:minWidth="100dp"
+                            android:switchMinWidth="56dp"
+                            android:textOff=" "
+                            android:textOn=" "
+                            android:visibility="visible" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/shipping_address_layout"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone" >
+
+                        <TextView
+                            style="@style/textview_normal_label_melon"
+                            android:paddingTop="10dp"
+                            android:text="@string/name_txt_caps" />
+
+                        <EditText
+                            android:id="@+id/f_name1"
+                            style="@style/full_width_edit_text"
+                            android:layout_marginLeft="5dip"
+                            android:layout_marginRight="5dip"
+                            android:hint="@string/add_shipping_address_firstname"
+                            android:nextFocusDown="@+id/l_name1"
+                            android:singleLine="true" >
+
+                            <requestFocus>
+                            </requestFocus>
+                        </EditText>
+
+                        <TextView
+                            android:id="@+id/firstNameErrorText"
+                            style="@style/textview_errortext"
+                            android:layout_marginLeft="5dip"
+                            android:layout_marginRight="5dip" />
+
+
+
+                        <EditText
+                            android:id="@+id/l_name1"
+                            style="@style/full_width_edit_text"
+                            android:layout_marginLeft="5dip"
+                            android:layout_marginRight="5dip"
+                            android:hint="@string/add_shipping_address_lastname"
+                            android:nextFocusDown="@+id/phone1"
+                            android:singleLine="true" >
+                        </EditText>
+
+                        <TextView
+                            android:id="@+id/lastNameErrorText"
+                            style="@style/textview_errortext"
+                            android:layout_marginLeft="5dip"
+                            android:layout_marginRight="5dip" />
+
+                        <TextView
+                            style="@style/textview_normal_label_melon"
+                            android:paddingTop="10dp"
+                            android:text="@string/contact_txt_caps" />
+
+                        <EditText
+                            android:id="@+id/email"
+                            style="@style/full_width_edit_text"
+                            android:layout_marginLeft="5dip"
+                            android:layout_marginRight="5dip"
+                            android:hint="@string/email_id_not_mandat"
+                            android:inputType="textEmailAddress"
+                            android:singleLine="true" >
+                        </EditText>
+
+                        <EditText
+                            android:id="@+id/phone1"
+                            style="@style/full_width_edit_text"
+                            android:layout_marginLeft="5dip"
+                            android:layout_marginRight="5dip"
+                            android:digits="0123456789"
+                            android:hint="@string/add_shipping_address_phone"
+                            android:inputType="phone"
+                            android:maxLength="10"
+                            android:nextFocusDown="@+id/al_11"
+                            android:singleLine="true" >
+                        </EditText>
+
+                        <TextView
+                            android:id="@+id/phoneErrorText"
+                            style="@style/textview_errortext"
+                            android:layout_marginLeft="5dip"
+                            android:layout_marginRight="5dip" />
+
+                        <TextView
+                            style="@style/textview_normal_label_melon"
+                            android:paddingTop="10dp"
+                            android:text="@string/address_txt_caps" />
+
+                        <EditText
+                            android:id="@+id/al_11"
+                            style="@style/full_width_edit_text"
+                            android:layout_marginLeft="5dip"
+                            android:layout_marginRight="5dip"
+                            android:hint="@string/address_line1"
+                            android:nextFocusDown="@+id/edtAdress2"
+                            android:singleLine="true" >
+                        </EditText>
+
+                        <TextView
+                            android:id="@+id/address1ErrorText"
+                            style="@style/textview_errortext"
+                            android:layout_marginLeft="5dip"
+                            android:layout_marginRight="5dip" />
+
+                        <EditText
+                            android:id="@+id/edtAdress2"
+                            style="@style/full_width_edit_text"
+                            android:layout_marginLeft="5dip"
+                            android:layout_marginRight="5dip"
+                            android:hint="@string/address_line2"
+                            android:nextFocusDown="@+id/city1"
+                            android:singleLine="true" >
+                        </EditText>
+
+                        <EditText
+                            android:id="@+id/city1"
+                            style="@style/full_width_edit_text"
+                            android:layout_marginLeft="5dip"
+                            android:layout_marginRight="5dip"
+                            android:hint="@string/add_shipping_address_city"
+                            android:nextFocusDown="@+id/zip_code1"
+                            android:singleLine="true"
+                            android:visibility="visible" >
+                        </EditText>
+
+                        <TextView
+                            android:id="@+id/cityErrorText"
+                            style="@style/textview_errortext"
+                            android:layout_marginLeft="5dip"
+                            android:layout_marginRight="5dip" />
+
+                        <Spinner
+                            android:id="@+id/spinner1"
+                            style="@style/spinner_state"
+                            android:layout_width="fill_parent"
+                            android:layout_height="@dimen/edit_text_height"
+                            android:overlapAnchor="false"
+                            android:paddingTop="@dimen/normal_text_padding_top" >
+                        </Spinner>
+
+                        <TextView
+                            android:id="@+id/stateErrorText"
+                            style="@style/textview_errortext"
+                            android:layout_marginLeft="5dip"
+                            android:layout_marginRight="5dip" />
+
+                        <EditText
+                            android:id="@+id/zip_code1"
+                            style="@style/full_width_edit_text"
+                            android:layout_marginLeft="5dip"
+                            android:layout_marginRight="5dip"
+                            android:digits="0123456789"
+                            android:hint="@string/add_shipping_address_zip"
+                            android:imeOptions="actionDone"
+                            android:inputType="number"
+                            android:maxLength="5"
+                            android:singleLine="true" >
+                        </EditText>
+
+                        <TextView
+                            android:id="@+id/zipCodeErrorText"
+                            style="@style/textview_errortext"
+                            android:layout_marginLeft="5dip"
+                            android:layout_marginRight="5dip" />
+
+                        <RelativeLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:id="@+id/save_shipping_addressTV"
+                                style="@style/textview_form_switch"
+                                android:layout_alignParentStart="true"
+                                android:text="@string/save_shipping_address" >
+                            </TextView>
+
+                            <Switch
+                                android:id="@+id/save_shipping_address_switch"
+                                android:layout_width="85dip"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_toEndOf="@id/save_shipping_addressTV"
+                                android:checked="true"
+                                android:maxHeight="40dp"
+                                android:minWidth="100dp"
+                                android:switchMinWidth="56dp"
+                                android:textOff=" "
+                                android:textOn=" "
+                                android:visibility="visible" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/textview_sipping_checkout_form_header"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/billing_address" />
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:paddingBottom="0dp"
+                        android:paddingTop="10dp" >
+
+                        <TextView
+                            android:id="@+id/same_as_shipping_addressTV"
+                            style="@style/textview_form_switch"
+                            android:layout_alignParentStart="true"
+                            android:text="@string/same_as_shipping_address" >
+                        </TextView>
+
+                        <Switch
+                            android:id="@+id/same_as_shipping_address_switch"
+                            android:layout_width="85dip"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_toEndOf="@id/same_as_shipping_addressTV"
+                            android:checked="false"
+                            android:maxHeight="40dp"
+                            android:minWidth="100dp"
+                            android:switchMinWidth="56dp"
+                            android:textOff=" "
+                            android:textOn=" "
+                            android:visibility="visible" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/prepopultaedBillingAddressLayout"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone" >
+
+                        <LinearLayout
+                            android:id="@+id/linearBillingFragment"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical" >
+
+                            <fragment
+                                android:id="@+id/addressFragment"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                class="com.ulta.core.fragments.checkout.ShippingAddressFragment" >
+                            </fragment>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/enterNewBillingAddressLayout"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:visibility="gone" >
+
+                        <TextView
+                            android:id="@+id/enterNewBillingAddressTV"
+                            style="@style/textview_form_switch"
+                            android:layout_alignParentStart="true"
+                            android:text="@string/enter_billing_address"
+                            android:textSize="15sp" >
+                        </TextView>
+
+                        <Switch
+                            android:id="@+id/enter_new_billing_address_switch"
+                            android:layout_width="85dip"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_toEndOf="@id/enterNewBillingAddressTV"
+                            android:checked="false"
+                            android:maxHeight="40dp"
+                            android:minWidth="100dp"
+                            android:switchMinWidth="56dp"
+                            android:textOff=" "
+                            android:textOn=" "
+                            android:visibility="visible" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/billing_address_layout"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone" >
+
+                        <TextView
+                            style="@style/textview_normal_label_melon"
+                            android:paddingTop="10dp"
+                            android:text="@string/name_txt_caps" />
+
+                        <LinearLayout
+                            style="@style/shipping_sub_section_padding"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical" >
+
+                            <EditText
+                                android:id="@+id/f_name"
+                                style="@style/full_width_edit_text"
+                                android:hint="@string/billing_addr_firstname"
+                                android:nextFocusDown="@+id/l_name"
+                                android:singleLine="true" >
+                            </EditText>
+
+                            <TextView
+                                android:id="@+id/firstNameBillingErrorText"
+                                style="@style/textview_errortext" />
+
+                            <EditText
+                                android:id="@+id/l_name"
+                                style="@style/full_width_edit_text"
+                                android:hint="@string/billing_addr_last_name"
+                                android:nextFocusDown="@+id/al_3"
+                                android:singleLine="true" >
+                            </EditText>
+
+                            <TextView
+                                android:id="@+id/lastNameBillingErrorText"
+                                style="@style/textview_errortext" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/textview_normal_label_melon"
+                            android:paddingTop="10dp"
+                            android:text="@string/contact_txt_caps" />
+
+                        <LinearLayout
+                            style="@style/shipping_sub_section_padding"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical" >
+
+                            <EditText
+                                android:id="@+id/al_3"
+                                style="@style/full_width_edit_text"
+                                android:digits="0123456789"
+                                android:hint="@string/billing_addr_phone"
+                                android:inputType="number"
+                                android:maxLength="10"
+                                android:nextFocusDown="@+id/al_1"
+                                android:singleLine="true" >
+                            </EditText>
+
+                            <TextView
+                                android:id="@+id/phoneBillingErrorText"
+                                style="@style/textview_errortext" />
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/textview_normal_label_melon"
+                            android:paddingTop="10dp"
+                            android:text="@string/address_txt_caps" />
+
+                        <EditText
+                            android:id="@+id/al_1"
+                            style="@style/full_width_edit_text"
+                            android:hint="@string/address_line1"
+                            android:nextFocusDown="@+id/al_2"
+                            android:singleLine="true" >
+                        </EditText>
+
+                        <TextView
+                            android:id="@+id/address1BillingErrorText"
+                            style="@style/textview_errortext" />
+
+                        <LinearLayout
+                            style="@style/shipping_sub_section_padding"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical" >
+
+                            <EditText
+                                android:id="@+id/al_2"
+                                style="@style/full_width_edit_text"
+                                android:hint="@string/address_line2"
+                                android:nextFocusDown="@+id/city" >
+                            </EditText>
+
+                            <EditText
+                                android:id="@+id/city"
+                                style="@style/full_width_edit_text"
+                                android:hint="@string/billing_addr_city"
+                                android:nextFocusDown="@+id/zip_code"
+                                android:singleLine="true" >
+                            </EditText>
+
+                            <TextView
+                                android:id="@+id/cityBillingErrorText"
+                                style="@style/textview_errortext" />
+
+                            <Spinner
+                                android:id="@+id/stateSpinner"
+                                style="@style/spinner_state"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/edit_text_height"
+                                android:overlapAnchor="false"
+                                android:paddingTop="@dimen/normal_text_padding_top" >
+                            </Spinner>
+
+                            <TextView
+                                android:id="@+id/stateBillingErrorText"
+                                style="@style/textview_errortext" />
+
+                            <EditText
+                                android:id="@+id/zip_code"
+                                style="@style/full_width_edit_text"
+                                android:digits="0123456789"
+                                android:hint="@string/billing_addr_zip"
+                                android:imeOptions="actionDone"
+                                android:inputType="number"
+                                android:maxLength="5"
+                                android:singleLine="true" >
+                            </EditText>
+
+                            <TextView
+                                android:id="@+id/zipBillingErrorText"
+                                style="@style/textview_errortext" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/white"
+                android:gravity="end|bottom"
+                android:orientation="vertical" >
+
+                <ImageButton
+                    android:id="@+id/shippingTypeButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/ripple_effect"
+                    android:contentDescription="@string/description"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/checkout_shippingmethod_enabled" >
+                </ImageButton>
+
+                <include
+                    android:layout_width="fill_parent"
+                    android:layout_height="45dp"
+                    layout="@layout/checkout_footer" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <include
+            android:id="@+id/navigation_drawer"
+            android:layout_width="@dimen/side_menu_width"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            layout="@layout/navigation_menu" />
+    </android.support.v4.widget.DrawerLayout>
+
+</LinearLayout>

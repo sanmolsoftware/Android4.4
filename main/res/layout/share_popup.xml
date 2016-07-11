@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center" >
+
+    <LinearLayout
+        android:id="@+id/tracks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-4dip"
+        android:background="@drawable/popup"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:weightSum="100" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/lightgrey"
+            android:orientation="vertical"
+            android:padding="5dip" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/filter"
+                android:textColor="@color/black"
+                android:textStyle="bold" >
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llFilterByBrand"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="5dip"
+            android:weightSum="100" >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="85"
+                android:text="@string/email_text"
+                android:textColor="@color/black" >
+            </TextView>
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="0dip"
+                android:layout_height="20dip"
+                android:layout_marginLeft="30dip"
+                android:layout_weight="15"
+                android:src="@drawable/chevron" >
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="@color/lightgrey"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llFilterByPrice"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="5dip"
+            android:weightSum="100" >
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="85"
+                android:text="@string/post_of_fb"
+                android:textColor="@color/black" >
+            </TextView>
+
+            <ImageView
+                android:layout_width="0dip"
+                android:layout_height="20dip"
+                android:layout_marginLeft="30dip"
+                android:layout_weight="15"
+                android:src="@drawable/chevron" >
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="@color/lightgrey"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llFilterByCategory"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="5dip"
+            android:weightSum="100" >
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="85"
+                android:text="@string/tweet_abt_fav"
+                android:textColor="@color/black" >
+            </TextView>
+
+            <ImageView
+                android:layout_width="0dip"
+                android:layout_height="20dip"
+                android:layout_marginLeft="30dip"
+                android:layout_weight="15"
+                android:src="@drawable/chevron" >
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/lightgrey"
+            android:orientation="vertical"
+            android:padding="5dip"
+            android:weightSum="100" >
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="25dip"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/bombay"
+                android:paddingLeft="30dip"
+                android:paddingRight="30dip"
+                android:text="@string/btn_cancel"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold" >
+            </Button>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

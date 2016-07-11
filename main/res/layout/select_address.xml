@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1" >
+
+    <com.ulta.core.widgets.flyin.TitleBar
+        android:id="@+id/titlebar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        custom:done_visible="true"
+        custom:menu_option="false"
+        custom:title_ulta="Select Address" >
+    </com.ulta.core.widgets.flyin.TitleBar>
+
+    <FrameLayout
+        android:id="@+id/loadingDialog"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center_vertical|center_horizontal|center"
+        android:background="@drawable/bg_patch_white"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="50dp" >
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/description"
+            android:padding="5dp"
+            android:src="@drawable/logo_spinner" />
+
+        <ProgressBar
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:indeterminateTint="#F00"
+            android:indeterminateTintMode="src_in" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:weightSum="1" >
+
+        <include
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.10"
+            layout="@layout/checkout_header" />
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.68"
+            android:background="@color/white"
+            android:overScrollMode="never" >
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_headline_big"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="@string/address_verification"
+                    android:textColor="@color/riverBed"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:layout_margin="10dip"
+                    android:text="@string/choose_shipping_address"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:visibility="visible" >
+                </TextView>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.1dp"
+                    android:background="@color/greyBackground" />
+
+                <LinearLayout
+                    android:id="@+id/linearFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dip"
+                    android:orientation="vertical"
+                    android:visibility="visible" >
+
+                    <fragment
+                        android:id="@+id/addressFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        class="com.ulta.core.fragments.checkout.AddressFragment" >
+                    </fragment>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.22"
+            android:background="@color/white"
+            android:gravity="bottom"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal"
+                android:weightSum="1" >
+
+                <ImageButton
+                    android:id="@+id/address"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/checkout_address_enabled"
+                    android:contentDescription="@string/description"
+                    android:visibility="gone" >
+                </ImageButton>
+
+                <ImageButton
+                    android:id="@+id/shippingType"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/checkout_shippingmethod_enabled"
+                    android:contentDescription="@string/description"
+                    android:visibility="gone" >
+                </ImageButton>
+            </LinearLayout>
+
+            <include
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                layout="@layout/checkout_footer" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

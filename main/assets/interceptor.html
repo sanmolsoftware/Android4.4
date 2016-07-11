@@ -1,0 +1,56 @@
+<!-- 		@author: viva 		       -->
+<!-- 		@date: Sep2012 	  	 	   -->
+<!-- @Name : Webview Interceptor Proto -->
+<html>
+	<head>
+	<script type="text/javascript">
+		  //Global variable for setting the value to iPhone.
+		  var productSearchInfoIphoneParam = "";
+		  
+		   //Common interception method of iPhone & Android
+			function getProductInformation(commonProdSearchInfo){
+			   
+				//Setting the value for the iPhone
+	            productSearchInfoIphoneParam = commonProdSearchInfo;
+				
+			   //Passing the value to Android. 
+			   //Warning : The names specified below should not be modified, as the 
+			   //android webview is expecting the same to fetch the information.
+				window.jsInterceptorForAndroid.productSearchInfo(commonProdSearchInfo);	
+			}
+		   
+			//Method for getting the value in iPhone
+			//Warning : The method name specified below should not be modified, as the 
+			//iPhone webview is expecting the same to fetch the information.
+	        function productInfoForIphone() {
+	           return productSearchInfoIphoneParam;
+	        }
+	</script>
+	</head>
+	<body>
+		<h4 align="center"><u>ViVa Web Interceptor Prototype</u></h4>
+		<table>
+			<tr><td colspan="2">&nbsp;</td></tr>
+			<tr>
+				<td>Weekly Ad Product 1</td>
+				<!--href='weeklyAd', # is not an option as iPhone requires some navigation to happen-->
+				<td><a href='weeklyAd' onclick=getProductInformation('viva')> Happen Nothing </a></td>
+			</tr>
+			<tr><td colspan="2">&nbsp;</td></tr>
+			<tr>
+				<td>Weekly Ad Product 2</td>
+				<!--href='weeklyAd', # is not an option as iPhone requires some navigation to happen-->
+				<!-- http://www.ulta.com/benefitcosmetics/ -->
+				<td><a href='http://www.ulta.com/benefitcosmetics/' onclick=getProductInformation('benefitcosmetics');>Intercept</a></td>
+			</tr>
+			<tr><td colspan="2">&nbsp;</td></tr>
+			<tr>
+				<td>Weekly Ad Product 3</td>
+				<!--href='weeklyAd', # is not an option as iPhone requires some navigation to happen-->
+				<!--http://www.ulta.com/ulta/browse/productDetail.jsp?productId=xlsImpprod4520051 -->
+				<td><a href='http://www.ulta.com/ulta/browse/productDetail.jsp?productId=xlsImpprod4520051' onclick=getProductInformation('xlsImpprod3900691'); >Navigate to Native</a></td>
+			</tr>
+			<tr><td colspan="2">&nbsp;</td></tr>
+		</table>
+	</body>
+</html>

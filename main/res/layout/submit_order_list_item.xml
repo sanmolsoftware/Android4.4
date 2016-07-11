@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_patch_white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/reviewOrderProductListLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="10dp" >
+
+        <ImageView
+            android:id="@+id/submitOrderListItemImg"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="@string/description" >
+        </ImageView>
+
+        <LinearLayout
+            android:id="@+id/reviewOrderProdDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/submitOrderListItemImg"
+            android:layout_toRightOf="@id/submitOrderListItemImg"
+            android:orientation="vertical"
+            android:paddingLeft="15dp" >
+
+            <TextView
+                android:id="@+id/submitOrderListItemBrandName"
+                style="@style/basket_brandNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:text="@string/brand_name"
+                android:textStyle="bold" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/submitOrderListItemPdtName"
+                style="@style/basket_ItemNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/prod_name" >
+            </TextView>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/freeTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/reviewOrderProdDescription"
+            android:layout_toRightOf="@id/reviewOrderProdDescription"
+            android:gravity="end"
+            android:text="@string/review_order_free"
+            android:textColor="@color/review_order_price_color"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/oneForFreeTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/reviewOrderProdDescription"
+            android:layout_toEndOf="@id/submitOrderListItemImg"
+            android:layout_toRightOf="@id/submitOrderListItemImg"
+            android:paddingLeft="15dp"
+            android:textColor="@color/review_order_price_color"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/oneForFreeTextView"
+            android:layout_toRightOf="@id/submitOrderListItemImg"
+            android:orientation="horizontal"
+            android:paddingBottom="15dp"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp" >
+
+            <TextView
+                android:id="@+id/submitOrderListItemQunatity"
+                style="@style/basket_ItemNumberText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_spinner"
+                android:gravity="center"
+                android:paddingBottom="3dp"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:text="@string/brand_activity_text" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/submitOrderListItemPrice"
+                style="@style/basket_ItemNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="5dp"
+                android:gravity="center_vertical"
+                android:paddingBottom="3dp"
+                android:paddingLeft="15dp" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/reviewOrderTotalPrice"
+                style="@style/basket_ItemPrice_new"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end|center_vertical" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.1dp"
+        android:background="@drawable/divider" />
+
+</LinearLayout>

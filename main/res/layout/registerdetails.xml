@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_patch_white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_patch_white"
+        android:orientation="vertical">
+
+        <com.ulta.core.widgets.flyin.TitleBar
+            android:id="@+id/titlebar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            custom:done_visible="false"
+            custom:title_ulta="New Account"></com.ulta.core.widgets.flyin.TitleBar>
+
+        <android.support.v4.widget.DrawerLayout
+            android:id="@+id/drawer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/toolbar"
+                    layout="@layout/toolbar"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" />
+
+                <ScrollView
+                    android:id="@+id/scrollView1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:fadingEdge="none"
+                    android:overScrollMode="never">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/textview_create_accout_form_header"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/cstar_grey_background"
+                            android:text="@string/username" />
+
+                        <LinearLayout
+                            style="@style/layout_margin_create_account"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/editFirstname"
+                                style="@style/full_width_edit_text"
+                                android:hint="@string/first_name"
+                                android:singleLine="true"></EditText>
+
+                            <TextView
+                                android:id="@+id/firstNameErrorText"
+                                style="@style/textview_errortext" />
+
+                            <EditText
+                                android:id="@+id/editLastname"
+                                style="@style/full_width_edit_text"
+                                android:hint="@string/last_name"
+                                android:singleLine="true"></EditText>
+
+                            <TextView
+                                android:id="@+id/lastNameErrorText"
+                                style="@style/textview_errortext" />
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/textview_create_accout_form_header"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/cstar_grey_background"
+                            android:text="@string/account_details" />
+
+                        <LinearLayout
+                            style="@style/layout_margin_create_account"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/editEmail"
+                                style="@style/full_width_edit_text"
+                                android:hint="@string/email"
+                                android:inputType="textEmailAddress"></EditText>
+
+                            <TextView
+                                android:id="@+id/emailErrorText"
+                                style="@style/textview_errortext" />
+
+                            <EditText
+                                android:id="@+id/editConfirmEmail"
+                                style="@style/full_width_edit_text"
+                                android:hint="@string/rewards_confirm_email"
+                                android:inputType="textEmailAddress"></EditText>
+
+                            <TextView
+                                android:id="@+id/confirm_emailErrorText"
+                                style="@style/textview_errortext" />
+
+                            <EditText
+                                android:id="@+id/editPassword"
+                                style="@style/full_width_edit_text"
+                                android:hint="@string/password"
+                                android:inputType="textPassword"
+                                android:maxLength="10"></EditText>
+
+                            <TextView
+                                android:id="@+id/passwordErrorText"
+                                style="@style/textview_errortext" />
+
+                            <EditText
+                                android:id="@+id/editReenterpassword"
+                                style="@style/full_width_edit_text"
+                                android:hint="@string/re_password"
+                                android:inputType="textPassword"
+                                android:maxLength="10"></EditText>
+
+                            <TextView
+                                android:id="@+id/repasswordErrorText"
+                                style="@style/textview_errortext" />
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/textview_create_accout_form_header"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/cstar_grey_background"
+                            android:text="@string/create_account_date_of_birth" />
+
+                        <LinearLayout
+                            style="@style/layout_margin_create_account"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/editDateOfBirth"
+                                style="@style/full_width_edit_text"
+                                android:digits="0123456789/"
+                                android:hint="@string/date_of_birth_mmdd"
+                                android:maxLength="5"
+                                android:singleLine="true"></EditText>
+
+                            <TextView
+                                android:id="@+id/dateofbirthErrorText"
+                                style="@style/textview_errortext" />
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/textview_create_accout_form_header"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/cstar_grey_background"
+                            android:text="@string/address" />
+
+                        <LinearLayout
+                            style="@style/layout_margin_create_account"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/editAddress1"
+                                style="@style/full_width_edit_text"
+                                android:hint="@string/address_line1"
+                                android:singleLine="true"></EditText>
+
+                            <TextView
+                                android:id="@+id/address1ErrorText"
+                                style="@style/textview_errortext" />
+
+                            <EditText
+                                android:id="@+id/editAddress2"
+                                style="@style/full_width_edit_text"
+                                android:hint="@string/address_line2"
+                                android:singleLine="true"></EditText>
+
+                            <EditText
+                                android:id="@+id/editCity"
+                                style="@style/full_width_edit_text"
+                                android:hint="@string/city"
+                                android:singleLine="true"></EditText>
+
+                            <TextView
+                                android:id="@+id/cityErrorText"
+                                style="@style/textview_errortext" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:baselineAligned="false"
+                                android:weightSum="100">
+
+                                <LinearLayout
+                                    android:id="@+id/linearLayout10"
+                                    android:layout_width="0dip"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="2dip"
+                                    android:layout_weight="60"
+                                    android:gravity="center_vertical"
+                                    android:orientation="vertical">
+
+                                    <Spinner
+                                        android:id="@+id/spState"
+                                        style="@style/spinner_state"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="@dimen/edit_text_height"
+                                        android:paddingTop="@dimen/normal_text_padding_top" />
+
+                                    <TextView
+                                        android:id="@+id/stateErrorText"
+                                        style="@style/textview_errortext" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dip"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="2dip"
+                                    android:layout_marginLeft="10dip"
+                                    android:layout_marginStart="10dip"
+                                    android:layout_weight="40"
+                                    android:gravity="center_vertical"
+                                    android:orientation="vertical">
+
+                                    <EditText
+                                        android:id="@+id/editZip"
+                                        style="@style/full_width_edit_text"
+                                        android:hint="@string/zip"
+                                        android:imeOptions="actionDone"
+                                        android:inputType="number"
+                                        android:maxLength="5"></EditText>
+
+                                    <TextView
+                                        android:id="@+id/zipErrorText"
+                                        style="@style/textview_errortext" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/textview_create_accout_form_header"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/cstar_grey_background"
+                            android:text="@string/contact_number" />
+
+                        <LinearLayout
+                            style="@style/layout_margin_create_account"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/phoneNumber"
+                                style="@style/full_width_edit_text"
+                                android:digits="1234567890"
+                                android:hint="@string/phone"
+                                android:inputType="phone"
+                                android:maxLength="10"
+                                android:singleLine="true"></EditText>
+
+                            <TextView
+                                android:id="@+id/phoneErrorText"
+                                style="@style/textview_errortext" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/cstar_grey_background"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textView1"
+                                style="@style/textview_normal_label_melon"
+                                android:layout_marginTop="5dp"
+                                android:paddingLeft="@dimen/activity_horizontal_margin"
+                                android:text="@string/join_reward"></TextView>
+
+                            <RelativeLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:background="@color/white"
+                                android:orientation="horizontal"
+                                android:paddingBottom="0dp"
+                                android:paddingLeft="16dp"
+                                android:paddingRight="16dp"
+                                android:paddingTop="10dp">
+
+                                <TextView
+                                    android:id="@+id/yes_sign_me_up_TV"
+                                    style="@style/textview_form_switch"
+                                    android:layout_alignParentLeft="true"
+                                    android:text="@string/sign_me_up"></TextView>
+
+                                <Switch
+                                    android:id="@+id/yes_sign_switch"
+                                    android:layout_width="85dip"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_toRightOf="@id/yes_sign_me_up_TV"
+                                    android:checked="true"
+                                    android:maxHeight="40dp"
+                                    android:minWidth="100dp"
+                                    android:switchMinWidth="56dp"
+                                    android:textOff=" "
+                                    android:textOn=" "
+                                    android:visibility="visible" />
+                            </RelativeLayout>
+
+                            <View
+                                android:layout_width="fill_parent"
+                                android:layout_height="0.1dp"
+                                android:background="@drawable/divider" />
+
+                            <RelativeLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/white"
+                                android:orientation="horizontal"
+                                android:paddingLeft="16dp"
+                                android:paddingRight="16dp"
+                                android:paddingTop="10dp">
+
+                                <TextView
+                                    android:id="@+id/already_a_member_TV"
+                                    style="@style/textview_form_switch"
+                                    android:layout_alignParentLeft="true"
+                                    android:text="@string/already_member"></TextView>
+
+                                <Switch
+                                    android:id="@+id/already_a_member_switch"
+                                    android:layout_width="85dip"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_toRightOf="@id/already_a_member_TV"
+                                    android:checked="false"
+                                    android:maxHeight="40dp"
+                                    android:minWidth="100dp"
+                                    android:switchMinWidth="56dp"
+                                    android:textOff=" "
+                                    android:textOn=" "
+                                    android:visibility="visible" />
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:id="@+id/membershipId"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dip"
+                                android:background="@color/white"
+                                android:orientation="vertical">
+
+                                <View
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="0.1dp"
+                                    android:background="@drawable/divider" />
+
+                                <EditText
+                                    android:id="@+id/editId"
+                                    style="@style/full_width_edit_text"
+                                    android:background="@android:color/transparent"
+                                    android:hint="@string/member_id_number"
+                                    android:inputType="number"
+                                    android:maxLength="15"
+                                    android:paddingLeft="@dimen/activity_horizontal_margin"></EditText>
+
+                                <TextView
+                                    android:id="@+id/idErrorText"
+                                    style="@style/textview_errortext"
+                                    android:layout_marginLeft="@dimen/activity_horizontal_margin" />
+                            </LinearLayout>
+
+                            <RadioGroup
+                                android:id="@+id/radioGroup1"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:background="@color/white"
+                                android:orientation="vertical"
+                                android:paddingBottom="5dp"
+                                android:visibility="gone">
+
+                                <RadioButton
+                                    android:id="@+id/radioSign"
+                                    style="@style/radio_button"
+                                    android:checked="true"
+                                    android:text="@string/sign_me_up"></RadioButton>
+
+                                <RadioButton
+                                    android:id="@+id/radioMember"
+                                    style="@style/radio_button"
+                                    android:text="@string/already_member"></RadioButton>
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="10dip">
+
+                                    <TextView
+                                        style="@style/textview_normal_label"
+                                        android:layout_marginLeft="50dip"
+                                        android:layout_marginStart="50dip"
+                                        android:text="@string/rewards_ID_num"></TextView>
+
+                                    <EditText
+                                        style="@style/FormEdit"
+                                        android:layout_width="100dip"
+                                        android:layout_height="40dp"
+                                        android:layout_marginLeft="5dip"
+                                        android:layout_marginStart="5dip"
+                                        android:inputType="number"
+                                        android:maxLength="15"
+                                        android:textColor="@color/black"
+                                        android:textSize="12sp"></EditText>
+                                </LinearLayout>
+
+                                <RadioButton
+                                    android:id="@+id/radioThanks"
+                                    style="@style/radio_button"
+                                    android:text="@string/no_thanks"></RadioButton>
+                            </RadioGroup>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/cstar_grey_background"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/checkRewardText"
+                                style="@style/textview_normal_label_melon"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginTop="5dp"
+                                android:paddingLeft="16dp"
+                                android:text="@string/create_account_offer_text"></TextView>
+
+                            <RelativeLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:background="@color/white"
+                                android:orientation="horizontal"
+                                android:paddingBottom="0dp"
+                                android:paddingLeft="16dp"
+                                android:paddingRight="16dp"
+                                android:paddingTop="10dp">
+
+                                <TextView
+                                    android:id="@+id/same_as_shipping_addressTV"
+                                    style="@style/textview_form_switch"
+                                    android:layout_alignParentLeft="true"
+                                    android:text="@string/chck_reward_text"></TextView>
+
+                                <Switch
+                                    android:id="@+id/check_reward_switch"
+                                    android:layout_width="85dip"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_toRightOf="@id/same_as_shipping_addressTV"
+                                    android:checked="true"
+                                    android:maxHeight="40dp"
+                                    android:minWidth="100dp"
+                                    android:switchMinWidth="56dp"
+                                    android:textOff=" "
+                                    android:textOn=" "
+                                    android:visibility="visible" />
+                            </RelativeLayout>
+
+                            <Button
+                                android:id="@+id/btnContinue"
+                                style="@style/buttonStyle_prelollipop_full_width"
+                                android:layout_marginBottom="20dp"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="40dp"
+                                android:text="@string/submit_button"
+                                android:visibility="visible"></Button>
+                        </LinearLayout>
+                    </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
+
+            <include
+                android:id="@+id/navigation_drawer"
+                layout="@layout/navigation_menu"
+                android:layout_width="@dimen/side_menu_width"
+                android:layout_height="match_parent"
+                android:layout_gravity="start" />
+        </android.support.v4.widget.DrawerLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/loadingDialog"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="50dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/description"
+            android:padding="5dp"
+            android:src="@drawable/logo_spinner" />
+
+        <ProgressBar
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:indeterminateTint="#F00"
+            android:indeterminateTintMode="src_in" />
+    </FrameLayout>
+
+</FrameLayout>

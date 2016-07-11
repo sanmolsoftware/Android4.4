@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.ulta.core.widgets.flyin.TitleBar
+        android:id="@+id/titlebar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        custom:done_visible="false"
+        custom:logo_ulta="true"
+        custom:title_ulta=""></com.ulta.core.widgets.flyin.TitleBar>
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/description"
+                            android:padding="5dp"
+                            android:src="@drawable/logo_spinner" />
+
+                        <ProgressBar
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:indeterminate="true"
+                            android:indeterminateTint="#F00"
+                            android:indeterminateTintMode="src_in" />
+                    </FrameLayout>
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentTop="true"
+                        android:paddingBottom="65dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/ultamate_creditcard_landing_image"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top"
+                                android:adjustViewBounds="true"
+                                android:scaleType="centerCrop" />
+
+                            <LinearLayout
+                                android:id="@+id/hyperlink"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/ultamate_creditcard_landing_image"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:id="@+id/txtCreditcardfaq"
+                                    style="@style/textview_normal_label"
+                                    android:layout_margin="5dp"
+                                    android:drawablePadding="5dp"
+                                    android:text="@string/creditcard_faq"
+                                    android:textColor="@color/bombay"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txtCreditcard_termsandconditions"
+                                    style="@style/textview_normal_label"
+                                    android:layout_below="@id/txtCreditcardfaq"
+                                    android:layout_margin="5dp"
+                                    android:drawablePadding="5dp"
+                                    android:text="@string/creditcard_termsandconditions"
+                                    android:textColor="@color/bombay"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </ScrollView>
+                </FrameLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/buttons_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <Button
+                        android:id="@+id/manageAccount"
+                        style="@style/buttonStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:text="@string/manage_account"
+                        android:textSize="15sp"></Button>
+
+                    <Button
+                        android:id="@+id/applyNow"
+                        style="@style/melonButtonStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:text="@string/apply_now"
+                        android:textSize="15sp"></Button>
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <include
+            android:id="@+id/navigation_drawer"
+            layout="@layout/navigation_menu"
+            android:layout_width="@dimen/side_menu_width"
+            android:layout_height="match_parent"
+            android:layout_gravity="start" />
+    </android.support.v4.widget.DrawerLayout>
+
+</LinearLayout>

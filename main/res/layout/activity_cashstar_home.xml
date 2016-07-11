@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_patch_white"
+    android:orientation="vertical">
+
+    <com.ulta.core.widgets.flyin.TitleBar
+        android:id="@+id/titlebar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        custom:done_visible="false"
+        custom:logo_ulta="false"
+        custom:title_ulta=""></com.ulta.core.widgets.flyin.TitleBar>
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:fadeScrollbars="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/cstar_grey_background"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:orientation="vertical">
+
+                        <FrameLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ProgressBar
+                                style="@android:style/Widget.ProgressBar.Small.Inverse"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:indeterminate="true"
+                                android:indeterminateTint="#F00"
+                                android:indeterminateTintMode="src_in" />
+
+                            <ImageView
+                                android:id="@+id/giftCardBanner"
+                                android:layout_width="fill_parent"
+                                android:layout_height="120dp"
+                                android:contentDescription="@string/description"
+                                android:scaleType="fitXY" />
+                        </FrameLayout>
+
+                        <View
+                            android:layout_width="fill_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginTop="10dp"
+                            android:background="#919191" />
+
+                        <LinearLayout
+                            android:id="@+id/eGiftCardLayout"
+                            style="@style/layout_margin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="5dp"
+                                android:layout_height="match_parent"
+                                android:background="#f27a45" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    style="@style/cashstar_egiftcard_title_style"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/cashstar_egiftcard_title" />
+
+                                <TextView
+                                    style="@style/cashstar_egiftcard_subtitle_style"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/cashstar_egiftcard_sub_title" />
+
+                                <TextView
+                                    style="@style/cashstar_egiftcard_message_style"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/cashstar_egiftcard_message" />
+
+                                <Button
+                                    android:id="@+id/btnEGiftCard"
+                                    style="@style/buttonStyle_prelollipop_full_width"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="16dp"
+                                    android:text="@string/cashstar_button"></Button>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="fill_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="10dp"
+                            android:background="#919191" />
+
+                        <LinearLayout
+                            android:id="@+id/plasticGiftCardLayout"
+                            style="@style/layout_margin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="5dp"
+                                android:layout_height="match_parent"
+                                android:background="#f27a45" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    style="@style/cashstar_egiftcard_title_style"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/cashstar_plastic_giftcard_title" />
+
+                                <TextView
+                                    style="@style/cashstar_egiftcard_subtitle_style"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/cashstar_plastic_giftcard_sub_title" />
+
+                                <TextView
+                                    style="@style/cashstar_egiftcard_message_style"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/cashstar_plastic_giftcard_message" />
+
+                                <Button
+                                    android:id="@+id/btnPlasticGiftCard"
+                                    style="@style/buttonStyle_prelollipop_full_width"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="16dp"
+                                    android:text="@string/cashstar_button"></Button>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/MyAccountMenuItems"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/more_options"></TextView>
+
+                    <LinearLayout
+                        style="@style/layout_margin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/checkGiftCardBalanceTV"
+                            style="@style/cashstar_more_options_items"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dip"
+                            android:drawablePadding="5dp"
+                            android:drawableRight="@drawable/chevron"
+                            android:gravity="center_vertical"
+                            android:text="@string/cashstar_check_gift_card_bal" />
+
+                        <View
+                            android:layout_width="fill_parent"
+                            android:layout_height="0.5dp"
+                            android:background="@drawable/divider" />
+
+                        <TextView
+                            android:id="@+id/corporateGiftCardTV"
+                            style="@style/cashstar_more_options_items"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dip"
+                            android:drawablePadding="5dp"
+                            android:drawableRight="@drawable/chevron"
+                            android:gravity="center_vertical"
+                            android:text="@string/corporate_giftcard" />
+
+                        <View
+                            android:layout_width="fill_parent"
+                            android:layout_height="0.5dp"
+                            android:background="@drawable/divider" />
+
+                        <TextView
+                            android:id="@+id/frequentlyAskedQuestionsTV"
+                            style="@style/cashstar_more_options_items"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dip"
+                            android:drawablePadding="5dp"
+                            android:drawableRight="@drawable/chevron"
+                            android:gravity="center_vertical"
+                            android:text="@string/frequently_asked_questions" />
+
+                        <View
+                            android:layout_width="fill_parent"
+                            android:layout_height="0.5dp"
+                            android:background="@drawable/divider" />
+
+                        <TextView
+                            android:id="@+id/termsAndConditionsTV"
+                            style="@style/cashstar_more_options_items"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dip"
+                            android:drawablePadding="5dp"
+                            android:drawableRight="@drawable/chevron"
+                            android:gravity="center_vertical"
+                            android:text="@string/terms_and_conditions" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+
+
+        <include
+            android:id="@+id/navigation_drawer"
+            layout="@layout/navigation_menu"
+            android:layout_width="@dimen/side_menu_width"
+            android:layout_height="match_parent"
+            android:layout_gravity="start" />
+    </android.support.v4.widget.DrawerLayout>
+
+</LinearLayout>

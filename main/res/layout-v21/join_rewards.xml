@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg_patch_white" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/bg_patch_white"
+        android:orientation="vertical" >
+
+        <com.ulta.core.widgets.flyin.TitleBar
+            android:id="@+id/titlebar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            custom:done_visible="false"
+            custom:menu_option="true"
+            custom:title_ulta="Join Rewards" >
+        </com.ulta.core.widgets.flyin.TitleBar>
+
+        <android.support.v4.widget.DrawerLayout
+            android:id="@+id/drawer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" >
+
+                <include
+                    android:id="@+id/toolbar"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    layout="@layout/toolbar" />
+
+                <ScrollView
+                    android:id="@+id/joinRewardLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/white"
+                    android:fadingEdge="none"
+                    android:overScrollMode="never"
+                    android:padding="10dp"
+                    android:visibility="visible" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <RadioGroup
+                            android:id="@+id/joinRewards_radioGrp"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:background="@drawable/rectangular_boarder"
+                            android:orientation="vertical" >
+
+                            <RadioButton
+                                android:id="@+id/radioSign"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="3dp"
+                                android:checked="true"
+                                android:text="@string/rewards_sign_me_up"
+                                android:textColor="#424242"
+                                android:textSize="14sp" >
+                            </RadioButton>
+
+                            <RadioButton
+                                android:id="@+id/radioMember"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="3dp"
+                                android:text="@string/alread_member_msg"
+                                android:textColor="#424242"
+                                android:textSize="14sp" />
+                        </RadioGroup>
+
+                        <LinearLayout
+                            android:id="@+id/lytSignUp"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="5dip"
+                            android:visibility="gone" >
+
+                            <EditText
+                                android:id="@+id/user_name"
+                                style="@style/full_width_edit_text"
+                                android:hint="@string/rewards_email"
+                                android:singleLine="true" />
+
+                            <TextView
+                                android:id="@+id/userNameErrorText"
+                                style="@style/textview_errortext" />
+
+                            <EditText
+                                android:id="@+id/confirm_user_name"
+                                style="@style/full_width_edit_text"
+                                android:hint="@string/rewards_confirm_email"
+                                android:inputType="textEmailAddress"
+                                android:singleLine="true" />
+
+                            <TextView
+                                android:id="@+id/confirmUserNameErrorText"
+                                style="@style/textview_errortext" />
+
+                            <EditText
+                                android:id="@+id/f_name"
+                                style="@style/full_width_edit_text"
+                                android:hint="@string/add_shipping_address_firstname"
+                                android:singleLine="true" />
+
+                            <TextView
+                                android:id="@+id/firstNameErrorText"
+                                style="@style/textview_errortext" />
+
+                            <EditText
+                                android:id="@+id/l_name"
+                                style="@style/full_width_edit_text"
+                                android:hint="@string/add_shipping_address_lastname"
+                                android:singleLine="true" />
+
+                            <TextView
+                                android:id="@+id/lastNameErrorText"
+                                style="@style/textview_errortext" />
+
+                            <EditText
+                                android:id="@+id/phone"
+                                style="@style/full_width_edit_text"
+                                android:hint="@string/add_shipping_address_phone"
+                                android:inputType="numberDecimal"
+                                android:maxLength="10"
+                                android:singleLine="true" />
+
+                            <TextView
+                                android:id="@+id/phoneErrorText"
+                                style="@style/textview_errortext" />
+
+                            <EditText
+                                android:id="@+id/dob"
+                                style="@style/full_width_edit_text"
+                                android:hint="@string/rewards_dob"
+                                android:inputType="textEmailAddress"
+                                android:numeric="integer"
+                                android:singleLine="true"
+                                android:visibility="gone" />
+
+                            <EditText
+                                android:id="@+id/al_1"
+                                style="@style/full_width_edit_text"
+                                android:hint="@string/add_shipping_address_address_line1"
+                                android:singleLine="true" />
+
+                            <TextView
+                                android:id="@+id/address1ErrorText"
+                                style="@style/textview_errortext" />
+
+                            <EditText
+                                android:id="@+id/al_2"
+                                style="@style/full_width_edit_text"
+                                android:hint="@string/rewards_addr_line2"
+                                android:singleLine="true" />
+
+                            <EditText
+                                android:id="@+id/city"
+                                style="@style/full_width_edit_text"
+                                android:hint="@string/add_shipping_address_city"
+                                android:singleLine="true" />
+
+                            <TextView
+                                android:id="@+id/cityErrorText"
+                                style="@style/textview_errortext" />
+
+                            <Spinner
+                                android:id="@+id/spinner1"
+                                android:layout_width="fill_parent"
+                                android:layout_height="@dimen/edit_text_height"
+                                android:background="@drawable/apptheme_textfield_grey_"
+                                android:overlapAnchor="false"
+                                android:paddingTop="@dimen/normal_text_padding_top" />
+
+                            <TextView
+                                android:id="@+id/stateErrorText"
+                                style="@style/textview_errortext" />
+
+                            <EditText
+                                android:id="@+id/zip_code"
+                                style="@style/full_width_edit_text"
+                                android:hint="@string/add_shipping_address_zip"
+                                android:imeOptions="actionDone"
+                                android:maxLength="5"
+                                android:numeric="integer"
+                                android:singleLine="true" />
+
+                            <TextView
+                                android:id="@+id/zipErrorText"
+                                style="@style/textview_errortext" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lytMembershipId"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dip"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center_vertical"
+                            android:visibility="gone" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dip"
+                                android:text="@string/rewards_ID_num"
+                                android:textColor="#424242"
+                                android:textSize="14sp" />
+
+                            <EditText
+                                android:id="@+id/editId"
+                                style="@style/FormEdit"
+                                android:layout_width="120dp"
+                                android:layout_height="64dp"
+                                android:layout_marginLeft="7dip"
+                                android:imeOptions="actionDone"
+                                android:inputType="number"
+                                android:maxLength="15"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/idErrorText"
+                            style="@style/textview_errortext" />
+
+                        <Button
+                            android:id="@+id/doneBtn"
+                            style="@style/Button_Full_width"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/done" />
+                    </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
+
+            <include
+                android:id="@+id/navigation_drawer"
+                android:layout_width="@dimen/side_menu_width"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                layout="@layout/navigation_menu" />
+        </android.support.v4.widget.DrawerLayout>
+
+        <LinearLayout
+            android:id="@+id/loadingDialog"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="50dp"
+            android:visibility="gone" >
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
+                    android:padding="5dp"
+                    android:src="@drawable/logo_spinner" />
+
+                <ProgressBar
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="true"
+                    android:indeterminateTint="#F00"
+                    android:indeterminateTintMode="src_in" />
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

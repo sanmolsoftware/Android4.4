@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content" >
+
+    <ImageView
+        android:id="@+id/arrow_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="5dip"
+        android:src="@drawable/arrow_up"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/tracks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/arrow_up"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:weightSum="100" >
+
+        <LinearLayout
+            android:id="@+id/shareMenuFB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/bg_headline_big"
+            android:padding="5dip" >
+
+            <ImageView
+                android:id="@+id/shareMenuFbImg"
+                android:layout_width="20dip"
+                android:layout_height="20dip"
+                android:layout_marginRight="10dip"
+                android:background="@drawable/ic_menu_share"
+                android:visibility="gone" >
+            </ImageView>
+
+            <TextView
+                android:id="@+id/shareMenuFBTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/fb_text"
+                android:textColor="@color/riverBed"
+                android:textStyle="bold"
+                android:typeface="normal" >
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/shareMenuTwitter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_headline_big"
+            android:padding="5dip" >
+
+            <ImageView
+                android:id="@+id/shareMenuTwitterImg"
+                android:layout_width="20dip"
+                android:layout_height="20dip"
+                android:layout_marginRight="10dip"
+                android:src="@drawable/ic_menu_share"
+                android:visibility="gone" >
+            </ImageView>
+
+            <TextView
+                android:id="@+id/shareMenuTwiiterTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/twitter_text"
+                android:textColor="@color/riverBed"
+                android:textStyle="bold" >
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/shareMenuEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_headline_big"
+            android:paddingBottom="5dip"
+            android:paddingLeft="12dip"
+            android:paddingRight="12dip"
+            android:paddingTop="5dip"
+            android:visibility="gone" >
+
+            <ImageView
+                android:id="@+id/shareMenuEmailImg"
+                android:layout_width="20dip"
+                android:layout_height="20dip"
+                android:layout_marginRight="10dip"
+                android:src="@drawable/ic_menu_share"
+                android:visibility="gone" >
+            </ImageView>
+
+            <TextView
+                android:id="@+id/shareMenuEmailTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:text="@string/email_text"
+                android:textColor="@color/riverBed"
+                android:textStyle="bold" >
+            </TextView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/arrow_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tracks"
+        android:layout_marginTop="-4dip"
+        android:src="@drawable/arrow_down"
+        android:visibility="gone" />
+
+</RelativeLayout>

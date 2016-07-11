@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppTheme" parent="AppTheme.Base">
+        <item name="android:colorPrimary">@color/primaryColor</item>
+        <item name="android:colorPrimaryDark">@color/primaryColorDark</item>
+        <item name="android:colorAccent">@color/accentColor</item>
+        <item name="android:colorControlHighlight">@color/colorHighlight</item>
+       <!--  <item name="colorControlActivated">@color/accentColor</item> -->
+        <item name="colorControlHighlight">@color/colorHighlight</item>
+        <item name="android:actionOverflowButtonStyle">@style/OverFlow</item>
+        <item name="android:actionButtonStyle">@style/ActionButtonStyle</item>
+        <item name="actionButtonStyle">@style/ActionButtonStyle</item>
+        <item name="actionMenuTextColor">@color/white</item>
+        <item name="android:actionMenuTextColor">@color/white</item>
+    </style>
+
+    <style name="OverFlow" parent="@style/Widget.AppCompat.Light.ActionButton.Overflow">
+        <!--<item name="android:src">@drawable/ic_action_overflow</item>-->
+        <!--<item name="android:paddingLeft">30dip</item>-->
+        <!--<item name="android:paddingRight">20dip</item>-->
+    </style>
+    <style name="ActionButtonStyle" parent="@style/Widget.AppCompat.Light.ActionButton">
+        <!--<item name="android:minWidth">60dp</item>-->
+        <!--<item name="android:paddingLeft">30dip</item>-->
+        <!--<item name="android:paddingRight">20dip</item>-->
+        <!--<item name="android:textSize">14sp</item>-->
+    </style>
+
+    <style name="Button_Full_width">
+        <item name="android:textColor">@color/melon</item>
+        <item name="android:textSize">@dimen/normal_text_Size</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:minWidth">88dp</item>
+        <item name="android:minHeight">36dp</item>
+        <item name="android:elevation">5dp</item>
+        <item name="android:translationZ">1dp</item>
+        <item name="android:background">@drawable/primary_round</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">fill_parent</item>
+    </style>
+
+    <style name="Button_Wrapped">
+        <item name="android:textSize">@dimen/normal_text_Size</item>
+        <item name="android:textColor">@color/melon</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:minWidth">88dp</item>
+        <item name="android:minHeight">36dp</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:elevation">5dp</item>
+        <item name="android:translationZ">1dp</item>
+        <item name="android:background">@drawable/primary_round</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="Button_rate_ulta">
+        <item name="android:textColor">@color/melon</item>
+        <item name="android:textSize">@dimen/normal_text_Size</item>
+        <item name="android:elevation">5dp</item>
+        <item name="android:translationZ">1dp</item>
+        <item name="android:background">@drawable/primary_round</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">fill_parent</item>
+    </style>
+
+</resources>

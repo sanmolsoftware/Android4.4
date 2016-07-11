@@ -1,0 +1,40 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="50dp"
+    android:layout_height="wrap_content"
+    android:paddingLeft="10dp"
+    android:layout_gravity="end|center"
+    android:clickable="true" >
+
+    <!-- Menu Item Image -->
+
+    <ImageView
+        android:id="@+id/bagImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:clickable="true"
+        android:contentDescription="@string/description"
+        android:src="@drawable/bag_icon" />
+
+    <!-- Badge Count -->
+
+    <TextView
+        android:id="@+id/actionbar_notifcation_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="top|end"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
+        android:background="@drawable/circle_background"
+        android:gravity="center"
+        android:minHeight="15dp"
+        android:minWidth="25dp"
+        android:padding="3dp"
+        android:text="99"
+        android:textColor="#ffffff"
+        android:textSize="13sp" />
+
+</RelativeLayout>

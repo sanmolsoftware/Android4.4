@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/bg_list_item"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/addLayout"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content"
+        android:weightSum="100">
+
+        <ImageView
+            android:layout_marginRight="5dp"
+            android:id="@+id/cardTypeImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/creditcard_default"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="80"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView1"
+                style="@style/RiverBedBold22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""></TextView>
+
+            <TextView
+                android:id="@+id/textView2"
+                style="@style/RiverBedRegular18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""></TextView>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnDelete"
+            style="@style/buttonStyle"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_weight="20"
+            android:text="@string/card_del_btn"
+            android:textSize="15sp"></Button>
+    </LinearLayout>
+
+</LinearLayout>

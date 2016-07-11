@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_patch_white"
+    android:orientation="vertical" >
+
+    <com.ulta.core.widgets.flyin.TitleBar
+        android:id="@+id/titlebar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        custom:done_visible="false"
+        custom:logo_ulta="false"
+        custom:title_ulta="My Rewards" >
+    </com.ulta.core.widgets.flyin.TitleBar>
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <include
+                android:id="@+id/toolbar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/toolbar" />
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@id/toolbar" >
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/description"
+                        android:padding="5dp"
+                        android:src="@drawable/logo_spinner" />
+
+                    <ProgressBar
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:indeterminate="true"
+                        android:indeterminateTint="#F00"
+                        android:indeterminateTintMode="src_in" />
+                </FrameLayout>
+
+                <ImageView
+                    android:id="@+id/rewardsMainImage"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/description"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/rewards" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:paddingBottom="20dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="33dp" >
+
+                <Button
+                    android:id="@+id/btnRewardsLogin"
+                    style="@style/Button_Full_width"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dip"
+                    android:layout_weight="1"
+                    android:text="@string/rewards_learn_more"
+                    android:textSize="15sp"
+                    android:textStyle="bold" >
+                </Button>
+
+                <Button
+                    android:id="@+id/btnRewardsCreateAccount"
+                    style="@style/melonButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginTop="5dip"
+                    android:layout_weight="1"
+                    android:text="@string/rewards_joinNow"
+                    android:textSize="15sp"
+                    android:textStyle="bold" >
+                </Button>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <include
+            android:id="@+id/navigation_drawer"
+            android:layout_width="@dimen/side_menu_width"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            layout="@layout/navigation_menu" />
+    </android.support.v4.widget.DrawerLayout>
+
+</LinearLayout>

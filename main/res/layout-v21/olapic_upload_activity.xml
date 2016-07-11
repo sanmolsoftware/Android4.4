@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:weightSum="1" >
+
+        <RelativeLayout
+            android:id="@+id/camera_uploadTopBar"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.075"
+            android:background="@color/primaryColor"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="15dp"
+                android:text="@string/album"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/camera"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="end|center_vertical"
+                android:padding="2dp"
+                android:src="@drawable/camera" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/folderList_lyt"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.825"
+            android:orientation="vertical" >
+
+            <ListView
+                android:id="@+id/olapic_upload_folders_list"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:divider="#000000"
+                android:dividerHeight="0.01dp"
+                android:listSelector="#88888888" >
+            </ListView>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.01dp"
+                android:background="#000000" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/imagegallery_lyt"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.8"
+            android:visibility="gone" >
+
+            <GridView
+                android:id="@+id/gridView1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:horizontalSpacing="5dip"
+                android:numColumns="4"
+                android:verticalSpacing="5dip" >
+            </GridView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/uploadBtn_lyt"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:visibility="gone" >
+
+            <Button
+                android:id="@+id/uploadImgBtn"
+                style="@style/Button_Wrapped"
+                android:text="@string/upload_txt" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <com.ulta.core.widgets.flyin.TitleBar
+        android:id="@+id/titlebar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        custom:done_visible="false"
+        custom:logo_ulta="false"
+        custom:title_ulta="Write Review" >
+    </com.ulta.core.widgets.flyin.TitleBar>
+
+    <FrameLayout
+        android:id="@+id/loadingDialog"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="50dp"
+        android:visibility="gone" >
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/description"
+            android:padding="5dp"
+            android:src="@drawable/logo_spinner" />
+
+        <ProgressBar
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:indeterminateTint="#F00"
+            android:indeterminateTintMode="src_in" />
+    </FrameLayout>
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:weightSum="1" >
+
+            <include
+                android:id="@+id/toolbar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/toolbar" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    style="@style/layout_margin"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="100" >
+
+                    <TextView
+                        android:id="@+id/txtWriteReviewProductName"
+                        style="@style/writereviewtextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxWidth="180dip" >
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/txtWriteReviewProductPrice"
+                        style="@style/writereviewtextView"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginStart="10dip"
+                        android:ellipsize="end"
+                        android:gravity="end"
+                        android:maxWidth="180dip" >
+                    </TextView>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtProductDescription"
+                    style="@style/layout_margin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/riverBed"
+                    android:textSize="14sp" >
+                </TextView>
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/greyBackground" />
+
+            <ScrollView
+                android:id="@+id/scrollView1"
+                style="@style/layout_margin"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.92"
+                android:background="#FFFFFF" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dip"
+                        android:layout_marginTop="20dip"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="4dp"
+                            android:paddingStart="4dp"
+                            android:text="@string/overall_rating"
+                            android:textColor="#424242"
+                            android:textSize="14sp" >
+                        </TextView>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end" >
+
+                            <ImageView
+                                android:id="@+id/imgRating1"
+                                android:layout_width="20dip"
+                                android:layout_height="15dip"
+                                android:background="@drawable/custom_rating"
+                                android:contentDescription="@string/description" >
+                            </ImageView>
+
+                            <ImageView
+                                android:id="@+id/imgRating2"
+                                android:layout_width="20dip"
+                                android:layout_height="15dip"
+                                android:background="@drawable/custom_rating"
+                                android:contentDescription="@string/description" >
+                            </ImageView>
+
+                            <ImageView
+                                android:id="@+id/imgRating3"
+                                android:layout_width="20dip"
+                                android:layout_height="15dip"
+                                android:background="@drawable/custom_rating"
+                                android:contentDescription="@string/description" >
+                            </ImageView>
+
+                            <ImageView
+                                android:id="@+id/imgRating4"
+                                android:layout_width="20dip"
+                                android:layout_height="15dip"
+                                android:background="@drawable/custom_rating"
+                                android:contentDescription="@string/description" >
+                            </ImageView>
+
+                            <ImageView
+                                android:id="@+id/imgRating5"
+                                android:layout_width="20dip"
+                                android:layout_height="15dip"
+                                android:background="@drawable/custom_rating"
+                                android:contentDescription="@string/description" >
+                            </ImageView>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/ratingErrorText"
+                        style="@style/textview_errortext"
+                        android:layout_width="fill_parent"
+                        android:gravity="end" />
+
+                    <EditText
+                        android:id="@+id/editReviewHeadline"
+                        style="@style/full_width_edit_text"
+                        android:hint="@string/review_headlines"
+                        android:singleLine="true"
+                        android:text="" >
+                    </EditText>
+
+                    <TextView
+                        android:id="@+id/reviewErrorText"
+                        style="@style/textview_errortext" />
+
+                    <EditText
+                        android:id="@+id/editComments"
+                        android:layout_width="fill_parent"
+                        android:layout_height="100dip"
+                        android:gravity="bottom"
+                        android:hint="@string/comments"
+                        android:paddingBottom="@dimen/normal_text_padding_below"
+                        android:paddingTop="@dimen/normal_text_padding_top"
+                        android:text=""
+                        android:textColor="@color/riverBed"
+                        android:textSize="@dimen/normal_text_Size" >
+                    </EditText>
+
+                    <TextView
+                        android:id="@+id/commentsErrorText"
+                        style="@style/textview_errortext" />
+
+                    <EditText
+                        android:id="@+id/editNickname"
+                        style="@style/full_width_edit_text"
+                        android:hint="@string/write_review_nickname"
+                        android:singleLine="true"
+                        android:text="" >
+                    </EditText>
+
+                    <TextView
+                        android:id="@+id/nickNameErrorText"
+                        style="@style/textview_errortext" />
+
+                    <EditText
+                        android:id="@+id/editYourLocation"
+                        style="@style/full_width_edit_text"
+                        android:hint="@string/write_review_loc"
+                        android:singleLine="true"
+                        android:text="" >
+                    </EditText>
+
+                    <TextView
+                        android:id="@+id/locationErrorText"
+                        style="@style/textview_errortext" />
+                </LinearLayout>
+            </ScrollView>
+
+            <Button
+                android:id="@+id/writeReviewDonebtn"
+                style="@style/buttonStyle"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_weight="0.08"
+                android:text="@string/done"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <include
+            android:id="@+id/navigation_drawer"
+            android:layout_width="@dimen/side_menu_width"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            layout="@layout/navigation_menu" />
+    </android.support.v4.widget.DrawerLayout>
+
+</LinearLayout>

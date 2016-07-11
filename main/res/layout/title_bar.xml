@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/title_bar_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header_bg" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/header_bg" >
+
+            <LinearLayout
+                android:id="@+id/title_bar_menu_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:contentDescription="@string/description"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="5dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="5dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/hamburger_icon" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/title_bar_done_icon"
+                style="@style/BlackButton"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="5dp"
+                android:text="@string/done"
+                android:visibility="gone" />
+
+            <!--
+             <ImageView android:layout_width="wrap_content" android:src="@drawable/ic_cab_done_holo_light" 
+			android:id="@+id/title_bar_done_icon" android:layout_height="wrap_content" 
+			android:layout_gravity="right|center_vertical" android:layout_marginRight="10dip" 
+			/>
+            -->
+
+            <ImageView
+                android:id="@+id/title_bar_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:contentDescription="@string/description"
+                android:src="@drawable/ulta_logo_icon"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/title_bar_title"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.7"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textStyle="bold" >
+            </TextView>
+
+            <ImageView
+                android:id="@+id/title_searchIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:contentDescription="@string/description"
+                android:paddingLeft="5dp"
+                android:paddingRight="12dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="12dp"
+                android:src="@drawable/search_home_icon" />
+
+            <ImageView
+                android:id="@+id/title_scanIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:contentDescription="@string/description"
+                android:paddingLeft="8dp"
+                android:paddingRight="15dp"
+                 android:paddingStart="8dp"
+                android:paddingEnd="15dp"
+                android:src="@drawable/bar_code_icon" />
+
+            <FrameLayout
+                android:id="@+id/title_bagIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="11dp"
+                android:padding="7dp" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:contentDescription="@string/description"
+                    android:src="@drawable/bag_icon" />
+
+                <TextView
+                    android:id="@+id/basketCountTextView"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="top|end"
+                    android:background="@drawable/circle_background"
+                    android:contentDescription="@string/description"
+                    android:src="@drawable/home_bag_icon"
+                    android:textColor="#FFFFFF"
+                    android:textSize="10sp"
+                    android:gravity="center"
+                    android:visibility="visible" />
+            </FrameLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

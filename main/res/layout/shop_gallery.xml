@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/home_top"
+        android:layout_width="fill_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/bg_dashboard_top" >
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@android:style/Widget.ProgressBar.Small.Inverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal|center" />
+
+        <com.ulta.core.activity.CustomGallery
+            android:id="@+id/gallery1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fadingEdge="none" >
+        </com.ulta.core.activity.CustomGallery>
+
+        <ImageView
+            android:id="@+id/defaultImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/description"
+            android:src="@drawable/home_header"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/bubbles_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="8dp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_list_item"
+    android:gravity="end"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="24dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+         >
+
+        <TextView
+            android:id="@+id/tvOfferHeading"
+            style="@style/Bonus_Offers_Heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold" >
+        </TextView>
+
+        <TextView
+            style="@style/Bonus_Offers_Date"
+            android:id="@+id/tvOfferDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="14sp" >
+        </TextView>
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="12dp"
+        android:id="@+id/tvOfferDescription"
+        android:padding="5dp"
+        style="@style/Bonus_Offers_Description"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/bonus_offer_desc"
+        android:textSize="14sp" >
+    </TextView>
+
+    <Button
+        android:layout_marginTop="12dp"
+        android:id="@+id/isActive"
+        style="@style/Button_Full_width"
+        android:layout_width="wrap_content"
+        android:layout_marginRight="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="@color/orange"
+        android:textSize="13sp" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.1dp"
+        android:layout_marginTop="14dp"
+        android:background="@color/greyBackground" />
+
+</LinearLayout>

@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_patch_white" >
+
+    <LinearLayout
+        android:id="@+id/loadingDialog"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical|center_horizontal|center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="50dp"
+        android:visibility="gone" >
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:src="@drawable/logo_spinner" />
+
+            <ProgressBar
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:indeterminateTint="#F00"
+                android:indeterminateTintMode="src_in" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <com.ulta.core.widgets.flyin.TitleBar
+        android:id="@+id/titlebar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        custom:done_visible="true"
+        custom:menu_option="false"
+        custom:title_ulta="Gift Box" >
+    </com.ulta.core.widgets.flyin.TitleBar>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <include
+            android:id="@+id/giftOptionsHeader"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            layout="@layout/checkout_header" />
+
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/giftOptionsHeader"
+            android:fadingEdge="none"
+            android:overScrollMode="never" >
+
+            <LinearLayout
+                android:id="@+id/new_gift_option_form_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:weightSum="100" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/shippingtype_linear_bg"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/gift_box_details"
+                    android:textColor="@color/black" />
+
+                <RelativeLayout
+                    android:id="@+id/giftThisOrderLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="15dp" >
+
+                    <CheckedTextView
+                        android:id="@+id/giftThisOrderCheckbox"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:checked="true"
+                        android:drawableEnd="@drawable/custom_checkbox"
+                        android:drawableRight="@drawable/custom_checkbox"
+                        android:text="@string/gift_this_order"
+                        android:textColor="#565656"
+                        android:textSize="14sp" >
+                    </CheckedTextView>
+
+                    <Switch
+                        android:id="@+id/giftThisorderSwitch"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:checked="true"
+                        android:maxHeight="40dp"
+                        android:minWidth="100dp"
+                        android:switchMinWidth="56dp"
+                        android:textOff=" "
+                        android:textOn=" "
+                        android:thumb="@drawable/switch_thumb"
+                        android:thumbTextPadding="17dp"
+                        android:track="@drawable/switch_track"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.1dp"
+                    android:background="@color/shippingtype_linear_bg" />
+
+                <Button
+                    android:id="@+id/Continue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_margin="15dip"
+                    android:background="@drawable/grey_button"
+                    android:text="@string/new_credit_card_done"
+                    android:textColor="@color/riverBed"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dip"
+                    android:layout_marginBottom="-5dip"
+                    android:visibility="gone" >
+
+                    <ImageView
+                        android:id="@+id/imageView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ultagiftbox" />
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/gift_options_txt"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/choosePreferredOption"
+                    style="@style/basket_footerTextView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/choose_gift_option" />
+
+                <LinearLayout
+                    android:id="@+id/giftSelectionLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="85"
+                    android:orientation="vertical"
+                    android:weightSum="100" >
+
+                    <LinearLayout
+                        android:id="@+id/optionsLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:paddingBottom="15dp"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:paddingTop="10dp" >
+
+                        <LinearLayout
+                            android:id="@+id/giftBoxAndNoteLayout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical" >
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/shippingtype_relative_bg"
+                                android:orientation="horizontal"
+                                android:paddingBottom="5dp"
+                                android:paddingTop="5dp" >
+
+                                <ImageView
+                                    android:id="@+id/giftBox"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:contentDescription="@string/description"
+                                    android:src="@drawable/address_selection_active"
+                                    android:textColor="@color/black"
+                                    android:textSize="15sp" >
+                                </ImageView>
+
+                                <TextView
+                                    style="@style/checkoutShippingTypePriceStyle"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableLeft="@drawable/gift_box_note"
+                                    android:drawablePadding="5dp"
+                                    android:gravity="center_vertical"
+                                    android:paddingLeft="10dp"
+                                    android:text="@string/gift_box_price" />
+                            </LinearLayout>
+
+                            <TextView
+                                style="@style/checkoutdeliveryTypeStyle"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/shippingtype_linear_bg"
+                                android:paddingBottom="10dp"
+                                android:paddingLeft="5dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/gift_box_and_note"
+                                android:textColor="@color/textColor" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/giftNoteLayout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical" >
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/shippingtype_relative_bg"
+                                android:orientation="horizontal"
+                                android:paddingBottom="5dp"
+                                android:paddingTop="5dp" >
+
+                                <ImageView
+                                    android:id="@+id/giftNote"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:contentDescription="@string/description"
+                                    android:src="@drawable/address_selection_active"
+                                    android:textSize="15sp"
+                                    android:visibility="invisible" >
+                                </ImageView>
+
+                                <TextView
+                                    style="@style/checkoutShippingTypePriceStyle"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableLeft="@drawable/gift_note"
+                                    android:drawablePadding="5dp"
+                                    android:gravity="center_vertical"
+                                    android:paddingLeft="10dp"
+                                    android:text="@string/review_order_free" />
+                            </LinearLayout>
+
+                            <TextView
+                                style="@style/checkoutdeliveryTypeStyle"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/shippingtype_linear_bg"
+                                android:paddingBottom="10dp"
+                                android:paddingLeft="5dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/gift_note_only"
+                                android:textColor="@color/textColor" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.1dp"
+                        android:background="@color/shippingtype_linear_bg" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dip" >
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/add_your_msg"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/noteForGift"
+                        style="@style/FormEdit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="70dp"
+                        android:layout_margin="5dip"
+                        android:background="@drawable/rounded_boundary"
+                        android:hint="@string/gift_option_enter_your_msg"
+                        android:imeOptions="actionDone"
+                        android:maxLength="125"
+                        android:padding="5dip"
+                        android:paddingLeft="3dip"
+                        android:paddingRight="3dip"
+                        android:singleLine="true" >
+                    </EditText>
+
+                    <TextView
+                        android:id="@+id/txtNoOfCharacters"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dip"
+                        android:text="@string/char_remaining"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/buttonAndPriceLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentBottom="true"
+            android:gravity="bottom"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="15dp" >
+
+                <ImageButton
+                    android:id="@+id/shippingTypeButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/ripple_effect"
+                    android:contentDescription="@string/description"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/checkout_shippingmethod_back_enabled" />
+
+                <ImageButton
+                    android:id="@+id/paymentButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/ripple_effect"
+                    android:contentDescription="@string/description"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/checkout_payment_enabled" />
+            </LinearLayout>
+
+            <include
+                android:id="@+id/shippingMethodFooter"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/checkout_footer" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</FrameLayout>

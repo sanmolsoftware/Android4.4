@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_patch_white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llSubmitOrderFooter"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dip"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/linearLayout10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="5dp"
+                android:visibility="visible"
+                android:weightSum="100">
+
+                <TextView
+                    android:id="@+id/txtNoOfItems"
+                    style="@style/basket_footerTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="80"
+                    android:gravity="start"
+                    android:text="@string/subtotal_non_caps"></TextView>
+
+                <TextView
+                    android:id="@+id/tvSubmitorderRawTotal"
+                    style="@style/basketAndreviewOrderPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_weight="20"
+                    android:gravity="end"
+                    android:text="@string/dollar_27"></TextView>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/additionalDiscountView"
+                android:layout_width="fill_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/shippingtype_linear_bg"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/additionalDicountLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="5dp"
+                android:visibility="gone"
+                android:weightSum="100">
+
+                <TextView
+                    style="@style/basket_footerTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="80"
+                    android:gravity="start"
+                    android:text="@string/additional_discount"></TextView>
+
+                <TextView
+                    android:id="@+id/tvAdditionalDiscount"
+                    style="@style/basketAndreviewOrderPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_weight="20"
+                    android:gravity="end"
+                    android:text="@string/dollar_27"></TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dip"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:visibility="gone"
+                android:weightSum="100">
+
+                <TextView
+                    android:id="@+id/textView7"
+                    style="@style/basket_footerTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="80"
+                    android:text="@string/subtotal"></TextView>
+
+                <TextView
+                    android:id="@+id/tvSubmitorderSubTotal"
+                    style="@style/basketAndreviewOrderPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_weight="20"
+                    android:gravity="end"
+                    android:text="@string/doller_0"></TextView>
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/shippingtype_linear_bg" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="5dp"
+                android:weightSum="100">
+
+                <TextView
+                    android:id="@+id/shippingMethodTV"
+                    style="@style/basket_footerTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="80"
+                    android:gravity="start"
+                    android:text="@string/submit_order_shipping"></TextView>
+
+                <TextView
+                    android:id="@+id/tvSubmitorderShipping"
+                    style="@style/basketAndreviewOrderPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_weight="20"
+                    android:gravity="end"
+                    android:text="@string/dollar_five"></TextView>
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/shippingtype_linear_bg" />
+
+            <LinearLayout
+                android:id="@+id/giftBoxAndNoteLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="5dp"
+                android:visibility="gone"
+                android:weightSum="100">
+
+                <TextView
+                    android:id="@+id/giftboxAndNoteTextView"
+                    style="@style/basket_footerTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="80"
+                    android:gravity="start"
+                    android:text="@string/submit_order_giftBoxAndNote"></TextView>
+
+                <TextView
+                    android:id="@+id/giftBoxAndNoteValueTextView"
+                    style="@style/basketAndreviewOrderPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_weight="20"
+                    android:gravity="end"
+                    android:text="@string/dollar_five"></TextView>
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/shippingtype_linear_bg" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="5dp"
+                android:weightSum="100">
+
+                <TextView
+                    style="@style/basket_footerTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="80"
+                    android:gravity="start"
+                    android:text="@string/tax"></TextView>
+
+                <TextView
+                    android:id="@+id/tvSubmitorderTax"
+                    style="@style/basketAndreviewOrderPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_weight="20"
+                    android:gravity="end"
+                    android:text="@string/dollar_five"></TextView>
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/shippingtype_linear_bg" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="5dp"
+                android:visibility="gone"
+                android:weightSum="100">
+
+                <TextView
+                    android:id="@+id/textView11"
+                    style="@style/basket_footerTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="80"
+                    android:gravity="start"
+                    android:text="@string/rewards_pts_discount"></TextView>
+
+                <TextView
+                    android:id="@+id/tvRedeemedAmount"
+                    style="@style/basketAndreviewOrderPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_weight="20"
+                    android:gravity="end"
+                    android:text="@string/dollar_five"></TextView>
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/shippingtype_linear_bg" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dip"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:visibility="gone"
+                android:weightSum="100">
+
+                <TextView
+                    style="@style/basket_footerTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="80"
+                    android:gravity="end"
+                    android:text="@string/submit_total"></TextView>
+
+                <TextView
+                    android:id="@+id/tvSubmitorderTotal"
+                    style="@style/basketAndreviewOrderPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_weight="20"
+                    android:gravity="end"
+                    android:text="@string/dollar_five"></TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/couponCodeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="5dp"
+                android:visibility="gone"
+                android:weightSum="100">
+
+                <TextView
+                    android:id="@+id/couponText"
+                    style="@style/basket_footerTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="80"
+                    android:gravity="start"></TextView>
+
+                <TextView
+                    android:id="@+id/couponValue"
+                    style="@style/basketAndreviewOrderPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_weight="20"
+                    android:gravity="end"></TextView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/reviewOrderAddressLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/textView1"
+                style="@style/subTotalTextView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/shippingtype_linear_bg"
+                android:paddingBottom="5dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="5dp"
+                android:text="@string/shipping_address"></TextView>
+
+            <LinearLayout
+                android:id="@+id/reviewOrderShippningAddressLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="10dp"
+                android:weightSum="100">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="90"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtShippingAddress1"
+                        style="@style/basket_brandNameTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"></TextView>
+
+                    <TextView
+                        android:id="@+id/txtShippingAddress2"
+                        style="@style/basket_brandNameTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"></TextView>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/billingAddressHeadingTextView"
+                style="@style/subTotalTextView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/shippingtype_linear_bg"
+                android:paddingBottom="5dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="5dp"
+                android:text="@string/billing_address"></TextView>
+
+            <LinearLayout
+                android:id="@+id/reviewOrderBillingAddressLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="10dp"
+                android:weightSum="100">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="90"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtBillingAddress1"
+                        style="@style/basket_brandNameTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"></TextView>
+
+                    <TextView
+                        android:id="@+id/txtBillingAddress2"
+                        style="@style/basket_brandNameTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"></TextView>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                style="@style/subTotalTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/shippingtype_linear_bg"
+                android:paddingBottom="5dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="5dp"
+                android:text="@string/payment_details"></TextView>
+
+            <LinearLayout
+                android:id="@+id/reviewOrderCreditCardLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="10dp"
+                android:weightSum="100">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="90"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtCardDetails1"
+                            style="@style/basket_brandNameTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"></TextView>
+
+                        <TextView
+                            android:id="@+id/txtCardDetails2"
+                            style="@style/basket_brandNameTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"></TextView>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/emailSubscriptionLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/subTotalTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/shippingtype_linear_bg"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/email_subscription_heading"></TextView>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/bg_list_item"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:weightSum="100">
+
+                    <TextView
+                        android:id="@+id/email_subscription_Tv"
+                        style="@style/basket_brandNameTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="70"
+                        android:gravity="center_vertical"
+                        android:text="@string/email_subscription_text_guest" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="30"
+                        android:gravity="end|center_vertical">
+
+                        <Switch
+                            android:id="@+id/emai_subscription_switch"
+                            android:layout_width="85dip"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:checked="true"
+                            android:maxHeight="40dp"
+                            android:minWidth="100dp"
+                            android:switchMinWidth="56dp"
+                            android:textOff=" "
+                            android:textOn=" "
+                            android:visibility="visible" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

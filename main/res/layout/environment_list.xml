@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/productionEnvironmentTV"
+            style="@style/environment_popup_heading"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/arrow_down"
+            android:text="@string/environment_prod_caps"></TextView>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/shippingtype_linear_bg" />
+
+        <LinearLayout
+            android:id="@+id/productionEnvironments"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/prodTextView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="10dp"
+                android:text="@string/environment_prod"
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/shippingtype_linear_bg" />
+
+            <TextView
+                android:id="@+id/prod_A"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="10dp"
+                android:text="@string/environment_prod_A"
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/shippingtype_linear_bg" />
+
+            <TextView
+                android:id="@+id/prod_B"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="10dp"
+                android:text="@string/environment_prod_B"
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/shippingtype_linear_bg" />
+
+            <TextView
+                android:id="@+id/stressTextView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="10dp"
+                android:text="@string/environment_stress"
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/shippingtype_linear_bg" />
+
+
+            <TextView
+                android:id="@+id/stagingTextView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="10dp"
+                android:text="@string/environment_staging"
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/shippingtype_linear_bg" />
+
+
+            <TextView
+                android:id="@+id/api_uat"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="10dp"
+                android:text="@string/environment_uat"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/qaEnvironmentTV"
+            style="@style/environment_popup_heading"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/arrow_down"
+            android:text="@string/environment_qa"></TextView>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/shippingtype_linear_bg" />
+
+        <LinearLayout
+            android:id="@+id/qaEnvironments"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+
+            <TextView
+                android:id="@+id/qa01TextView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="10dp"
+                android:text="@string/environment_qa01"
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/shippingtype_linear_bg" />
+
+            <TextView
+                android:id="@+id/qa02TextView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="10dp"
+                android:text="@string/environment_qa02"
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/shippingtype_linear_bg" />
+
+            <TextView
+                android:id="@+id/qa03TextView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="10dp"
+                android:text="@string/environment_qa03"
+                android:textSize="20sp" />
+
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/shippingtype_linear_bg" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/devEnvironmentTV"
+            style="@style/environment_popup_heading"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/arrow_down"
+            android:text="@string/environment_dev"></TextView>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/shippingtype_linear_bg" />
+
+        <LinearLayout
+            android:id="@+id/devEnvironments"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/da01TextView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="10dp"
+                android:text="@string/environment_da01"
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/shippingtype_linear_bg" />
+
+            <TextView
+                android:id="@+id/da02TextView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="10dp"
+                android:text="@string/environment_da02"
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/shippingtype_linear_bg" />
+
+            <TextView
+                android:id="@+id/da3TextView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="10dp"
+                android:text="@string/environment_da03"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/customEnvironmentTV"
+            style="@style/environment_popup_heading"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/arrow_down"
+            android:text="@string/environment_custom"></TextView>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/shippingtype_linear_bg" />
+
+        <LinearLayout
+            android:id="@+id/customEnvironments"
+            style="@style/layout_margin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/customEnvNameET"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="@string/custom_environment_name_hint" />
+
+            <EditText
+                android:id="@+id/customEnvRestET"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="@string/custom_environment_rest_hint" />
+
+            <EditText
+                android:id="@+id/customEnvSecureET"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="@string/custom_environment_secure_hint" />
+
+            <TextView
+                android:id="@+id/errorText"
+                style="@style/textview_errortext" />
+
+            <Button
+                android:id="@+id/customEnvDoneButton"
+                style="@style/buttonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/done" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

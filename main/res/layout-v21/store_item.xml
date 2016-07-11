@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_product_listview"
+    android:baselineAligned="false"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:weightSum="100" >
+
+        <TextView
+            android:id="@+id/store_item_name"
+            style="@style/store_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="start"
+            android:gravity="start"
+            android:paddingBottom="5dp"
+            android:text="@string/ulta_store" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/store_status"
+            android:layout_width="57dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:textColor="@color/white"
+            android:textSize="12sp" >
+        </TextView>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/store_item_address"
+        style="@style/store_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:gravity="start"
+        android:paddingBottom="5dp"
+        android:paddingLeft="16dp"
+        android:textSize="14sp" >
+    </TextView>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:paddingLeft="16dp" >
+
+        <TextView
+            android:id="@+id/viewMap"
+            style="@style/store_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:drawablePadding="8dp"
+            android:drawableRight="@drawable/chevron"
+            android:paddingTop="15dp"
+            android:text="@string/view_map"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <ProgressBar
+            android:id="@+id/store_status_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/checkAvailability"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="5dp"
+            style="@style/Button_Full_width"
+            android:drawablePadding="5dp"
+            android:padding="10dp"
+            android:focusable="false"
+            android:text="@string/check_availability"
+            android:textColor="#f27a45"
+            android:textSize="14sp"
+            android:visibility="gone" >
+        </Button>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/divider" />
+
+</LinearLayout>

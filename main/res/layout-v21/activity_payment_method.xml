@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.ulta.core.widgets.flyin.TitleBar
+        android:id="@+id/titlebar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        custom:done_visible="false"
+        custom:title_ulta="Checkout"></com.ulta.core.widgets.flyin.TitleBar>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <include
+            android:id="@+id/checkoutHeader"
+            layout="@layout/checkout_header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+        <ScrollView
+            android:id="@+id/paymentMethodScrollView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/checkoutHeader"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="155dp"
+            android:fillViewport="true"
+            android:overScrollMode="never">
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/black" />
+
+                <LinearLayout
+                    android:id="@+id/paypalLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp">
+
+                    <TextView
+                        style="@style/textview_normal_label_full_width"
+                        android:layout_margin="5dp"
+                        android:drawableEnd="@drawable/arrow_right2"
+                        android:drawablePadding="5dp"
+                        android:drawableStart="@drawable/paypal"
+                        android:gravity="center|start"
+                        android:text="@string/paypal" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/black" />
+
+                <LinearLayout
+                    android:id="@+id/creditCardLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp">
+
+                    <TextView
+                        style="@style/textview_normal_label_full_width"
+                        android:layout_margin="5dp"
+                        android:drawableEnd="@drawable/arrow_down"
+                        android:drawablePadding="5dp"
+                        android:drawableStart="@drawable/credit_card"
+                        android:gravity="center|start"
+                        android:text="@string/credit_card" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/credit_card_details_layout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/linearCreditFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dip"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <fragment
+                            android:id="@+id/creditCardFragment"
+                            class="com.ulta.core.fragments.checkout.PaymentCheckBoxFragment"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"></fragment>
+
+                        <LinearLayout
+                            android:id="@+id/linearSecurityCode"
+                            style="@style/layout_margin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/edtSecurityCode"
+                                android:layout_width="150dp"
+                                android:layout_height="@dimen/edit_text_height"
+                                android:digits="0123456789"
+                                android:hint="@string/new_cc_sec_code"
+                                android:inputType="number|textPassword"
+                                android:maxLength="3"
+                                android:paddingBottom="@dimen/normal_text_padding_below"
+                                android:paddingTop="@dimen/normal_text_padding_top"
+                                android:password="true"
+                                android:singleLine="true"
+                                android:textColor="@color/riverBed"
+                                android:textColorHint="@color/melon"
+                                android:textSize="@dimen/normal_text_Size"></EditText>
+
+                            <TextView
+                                android:id="@+id/savedCardSecurityErrorText"
+                                style="@style/textview_errortext" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/black" />
+
+                    <RelativeLayout
+                        android:id="@+id/pay_with_new_card_layout"
+                        style="@style/layout_margin"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/pay_with_new_cardTV"
+                            style="@style/textview_normal_label"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginTop="10dip"
+                            android:text="@string/pay_with_new_card"
+                            android:textSize="15sp"></TextView>
+
+                        <Switch
+                            android:id="@+id/pay_with_new_card_switch"
+                            android:layout_width="85dip"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_toEndOf="@id/pay_with_new_cardTV"
+                            android:checked="false"
+                            android:maxHeight="40dp"
+                            android:minWidth="100dp"
+                            android:switchMinWidth="56dp"
+                            android:textOff=" "
+                            android:textOn=" "
+                            android:thumbTextPadding="17dp"
+                            android:visibility="visible" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout14"
+                        style="@style/layout_margin"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/cardHolderName"
+                            style="@style/full_width_edit_text"
+                            android:hint="@string/new_cc_nameOncard"
+                            android:singleLine="true">
+
+                            <requestFocus></requestFocus>
+                        </EditText>
+
+                        <TextView
+                            android:id="@+id/nameOnCardErrorText"
+                            style="@style/textview_errortext" />
+
+                        <FrameLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp">
+
+                            <EditText
+                                android:id="@+id/NumberOfCard"
+                                style="@style/full_width_edit_text"
+                                android:digits="0123456789"
+                                android:drawablePadding="5dp"
+                                android:drawableRight="@drawable/creditcard_default"
+                                android:hint="@string/new_cc_number"
+                                android:inputType="number"
+                                android:maxLength="16"
+                                android:singleLine="true"></EditText>
+
+                        </FrameLayout>
+
+                        <TextView
+                            android:id="@+id/numberOnCardErrorText"
+                            style="@style/textview_errortext" />
+
+                        <LinearLayout
+                            android:id="@+id/acceptedCardTypesLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                style="@style/rate_ulta_message"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/accepted_card_types" />
+
+                            <LinearLayout
+                                android:id="@+id/cardImageLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginTop="5dp"
+                                android:orientation="horizontal"></LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ExpiryLayout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:baselineAligned="false"
+                                android:orientation="horizontal"
+                                android:weightSum="100">
+
+                                <Spinner
+                                    android:id="@+id/month"
+                                    style="@style/Widget.AppCompat.Spinner.Underlined"
+                                    android:layout_width="0dip"
+                                    android:layout_height="@dimen/edit_text_height"
+                                    android:layout_margin="2dip"
+                                    android:layout_weight="50"
+                                    android:overlapAnchor="false"
+                                    android:paddingTop="@dimen/normal_text_padding_top"></Spinner>
+
+                                <Spinner
+                                    android:id="@+id/year"
+                                    style="@style/Widget.AppCompat.Spinner.Underlined"
+                                    android:layout_width="0dip"
+                                    android:layout_height="@dimen/edit_text_height"
+                                    android:layout_margin="2dip"
+                                    android:layout_weight="50"
+                                    android:overlapAnchor="false"
+                                    android:paddingTop="@dimen/normal_text_padding_top"></Spinner>
+                            </LinearLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:baselineAligned="false"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/expiryMonthErrorText"
+                                    style="@style/textview_errortext"
+                                    android:layout_alignParentStart="true" />
+
+                                <TextView
+                                    android:id="@+id/expiryYearErrorText"
+                                    style="@style/textview_errortext"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginEnd="10dp" />
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/securityCodeLayout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/creditsecurityCode"
+                                style="@style/full_width_edit_text"
+                                android:digits="0123456789"
+                                android:hint="@string/new_cc_sec_code"
+                                android:imeOptions="actionDone"
+                                android:inputType="number|textPassword"
+                                android:maxLength="3"
+                                android:password="true"
+                                android:singleLine="true"></EditText>
+
+                            <TextView
+                                android:id="@+id/creditSecurityErrorText"
+                                style="@style/textview_errortext" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/black" />
+
+                <LinearLayout
+                    android:id="@+id/giftCardLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp">
+
+                    <TextView
+                        style="@style/textview_normal_label_full_width"
+                        android:layout_margin="5dp"
+                        android:drawableEnd="@drawable/arrow_down"
+                        android:drawablePadding="5dp"
+                        android:drawableStart="@drawable/gift_card"
+                        android:gravity="center|start"
+                        android:text="@string/gift_card" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/giftCardExpandedLayout"
+                    style="@style/layout_margin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <EditText
+                        android:id="@+id/giftCardNumber"
+                        style="@style/full_width_edit_text"
+                        android:digits="0123456789"
+                        android:hint="@string/gift_card_num"
+                        android:inputType="number"
+                        android:maxLength="16"
+                        android:singleLine="true">
+
+                        <requestFocus></requestFocus>
+                    </EditText>
+
+                    <TextView
+                        android:id="@+id/giftcardNumberErrorText"
+                        style="@style/textview_errortext" />
+
+                    <EditText
+                        android:id="@+id/giftCardPin"
+                        style="@style/full_width_edit_text"
+                        android:digits="0123456789"
+                        android:hint="@string/gift_card_pin"
+                        android:inputType="numberPassword"
+                        android:maxLength="8"
+                        android:singleLine="true"></EditText>
+
+                    <TextView
+                        android:id="@+id/giftCardPinErrorText"
+                        style="@style/textview_errortext" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/black" />
+
+                <LinearLayout
+                    android:id="@+id/redeemPointsLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp">
+
+                    <TextView
+                        style="@style/textview_normal_label_full_width"
+                        android:layout_margin="5dp"
+                        android:drawableEnd="@drawable/arrow_down"
+                        android:drawablePadding="5dp"
+                        android:drawableStart="@drawable/reward_point"
+                        android:gravity="center|start"
+                        android:text="@string/redeem_points" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/black" />
+
+                <LinearLayout
+                    android:id="@+id/redeemPointsDetailsLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/totalRedeemPoints"
+                        style="@style/textview_normal_label"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/black" />
+
+                    <LinearLayout
+                        android:id="@+id/redeemLayout"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/textview_normal_label"
+                            android:drawablePadding="5dp"
+                            android:gravity="center|start"
+                            android:text="@string/redeem" />
+
+                        <TextView
+                            android:id="@+id/changeRedeemTv"
+                            style="@style/textview_normal_label_full_width"
+                            android:drawableEnd="@drawable/arrow_down"
+                            android:drawablePadding="5dp"
+                            android:gravity="center|start"
+                            android:text="@string/zero_point"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/black" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/no_redeempoints"
+                    style="@style/textview_normal_label_full_width"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingStart="16dp"
+                    android:text="@string/no_redeem"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <ImageButton
+                    android:id="@+id/giftBoxDetails"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/ripple_effect"
+                    android:contentDescription="@string/description"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/checkout_giftbox_back_enabled"></ImageButton>
+
+                <ImageButton
+                    android:id="@+id/reviewOrderLayout"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/ripple_effect"
+                    android:contentDescription="@string/description"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/checkout_revieworder_enabled"></ImageButton>
+            </LinearLayout>
+
+            <include
+                layout="@layout/checkout_footer"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/loadingDialog"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_vertical|center_horizontal|center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="50dp">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/description"
+                android:padding="5dp"
+                android:src="@drawable/logo_spinner" />
+
+            <ProgressBar
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminate="true"
+                android:indeterminateTint="#F00"
+                android:indeterminateTintMode="src_in" />
+        </FrameLayout>
+    </RelativeLayout>
+
+</LinearLayout>

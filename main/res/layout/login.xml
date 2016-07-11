@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:ripple="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_patch_white"
+    android:orientation="vertical" >
+
+    <com.ulta.core.widgets.flyin.TitleBar
+        android:id="@+id/titlebar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        custom:done_visible="false"
+        custom:logo_ulta="false"
+        custom:title_ulta="" >
+    </com.ulta.core.widgets.flyin.TitleBar>
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <include
+                android:id="@+id/toolbar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/toolbar" />
+
+            <ScrollView
+                style="@style/layout_margin"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:fillViewport="true"
+                android:fitsSystemWindows="true" >
+
+                <LinearLayout
+                    android:id="@+id/linearLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:weightSum="1" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_login_white"
+                        android:orientation="vertical"
+                        android:paddingBottom="30dp"
+                        android:paddingTop="20dp" >
+
+                        <EditText
+                            android:id="@+id/editUsername"
+                            style="@style/full_width_edit_text"
+                            android:hint="@string/username_hint"
+                            android:inputType="textEmailAddress" >
+                        </EditText>
+
+                        <TextView
+                            android:id="@+id/usernameErrorText"
+                            style="@style/textview_errortext" />
+
+                        <EditText
+                            android:id="@+id/editPasswordLogin"
+                            style="@style/full_width_edit_text"
+                            android:hint="@string/login_pwd_hint"
+                            android:imeOptions="actionDone"
+                            android:inputType="textPassword"
+                            android:singleLine="true" >
+                        </EditText>
+
+                        <TextView
+                            android:id="@+id/passwordErrorText"
+                            style="@style/textview_errortext" />
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:baselineAligned="false"
+                            android:paddingBottom="5dp"
+                            android:paddingTop="15dp" >
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:layout_gravity="start"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal" >
+
+                                <TextView
+                                    android:id="@+id/txtForgotUsername"
+                                    style="@style/textview_normal_label_melon"
+                                    android:text="@string/forgot_username_pwd_text" >
+                                </TextView>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_gravity="end"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginStart="20dp" >
+
+                                <TextView
+                                    android:id="@+id/signInText"
+                                    style="@style/textview_normal_label"
+                                    android:layout_gravity="center"
+                                    android:text="@string/stay_signed_in" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginStart="5dp"
+                                    android:gravity="end" >
+
+                                    <Switch
+                                        android:id="@+id/stay_signed_in_switch"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:checked="true"
+                                        android:switchMinWidth="56dp"
+                                        android:textOff=""
+                                        android:textOn="    "
+                                        android:thumb="@drawable/switch_thumb"
+                                        android:track="@drawable/switch_track"
+                                        android:visibility="visible" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <com.ulta.core.materialdesign.RippleView
+                            android:id="@+id/more"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="35dip"
+                            ripple:rv_type="rectangle" >
+
+                            <Button
+                                android:id="@+id/btnLogin"
+                                style="@style/buttonStyle_prelollipop_full_width"
+                                android:text="@string/login_btn_signIn" >
+                            </Button>
+                        </com.ulta.core.materialdesign.RippleView>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.1dp"
+                        android:background="#88888888" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/newtoultaText"
+                            style="@style/textview_normal_label"
+                            android:layout_marginBottom="15dip"
+                            android:paddingTop="20dp"
+                            android:text="@string/new_to_ulta" >
+                        </TextView>
+
+                        <com.ulta.core.materialdesign.RippleView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="35dip"
+                            ripple:rv_type="rectangle" >
+
+                            <Button
+                                android:id="@+id/btnRegister"
+                                style="@style/buttonStyle_prelollipop_full_width"
+                                android:text="@string/create_account" >
+                            </Button>
+                        </com.ulta.core.materialdesign.RippleView>
+
+                        <TextView
+                            android:id="@+id/txtOr"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="15dip"
+                            android:layout_marginLeft="25dip"
+                            android:layout_marginRight="25dip"
+                            android:layout_marginTop="25dip"
+                            android:text="@string/or"
+                            android:textColor="#45545f"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" >
+                        </TextView>
+
+                        <Button
+                            android:id="@+id/btnGuestContinue"
+                            style="@style/buttonStyle_prelollipop_full_width"
+                            android:layout_marginTop="20dip"
+                            android:text="@string/continue_as_guest"
+                            android:visibility="gone" >
+                        </Button>
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <include
+            android:id="@+id/navigation_drawer"
+            android:layout_width="@dimen/side_menu_width"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            layout="@layout/navigation_menu" />
+    </android.support.v4.widget.DrawerLayout>
+
+</LinearLayout>

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:custom="http://schemas.android.com/apk/res-auto"
+	android:background="@drawable/bg_patch_white"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content">
+	<LinearLayout
+		
+		android:background="@drawable/bg_patch_white"
+		android:layout_gravity="center_horizontal"
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="fill_parent">
+		<com.ulta.core.widgets.flyin.TitleBar
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			custom:done_visible="true"
+			custom:title_ulta="New Shipping Address"
+			android:id="@+id/titlebar"
+			custom:menu_option="true"></com.ulta.core.widgets.flyin.TitleBar>
+		<ScrollView
+			android:layout_width="fill_parent"
+			android:layout_gravity="center_horizontal"
+			android:padding="10dp"
+			android:background="@color/background"
+			android:layout_height="match_parent"
+			android:overScrollMode="never">
+
+
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:padding="5dp"
+				android:id="@+id/new_shipping_method_form_layout">
+
+
+				<TextView
+					android:text="@string/first_name"
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:id="@+id/first_name"
+					android:layout_marginTop="10dip"
+					style="@style/RiverBedRegular20"></TextView>
+				<EditText
+					android:textSize="13sp"
+					android:layout_height="40dip"
+					android:layout_width="match_parent"
+					android:id="@+id/f_name1"
+					android:singleLine="true"
+					style="@style/FormEdit">
+					<requestFocus></requestFocus>
+				</EditText>
+				<TextView
+					android:text="@string/nick_name"
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:id="@+id/last_name1"
+					android:layout_marginTop="10dip"
+					style="@style/RiverBedRegular20"></TextView>
+				<EditText
+					android:textSize="13sp"
+					android:layout_height="40dip"
+					android:layout_width="match_parent"
+					android:id="@+id/n_name1"
+					android:singleLine="true"
+					style="@style/FormEdit">
+
+				</EditText>
+				<TextView
+					android:text="@string/last_name"
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:id="@+id/last_name"
+					android:layout_marginTop="10dip"
+					style="@style/RiverBedRegular20"></TextView>
+				<EditText
+					android:textSize="13sp"
+					android:layout_height="40dip"
+					android:layout_width="match_parent"
+					android:id="@+id/l_name1"
+					android:singleLine="true"
+					style="@style/FormEdit">
+
+				</EditText>
+				<TextView
+					android:text="@string/address_line1"
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:id="@+id/textView3"
+					android:layout_marginTop="10dip"
+					style="@style/RiverBedRegular20"></TextView>
+				<EditText
+					android:textSize="13sp"
+					android:layout_height="40dip"
+					android:layout_width="match_parent"
+					android:id="@+id/al_11"
+					android:singleLine="true"
+					style="@style/FormEdit"></EditText>
+				<TextView
+					android:text="@string/city"
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:id="@+id/textView7"
+					android:layout_marginTop="10dip"
+					style="@style/RiverBedRegular20"
+					android:visibility="visible"></TextView>
+				<EditText
+					android:textSize="13sp"
+					android:layout_height="40dip"
+					android:layout_width="match_parent"
+					android:id="@+id/city1"
+					android:singleLine="true"
+					style="@style/FormEdit"
+					android:visibility="visible"></EditText>
+				<!-- <View android:layout_width="fill_parent" android:background="@color/white" 
+					android:id="@+id/View07" android:layout_height="1dip" android:layout_marginBottom="5dip"></View> -->
+
+				<TextView
+					android:text="@string/state"
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:id="@+id/textView6"
+					android:layout_marginTop="10dip"
+					style="@style/RiverBedRegular20"></TextView>
+				<Spinner
+					android:layout_height="45dip"
+					android:layout_width="match_parent"
+					android:id="@+id/spinner1"
+					android:background="@drawable/spiner"
+					android:layout_marginRight="5dip"
+					android:paddingLeft="3dip"
+					android:paddingTop="3dip"
+					android:paddingBottom="3dip"
+					android:paddingRight="30dip"
+					android:prompt="@string/stateselect_prompt"></Spinner>
+
+				<TextView
+					android:text="@string/phone"
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:id="@+id/textView5"
+					android:layout_marginTop="10dip"
+					style="@style/RiverBedRegular20"></TextView>
+				<EditText
+					android:textSize="13sp"
+					android:layout_height="40dip"
+					android:layout_width="match_parent"
+					android:id="@+id/phone1"
+					android:inputType="numberDecimal"
+					android:singleLine="true"
+					style="@style/FormEdit"
+					android:maxLength="10"></EditText>
+
+
+				<TextView
+					android:text="@string/country"
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:id="@+id/textView8"
+					android:layout_marginTop="10dip"
+					style="@style/RiverBedRegular20"
+					android:visibility="gone"></TextView>
+				<EditText
+					android:textSize="13sp"
+					android:layout_height="40dip"
+					android:layout_width="match_parent"
+					android:id="@+id/country1"
+					android:singleLine="true"
+					style="@style/FormEdit"
+					android:visibility="gone"></EditText>
+				<TextView
+					android:text="@string/zip"
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:layout_marginTop="10dip"
+					style="@style/RiverBedRegular20"></TextView>
+				<EditText
+					android:textSize="13sp"
+					android:layout_height="40dip"
+					android:layout_width="match_parent"
+					android:id="@+id/zip_code1"
+					android:singleLine="true"
+					android:numeric="integer"
+					android:maxLength="5"
+					style="@style/FormEdit"></EditText>
+				<CheckBox
+					android:id="@+id/setDefault1"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="@string/add_shipping_address_default_shipping_address"
+					android:textColor="@color/riverBed"
+					android:textSize="15sp"
+					android:button="@drawable/custom_checkbox" />
+
+			</LinearLayout>
+
+
+		</ScrollView>
+		<LinearLayout
+			android:layout_height="match_parent"
+			android:gravity="center"
+			android:id="@+id/loadingDialogaddAddress"
+			android:orientation="vertical"
+			android:visibility="visible"
+			android:layout_width="match_parent"
+			android:layout_gravity="center_vertical|center_horizontal|center">
+			<ProgressBar
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				style="@android:style/Widget.ProgressBar.Small.Inverse"></ProgressBar>
+			<TextView
+				android:text="@string/loading_text"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				style="@style/RiverBedRegular20"></TextView>
+		</LinearLayout>
+	</LinearLayout>
+</FrameLayout>

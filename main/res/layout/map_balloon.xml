@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/balloon_main_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingBottom="5dp"
+    android:background="@drawable/popup_background"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/balloon_item_main"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/storeStatus"
+            style="@style/RiverBedRegular20"
+            android:layout_width="57dp"
+            android:textSize="12sp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:textColor="@color/white" >
+        </TextView>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/balloon_item_title"
+        android:layout_width="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_height="wrap_content"
+        android:text="@string/store_name_header"
+        android:textColor="@color/black"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/balloon_item_address1"
+        android:layout_width="wrap_content"
+         android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="13sp" />
+
+<!--     <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/balloon_item_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/balloon_item_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/balloon_item_zip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+    </LinearLayout> -->
+
+   
+
+</LinearLayout>

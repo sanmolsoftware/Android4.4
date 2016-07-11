@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/promotionsLinearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_patch_white"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp" >
+
+        <FrameLayout
+            android:layout_width="85dp"
+            android:layout_height="85dp" >
+
+            <ImageView
+                android:id="@+id/promotionsBadgeImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|top"
+                android:contentDescription="@string/description"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/promotionsImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:contentDescription="@string/description"
+                android:paddingTop="20dp"
+                android:src="@drawable/ulta_logo_icon"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:orientation="vertical" 
+            android:paddingTop="5dp">
+
+            <TextView
+                android:id="@+id/promotionTextView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="16dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="16dp"
+                android:textColor="#565656"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/promotionDescriptionTextView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="16dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="16dp"
+                android:textColor="#777777"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#EEEEEEEE" 
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp">
+
+        <TextView
+            android:id="@+id/promotionValidityTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:textColor="#929292"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+</LinearLayout>

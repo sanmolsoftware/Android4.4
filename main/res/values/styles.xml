@@ -1,0 +1,961 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Text styles -->
+    <style name="FormEdit">
+        <item name="android:typeface">sans</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:textColor">@color/riverBed</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+    </style>
+
+    <!-- styles for textview -->
+    <style name="RiverBedBold16">
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/riverbed</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="RiverBedRegular16">
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/riverbed</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="MyAccountUserName">
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/riverbed</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MyAccountUserDetails">
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/riverbed</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="MyAccountMenuItems">
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/riverbed</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="RiverBedBold18">
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/riverbed</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="RiverBedRegular18">
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/riverbed</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="RiverBedBold20">
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/riverbed</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="RiverBedRegular20">
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/riverbed</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="OrangeRegular20">
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/orange</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="RiverBedBold22">
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/riverbed</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="RiverBedBold22_home">
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">#788691</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TunaRegular16">
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/tuna</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="TunaRegular14">
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/tuna</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="BlackRegular22">
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="BlackBold22">
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AbbeyRegular18">
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/abbey</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="CatskillWhiteRegular20">
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/catskillwhite</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="CatskillWhiteRegular22">
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/catskillwhite</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="BombayRegular18">
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/bombay</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="WhiteRegular24">
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="WhiteRegular25">
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="WhiteRegular22">
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="WhiteRegular18">
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="SirenRegular20">
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/siren</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="SirenRegular16">
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/siren</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="checkoutShippingTypePriceStyle">
+        <item name="android:textColor">@color/checkout_ground_shipping_price</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="checkoutdeliveryTypeStyle">
+        <item name="android:textColor">@color/checkout_delivery_type_price</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="orderSummaryOrderIdTextStyle">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="orderSummaryemailIdTextStyle">
+        <item name="android:textColor">#565656</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="orderSummaryRewardsMessageStule">
+        <item name="android:textColor">#EF426D</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="orderSummaryTitle">
+        <item name="android:textColor">#565656</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="orderSummaryTaxSubTextStyle">
+        <item name="android:textColor">#999B9E</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <!-- styles for textview End -->
+
+
+    <!-- styles for buttons -->
+    <style name="OrangeButton">
+        <item name="android:background">@drawable/orange_button</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="BlackButton">
+        <item name="android:background">@drawable/black_button</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="GreyButton">
+        <item name="android:background">@drawable/grey_button</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/riverbed</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="writereviewtextView">
+        <item name="android:textColor">@color/riverBed</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="buttonStyle">
+        <item name="android:minHeight">36dp</item>
+        <item name="android:textColor">#f27a45</item>
+        <item name="android:background">@drawable/button_rectangular_border</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="melonButtonStyle">
+        <item name="android:minHeight">36dp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:background">@drawable/button_melon_white_text</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="buttonMelonStyle_prelollipop_full_width">
+        <item name="android:minHeight">36dp</item>
+        <item name="android:textSize">@dimen/normal_text_Size</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:background">@drawable/button_melon_white_text</item>
+    </style>
+
+    <style name="buttonStyle_prelollipop_wrapped_width">
+        <item name="android:minHeight">36dp</item>
+        <item name="android:textSize">@dimen/normal_text_Size</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textColor">#f27a45</item>
+        <item name="android:background">@drawable/button_rectangular_border</item>
+    </style>
+
+    <style name="buttonStyle_prelollipop_full_width">
+        <item name="android:minHeight">36dp</item>
+        <item name="android:textSize">@dimen/normal_text_Size</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:textColor">#f27a45</item>
+        <item name="android:background">@drawable/button_rectangular_border</item>
+    </style>
+
+    <style name="disabledbuttonStyle">
+        <item name="android:textColor">#D6D6D6</item>
+        <item name="android:background">@drawable/button_disabled_rectangular_border</item>
+    </style>
+
+    <style name="Animations" />
+
+    <!-- CustomDialog -->
+    <style name="CustomDialogTheme" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <!-- PopDownMenu -->
+    <style name="Animations.PopDownMenu" />
+
+    <style name="Animations.PopDownMenu.Center">
+        <item name="@android:windowEnterAnimation">@anim/grow_from_top</item>
+        <item name="@android:windowExitAnimation">@anim/shrink_from_bottom</item>
+    </style>
+
+    <style name="Animations.PopDownMenu.Left">
+        <item name="@android:windowEnterAnimation">@anim/grow_from_topleft_to_bottomright</item>
+        <item name="@android:windowExitAnimation">@anim/shrink_from_bottomright_to_topleft</item>
+    </style>
+
+    <style name="Animations.PopDownMenu.Right">
+        <item name="@android:windowEnterAnimation">@anim/grow_from_topright_to_bottomleft</item>
+        <item name="@android:windowExitAnimation">@anim/shrink_from_bottomleft_to_topright</item>
+    </style>
+
+    <style name="Animations.PopDownMenu.Reflect">
+        <item name="@android:windowEnterAnimation">@anim/pump_top</item>
+        <item name="@android:windowExitAnimation">@anim/disappear</item>
+    </style>
+
+    <!-- PopUpMenu -->
+    <style name="Animations.PopUpMenu" />
+
+    <style name="Animations.PopUpMenu.Center">
+        <item name="@android:windowEnterAnimation">@anim/grow_from_bottom</item>
+        <item name="@android:windowExitAnimation">@anim/shrink_from_top</item>
+    </style>
+
+    <style name="Animations.PopUpMenu.Left">
+        <item name="@android:windowEnterAnimation">@anim/grow_from_bottomleft_to_topright</item>
+        <item name="@android:windowExitAnimation">@anim/shrink_from_topright_to_bottomleft</item>
+    </style>
+
+    <style name="Animations.PopUpMenu.Right">
+        <item name="@android:windowEnterAnimation">@anim/grow_from_bottomright_to_topleft</item>
+        <item name="@android:windowExitAnimation">@anim/shrink_from_topleft_to_bottomright</item>
+    </style>
+
+    <style name="Animations.PopUpMenu.Reflect">
+        <item name="@android:windowEnterAnimation">@anim/pump_bottom</item>
+        <item name="@android:windowExitAnimation">@anim/disappear</item>
+    </style>
+
+    <!-- For Action Bar -->
+    <!--
+    <style name="AppTheme" parent="android:style/Theme.Light">
+        <item name="android:windowTitleSize">@dimen/actionbar_compat_height</item>
+        <item name="android:windowTitleBackgroundStyle">@style/ActionBarCompat</item>
+        <item name="android:windowContentOverlay">@drawable/actionbar_shadow</item>
+
+        for programmatic instantiation
+        <item name="actionbarCompatTitleStyle">@style/ActionBarCompatTitle</item>
+        <item name="actionbarCompatItemStyle">@style/ActionBarCompatItem</item>
+        <item name="actionbarCompatItemHomeStyle">@style/ActionBarCompatHomeItem</item>
+        <item name="actionbarCompatProgressIndicatorStyle">@style/ActionBarCompatProgressIndicator</item>
+    </style>
+    -->
+
+    <style name="ActionBarCompat">
+
+        <!-- <item name="android:background">#eee</item> -->
+        <item name="android:background">@drawable/header_bg</item>
+    </style>
+
+    <style name="ActionBarCompatItemBase">
+
+        <!-- layout_width/height must be set in code -->
+        <item name="android:scaleType">center</item>
+        <item name="android:background">@drawable/actionbar_compat_item</item>
+    </style>
+
+    <style name="ActionBarCompatProgressIndicator" parent="android:style/Widget.ProgressBar.Large">
+        <item name="android:indeterminate">true</item>
+    </style>
+
+    <style name="ActionBarCompatTitleBase">
+        <item name="android:id">@id/actionbar_compat_title</item>
+        <!-- layout_width/height/weight must be set in code -->
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:paddingLeft">6dp</item>
+        <item name="android:paddingRight">6dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:typeface">serif</item>
+    </style>
+
+    <style name="ActionBarCompatTitle" parent="style/ActionBarCompatTitleBase">
+        <item name="android:textColor">@color/actionbar_title_color</item>
+    </style>
+
+    <style name="ActionBarCompatItem" parent="style/ActionBarCompatItemBase"></style>
+
+    <style name="ActionBarCompatHomeItem" parent="style/ActionBarCompatItemBase"></style>
+
+    <style name="CustomWindowTitleBackground">
+        <item name="android:background">#323331</item>
+    </style>
+
+    <style name="CustomTheme" parent="android:Theme">
+        <item name="android:windowTitleSize">40dip</item>
+        <item name="android:windowTitleBackgroundStyle">@style/CustomWindowTitleBackground</item>
+    </style>
+
+    <style name="boldText">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="homeScreenTextSize">
+        <item name="android:textColor">#868686</item>
+        <item name="android:textSize">32sp</item>
+    </style>
+
+    <style name="homeScreenSubTextSize">
+        <item name="android:textColor">#777777</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="homeScreenMyRewardsTextSize">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="shopScreenTextSize">
+        <item name="android:textColor">#323232</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="homeScreenOfferTextSize">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="ThemeDialogCustom">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowBackground">@color/transparent_color</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
+
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+    <!-- Product Details Page Style -->
+    <style name="PDP_Product_Name">
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">#565656</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="PDP_Product_Promotion">
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">#F63285</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="PDP_Product_Options">
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">#565656</item>
+        <item name="android:textSize">9sp</item>
+    </style>
+
+    <style name="PDP_Product_ItemId">
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">#c3c3c3</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="PDP_People_Also_bought">
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">#565656</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <!-- Styles for basket page -->
+    <style name="basket_promotionalSuggestion">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="basket_ItemNumber">
+        <item name="android:textColor">#565656</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="basket_ItemNumberText">
+        <item name="android:textColor">#565656</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="footer_Text">
+        <item name="android:textColor">#565656</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="basket_ItemNameTextView">
+        <item name="android:textColor">#777777</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="basket_brandNameTextView">
+        <item name="android:textColor">#565656</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="basket_FeatureTextView">
+        <item name="android:textColor">#777777</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="basket_ItemPrice">
+        <item name="android:textColor">@color/review_order_price_color</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="basket_ItemPrice_new">
+        <item name="android:textColor">#777777</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="basket_footerTextView">
+        <item name="android:textColor">#565656</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="subTotalTextView">
+        <item name="android:textColor">@color/submit_order_total_color</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="rewardsSignupTextView">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="ultamaterewardsSignupTextView">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="rewardsHeadingTextStyle">
+        <item name="android:textColor">#565656</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="MyRadioButtonStyle" parent="@android:style/Widget.CompoundButton.RadioButton">
+        <item name="android:button">@drawable/custom_btn_radio</item>
+    </style>
+
+    <style name="Bonus_Offers_Date">
+        <item name="android:textColor">#929292</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="Bonus_Offers_Heading">
+        <item name="android:textColor">#565656</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="Bonus_Offers_Description">
+        <item name="android:textColor">#777777</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="check_out_header">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/checkout_header_disabled</item>
+    </style>
+
+    <style name="basketAndreviewOrderPrice">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#565656</item>
+    </style>
+
+    <style name="store_heading">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#f27a35</item>
+    </style>
+
+    <style name="store_address">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#565656</item>
+    </style>
+
+    <style name="near_by_stores">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#929292</item>
+    </style>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="AppTheme.Base">
+
+        <!-- Customize your theme here. -->
+
+        <item name="android:actionOverflowButtonStyle">@style/OverFlow</item>
+        <item name="actionOverflowButtonStyle">@style/OverFlow</item>
+    </style>
+
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:actionOverflowButtonStyle">@style/OverFlow</item>
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryColorDark</item>
+        <item name="colorAccent">@color/accentColor</item>
+        <!--  <item name="colorControlActivated">@color/accentColor</item> -->
+        <item name="colorControlHighlight">@color/colorHighlight</item>
+        <item name="android:actionButtonStyle">@style/ActionButtonStyle</item>
+        <item name="actionButtonStyle">@style/ActionButtonStyle</item>
+        <item name="actionMenuTextColor">@color/white</item>
+        <item name="android:actionMenuTextColor">@color/white</item>
+    </style>
+
+    <style name="AppCompatAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryColorDark</item>
+        <item name="colorAccent">@color/accentColor</item>
+        <item name="colorControlActivated">@color/accentColor</item>
+        <item name="colorControlHighlight">@color/colorHighlight</item>
+    </style>
+
+    <style name="OverFlow" parent="@style/Widget.AppCompat.Light.ActionButton.Overflow">
+        <!--<item name="android:src">@drawable/ic_action_overflow</item>-->
+        <!--<item name="android:paddingLeft">30dip</item>-->
+        <!--<item name="android:paddingRight">20dip</item>-->
+    </style>
+
+    <style name="ActionButtonStyle" parent="@style/Widget.AppCompat.Light.ActionButton">
+        <!--<item name="android:minWidth">60dp</item>-->
+        <!--<item name="android:paddingLeft">30dip</item>-->
+        <!--<item name="android:paddingRight">20dip</item>-->
+        <!--<item name="android:textSize">14sp</item>-->
+    </style>
+
+    <style name="FloatLabel">
+        <item name="android:textColor">@android:color/black</item>
+        <!-- Other textview styling -->
+    </style>
+
+    <style name="layout_margin">
+        <item name="android:paddingLeft">@dimen/activity_horizontal_margin</item>
+        <item name="android:paddingRight">@dimen/activity_horizontal_margin</item>
+        <item name="android:paddingTop">@dimen/layout_top_bottom_margin</item>
+        <item name="android:paddingBottom">@dimen/layout_top_bottom_margin</item>
+    </style>
+
+    <style name="layout_margin_create_account">
+        <item name="android:paddingLeft">@dimen/activity_horizontal_margin</item>
+        <item name="android:paddingRight">@dimen/activity_horizontal_margin</item>
+        <item name="android:paddingBottom">@dimen/activity_horizontal_margin</item>
+    </style>
+
+    <style name="side_menu_margin">
+        <item name="android:paddingTop">@dimen/layout_top_bottom_margin</item>
+        <item name="android:paddingBottom">@dimen/layout_top_bottom_margin</item>
+        <item name="android:paddingLeft">@dimen/normal_text_padding_below</item>
+        <item name="android:paddingRight">@dimen/normal_text_padding_below</item>
+    </style>
+
+    <style name="full_width_edit_text">
+        <item name="android:layout_height">@dimen/edit_text_height</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:textSize">@dimen/normal_text_Size</item>
+        <item name="android:textColor">@color/riverBed</item>
+        <item name="android:paddingTop">@dimen/normal_text_padding_top</item>
+        <item name="android:paddingBottom">@dimen/normal_text_padding_below</item>
+        <item name="android:background">@drawable/apptheme_textfield_grey_</item>
+    </style>
+
+    <style name="full_width_spinner">
+        <item name="android:layout_height">@dimen/spinner_height</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:textSize">@dimen/normal_text_Size</item>
+        <item name="android:textColor">@color/riverBed</item>
+        <item name="android:paddingTop">@dimen/normal_text_padding_top</item>
+    </style>
+
+    <style name="spinner_state">
+        <item name="android:background">@drawable/apptheme_textfield_grey_</item>
+    </style>
+
+    <style name="payment_weight_item">
+        <item name="android:layout_height">@dimen/edit_text_height</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">@dimen/normal_text_Size</item>
+        <item name="android:textColor">@color/riverBed</item>
+        <item name="android:paddingTop">@dimen/normal_text_padding_top</item>
+        <item name="android:paddingBottom">@dimen/normal_text_padding_below</item>
+    </style>
+
+    <style name="textview_normal_label_melon">
+        <item name="android:textSize">@dimen/normal_text_Size</item>
+        <item name="android:textColor">@color/melon</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="textview_normal_label">
+        <item name="android:textSize">@dimen/normal_text_Size</item>
+        <item name="android:textColor">@color/text_normal_color</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="textview_normal_label_full_width">
+        <item name="android:textSize">@dimen/normal_text_Size</item>
+        <item name="android:textColor">@color/text_normal_color</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/form_heading_textview_textsize</item>
+    </style>
+
+    <style name="textview_side_menu">
+        <item name="android:textSize">@dimen/error_text_Size</item>
+        <item name="android:textColor">@color/side_menu_text</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="textview_form_header">
+        <item name="android:textSize">@dimen/normal_text_Size</item>
+        <item name="android:textColor">@color/text_normal_color</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:paddingLeft">@dimen/padding_left_form_header</item>
+        <item name="android:layout_height">@dimen/form_heading_textview_textsize</item>
+    </style>
+
+    <style name="textview_sipping_checkout_form_header">
+        <item name="android:textSize">@dimen/normal_text_Size</item>
+        <item name="android:textColor">@color/melon</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/form_heading_textview_textsize</item>
+    </style>
+
+    <style name="textview_form_switch">
+        <item name="android:textSize">@dimen/normal_text_Size</item>
+        <item name="android:textColor">@color/olapic_detail_caption</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/form_heading_textview_textsize</item>
+    </style>
+
+    <style name="textview_errortext">
+        <item name="android:paddingTop">@dimen/erro_text_padding_top</item>
+        <item name="android:paddingBottom">@dimen/erro_text_padding_below</item>
+        <item name="android:textSize">@dimen/error_text_Size</item>
+        <item name="android:textColor">@color/error_color</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="check_box">
+        <item name="android:button">@drawable/custom_checkbox</item>
+        <item name="android:textSize">@dimen/normal_text_Size</item>
+        <item name="android:textColor">@color/text_normal_color</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">5dp</item>
+    </style>
+
+    <style name="radio_button">
+        <item name="android:textSize">@dimen/normal_text_Size</item>
+        <item name="android:textColor">@color/text_normal_color</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="shipping_sub_section_padding">
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+    </style>
+
+    <style name="olapic_details_product_image">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:paddingTop">@dimen/olapic_detail_image_padding_top</item>
+        <item name="android:paddingBottom">@dimen/normal_text_padding_below</item>
+    </style>
+
+    <style name="olapic_details_share_image">
+        <item name="android:paddingBottom">@dimen/normal_text_padding_below</item>
+    </style>
+
+    <style name="olapic_details_user_name">
+        <item name="android:paddingLeft">@dimen/normal_text_padding_below</item>
+        <item name="android:paddingRight">@dimen/normal_text_padding_below</item>
+        <item name="android:textSize">@dimen/error_text_Size</item>
+        <item name="android:textColor">@color/olapic_detail_username</item>
+    </style>
+
+    <style name="olapic_details_caption">
+        <item name="android:paddingTop">@dimen/erro_text_padding_below</item>
+        <item name="android:paddingLeft">@dimen/normal_text_padding_below</item>
+        <item name="android:paddingRight">@dimen/normal_text_padding_below</item>
+        <item name="android:textSize">@dimen/olapic_detail_caption_size</item>
+        <item name="android:textColor">@color/olapic_detail_caption</item>
+    </style>
+
+    <style name="olapic_details_shop_look_text">
+        <item name="android:paddingTop">@dimen/padding_left_form_header</item>
+        <item name="android:paddingBottom">@dimen/padding_left_form_header</item>
+        <item name="android:paddingLeft">@dimen/activity_horizontal_margin</item>
+        <item name="android:paddingRight">@dimen/activity_horizontal_margin</item>
+        <item name="android:textSize">@dimen/normal_text_Size</item>
+        <item name="android:textColor">@color/material_orange_800</item>
+    </style>
+
+    <style name="login_dialog_heading">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/melon</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="login_dilaog_label_melon">
+        <item name="android:textSize">@dimen/error_text_Size</item>
+        <item name="android:textColor">@color/melon</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="login_dialog_margin">
+        <item name="android:paddingLeft">@dimen/activity_horizontal_margin</item>
+        <item name="android:paddingRight">@dimen/activity_horizontal_margin</item>
+        <item name="android:paddingTop">@dimen/layout_top_bottom_margin</item>
+    </style>
+
+    <style name="textview_sipping_checkout_form_sub_header">
+        <item name="android:textSize">@dimen/normal_text_Size</item>
+        <item name="android:textColor">@color/olapic_detail_caption</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/form_heading_textview_textsize</item>
+    </style>
+
+    <style name="rate_ulta_message">
+        <item name="android:textSize">@dimen/rate_ulta_message</item>
+        <item name="android:textColor">@color/text_normal_color</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/rate_ulta_message_height</item>
+    </style>
+
+    <style name="alert_message">
+        <item name="android:textSize">@dimen/normal_text_Size</item>
+        <item name="android:textColor">@color/text_normal_color</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/rate_ulta_message_height</item>
+    </style>
+
+    <style name="alert_layout_margin">
+        <item name="android:paddingLeft">@dimen/alert_dilaog_padding</item>
+        <item name="android:paddingRight">@dimen/alert_dilaog_padding</item>
+        <item name="android:paddingTop">@dimen/alert_dilaog_padding</item>
+        <item name="android:paddingBottom">@dimen/alert_dilaog_padding</item>
+    </style>
+
+    <style name="alert_button_layout_margin">
+        <item name="android:paddingLeft">@dimen/normal_text_padding_below</item>
+        <item name="android:paddingRight">@dimen/normal_text_padding_below</item>
+        <item name="android:paddingTop">@dimen/normal_text_padding_below</item>
+        <item name="android:paddingBottom">@dimen/normal_text_padding_below</item>
+    </style>
+
+    <style name="environment_popup_heading">
+        <item name="android:textSize">@dimen/normal_text_Size</item>
+        <item name="android:textColor">@color/melon</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingLeft">@dimen/normal_text_padding_top</item>
+        <item name="android:paddingRight">@dimen/normal_text_padding_top</item>
+        <item name="android:paddingTop">@dimen/padding_left_form_header</item>
+        <item name="android:paddingBottom">@dimen/padding_left_form_header</item>
+    </style>
+
+
+    <!--Cash star Can Also set styles directly-->
+    <style name="CStarInputField" parent="CStarInputFieldDefault"></style>
+
+    <style name="CStarLargeButton" parent="CStarLargeButtonDefault"></style>
+
+    <!-- <style name="CStarInputErrorTextAppearance" parent="error_appearance">
+     </style>
+     <style name="CStarInputHintTextAppearance" parent="error_appearance">
+     </style>
+
+     <style name="error_appearance" parent="@android:style/TextAppearance">
+         <item name="android:textColor">@color/red_500</item>
+         <item name="android:textSize">12sp</item>
+     </style>-->
+    <style name="textview_create_accout_form_header">
+        <item name="android:paddingLeft">@dimen/normal_text_padding_top</item>
+        <item name="android:textSize">@dimen/normal_text_Size</item>
+        <item name="android:textColor">@color/melon</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/form_heading_textview_textsize</item>
+    </style>
+
+    <style name="MaterialDialogSheet" parent="@android:style/Theme.Dialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowAnimationStyle">@style/MaterialDialogSheetAnimation</item>
+    </style>
+
+
+    <style name="MaterialDialogSheetAnimation">
+        <item name="android:windowEnterAnimation">@anim/popup_show</item>
+        <item name="android:windowExitAnimation">@anim/popup_hide</item>
+    </style>
+
+    <style name="cashstar_egiftcard_title_style">
+        <item name="android:textColor">@color/olapic_detail_caption</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="cashstar_egiftcard_subtitle_style">
+        <item name="android:textColor">#EF426D</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="cashstar_egiftcard_message_style">
+        <item name="android:textColor">@color/olapic_detail_caption</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="cashstar_more_options_items">
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">@color/riverbed</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:paddingTop">@dimen/padding_left_form_header</item>
+        <item name="android:paddingBottom">@dimen/padding_left_form_header</item>
+    </style>
+
+</resources>

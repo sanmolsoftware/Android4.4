@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="CSTAR_ENVIRONMENT">
+        @integer/CSTAR_ENV_SEMI
+    </integer>
+<string name="CSTAR_APP_TOKEN">
+3a31df427b31365e1e0ae550a1d40e1abf8ad0f9
+</string>
+<string name="CSTAR_MERCHANT_CODE">
+ULTA
+</string>
+<string name="CSTAR_IMPORT_SCHEME">
+cashstarulta
+</string>
+</resources>

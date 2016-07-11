@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- For Action bar -->
+    <!-- <color name="actionbar_title_color">#224894</color> -->
+    <color name="transparent">#80000000</color>
+    <color name="actionbar_title_color">#ffffff</color>
+    <!-- <color name="peacockgreen">#20B296</color> -->
+
+
+    <!--
+    <color name="hitPink">#FDB384</color>
+	<color name="tanHide">#F89C6A</color>
+    -->
+    <color name="riverBed">#45545F</color>
+    <color name="pampas">#EEEBE8</color>
+    <color name="jaffa">#EE883C</color>
+    <!-- <color name="rajah">#F9AF6E</color> -->
+    <color name="gridbackground">#FDF2E9</color>
+    <color name="slategrey">#CCCCCC</color>
+    <color name="roseBudCherry">#750B3B</color>
+    <color name="lightgrey">#F3F4F6</color>
+    <!-- <color name="purple">#ef883c</color> -->
+    <color name="blackgrey">#4F4F4F</color>
+    <!-- <color name="lightPurple">#F5EFEF</color> -->
+    <color name="greyBackground">#aab1b6</color>
+    <color name="textColor">#424242</color>
+    <color name="background">#f3f5f7</color>
+    <color name="black">#000000</color>
+    <color name="transparent_color">#00000000</color>
+    <color name="riverbed">#45545F</color>
+    <color name="tuna">#35373D</color>
+    <color name="abbey">#4B5053</color>
+    <color name="catskillwhite">#DDE7EF</color>
+    <color name="siren">#ed137c</color>
+    <color name="bombay">#B0B6BB</color>
+    <color name="white">#FFFFFF</color>
+    <color name="orange">#ef883c</color>
+    <color name="LightBlue">#80DAEB</color>
+    <color name="checkout_header_disabled">#F4BCA3</color>
+    <color name="pdp_sale_price">#454545</color>
+    <color name="checkout_ground_shipping_price">#FFFFFF</color>
+    <color name="checkout_delivery_type_price">#4D4D4D</color>
+    <color name="shippingtype_relative_bg">#CC565656</color>
+    <color name="shippingtype_linear_bg">#D6D6D6</color>
+    <color name="disabled_btn_text_color">#D6D6D6</color>
+    <color name="submit_order_total_color">#323232</color>
+    <color name="review_order_price_color">#f38250</color>
+    <color name="basket_dividerColor">#f4f3f3</color>
+    <color name="activated_offer">#4ac3cc</color>
+    <color name="button_textColor">#FC954F</color>
+    <color name="offers_color">#f7f7f7</color>
+    <color name="buyMoreSaveMoreOffer">#69B7B3</color>
+    <color name="marked_down_orignal_price_color">#4AC3CC</color>
+    <color name="sale_price_color">#C3C3C3</color>
+    <color name="orignal_price_color">#454545</color>
+    <color name="promotion_color">#F63285</color>
+
+    <bool name="default_circle_indicator_centered">true</bool>
+
+    <color name="default_circle_indicator_page_color">#00000000</color>
+
+    <integer name="default_circle_indicator_orientation">0</integer>
+
+    <dimen name="default_circle_indicator_radius">3dp</dimen>
+
+    <bool name="default_circle_indicator_snap">false</bool>
+
+    <dimen name="default_circle_indicator_stroke_width">1dp</dimen>
+
+    <color name="melon">#F27A45</color>
+    <color name="dialog_title">#F27A45</color>
+
+    <!-- material design -->
+    <color name="material_orange_200">#fbbea1</color>
+    <!-- secondary orange fro status bar -->
+    <color name="material_orange_500">#f04c24</color>
+
+    <!-- main color for app bar -->
+    <color name="material_orange_800">#f47d39</color>
+    <color name="material_orange_900">#ff5722</color>
+    <color name="colorPrimary">@color/melon</color>
+    <color name="colorPrimaryDark">@color/material_orange_800</color>
+    <color name="colorSecondary">@color/material_orange_200</color>
+    <color name="colorSecondaryDark">@color/material_orange_500</color>
+    <color name="primaryColor">@color/material_orange_800</color>
+    <color name="primaryColorDark">@color/material_orange_500</color>
+    <color name="accentColor">@color/material_orange_500</color>
+    <color name="colorHighlight">#363636</color>
+    <color name="rippelColor">#feeae1</color>
+    <color name="rippelColorBackground">#ffffff</color>
+    <color name="text_normal_color">#565656</color>
+    <color name="error_color">#FF0000</color>
+    <color name="side_menu_text">#868686</color>
+    <color name="home_mobileoffer_bg">#ef426d</color>
+    <color name="olapic_detail_username">#414042</color>
+    <color name="olapic_detail_caption">#636466</color>
+    <color name="shipping_address_caption">#636466</color>
+    <color name="shipping_different_address">#999b9e</color>
+    <color name="chekout_header_highlighted">#999b9e</color>
+    <color name="bag_subtotal_background">#fabda1 </color>
+
+   <!--cash star colors-->
+    <color name="cstar_dark">#5F5457</color>
+    <color name="cstar_light">#ff8E8E8E</color>
+    <color name="cstar_primary">@color/material_orange_800</color>
+    <color name="cstar_action">@color/material_orange_500</color>
+    <color name="cstar_highlight">#215747</color>
+    <color name="cstar_large_button_text">#ECECED</color>
+<color name="cstar_button_press">@color/material_orange_200</color>
+<color name="cstar_faceplate_backgroud">#ff333333</color>
+<color name="cstar_light_background_text_primary">#5F5457</color>
+<color name="cstar_light_background_text_secondary">#ff8E8E8E</color>
+
+</resources>

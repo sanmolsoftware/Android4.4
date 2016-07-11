@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/reviewOrderShippningAddressLayout_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_list_item"
+        android:baselineAligned="false"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:weightSum="100">
+
+        <TextView
+            android:id="@+id/textView1"
+            style="@style/RiverBedBold18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/shipping_addr"
+            android:textColor="@color/black"></TextView>
+
+        <TextView
+            android:id="@+id/txtShippingAddress1_fragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:textColor="@color/riverBed"
+            android:textSize="13sp"></TextView>
+
+        <TextView
+            android:id="@+id/txtShippingAddress2_fragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/riverBed"
+            android:textSize="13sp"></TextView>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/divider"></View>
+
+    <LinearLayout
+        android:id="@+id/reviewOrderBillingAddressLayout_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_list_item"
+        android:baselineAligned="false"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:weightSum="100">
+
+        <TextView
+            style="@style/RiverBedBold18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/billing_addr"
+            android:textColor="@color/black"></TextView>
+
+        <TextView
+            android:id="@+id/txtBillingAddress1_fragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:textColor="@color/riverBed"
+            android:textSize="13sp"></TextView>
+
+        <TextView
+            android:id="@+id/txtBillingAddress2_fragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/riverBed"
+            android:textSize="13sp"></TextView>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/divider"></View>
+
+    <LinearLayout
+        android:id="@+id/reviewOrderCreditCardLayout_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_list_item"
+        android:baselineAligned="false"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:weightSum="100">
+
+        <TextView
+            style="@style/RiverBedBold18"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/payment_details"
+            android:textColor="@color/black"></TextView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtCardDetails1_fragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:textColor="@color/riverBed"
+                    android:textSize="13sp"></TextView>
+
+                <TextView
+                    android:id="@+id/txtCardDetails2_fragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/riverBed"
+                    android:textSize="13sp"></TextView>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/cardTypeImage"
+                android:src="@drawable/creditcard_default"
+                android:layout_width="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/divider"></View>
+
+    <LinearLayout
+        android:id="@+id/reviewOrderShipping_method"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_list_item"
+        android:baselineAligned="false"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:visibility="gone"
+        android:weightSum="100">
+
+        <TextView
+            style="@style/RiverBedBold18"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/shipping_option"
+            android:textColor="@color/black"></TextView>
+
+        <TextView
+            android:id="@+id/txtShippingMethod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:textColor="@color/riverBed"
+            android:textSize="13sp"></TextView>
+    </LinearLayout>
+
+</LinearLayout>

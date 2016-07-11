@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_text_area"
+    android:orientation="vertical" >
+
+	<LinearLayout
+	    android:id="@+id/linearLayout1"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center_vertical"
+	    android:background="#FFFFFF"
+	    android:padding="5dip" >
+
+		<ImageView
+		    android:id="@+id/icon"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_gravity="start|center_vertical"
+		    android:contentDescription="@string/description"
+		    android:src="@drawable/dummy_product" />
+		<TextView
+		    android:id="@+id/MissingColor"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:textColor="#000000"
+		    android:textSize="14sp"
+		    android:visibility="gone" />
+		<TextView
+		    android:id="@+id/title"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_marginLeft="20dp"
+		    android:textColor="#000000"
+		    android:textSize="12sp" />
+
+		    <ImageView
+		        android:id="@+id/imageView1"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="end|fill_vertical"
+		        android:src="@drawable/ic_cab_done_holo_light"
+		        android:visibility="gone" />
+
+	</LinearLayout>
+
+	<ImageView
+	    android:id="@+id/store_item_img"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:background="#000000"
+	    android:src="@drawable/divider" >
+</ImageView>
+
+</LinearLayout>
+

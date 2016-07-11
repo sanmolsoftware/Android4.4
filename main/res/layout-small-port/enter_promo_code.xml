@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:custom="http://schemas.android.com/apk/res-auto"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:background="@color/white"><com.ulta.core.widgets.flyin.TitleBar
+		android:id="@+id/titlebar" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" custom:done_visible="true"
+		custom:title_ulta="Gift Card">
+	</com.ulta.core.widgets.flyin.TitleBar>
+<LinearLayout
+	android:id="@+id/formDialog"
+	android:orientation="vertical"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:padding="5dip"
+	android:background="@color/background"
+	>
+	<Button android:visibility="gone"
+		android:text="@string/done"
+		android:id="@+id/button1"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:background="@drawable/grey_button"
+		android:layout_gravity="right"
+		android:layout_margin="5dip"
+		android:textSize="15sp"
+		android:textColor="@color/riverBed"></Button>
+	<TextView
+		android:text="@string/enter_gift_card"
+		android:id="@+id/textView1"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="5dip"
+		style="@style/RiverBedBold20"></TextView>
+	<LinearLayout
+		android:id="@+id/linearLayout1"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:padding="10dip"
+		android:layout_margin="5dip">
+		<TextView
+			android:layout_width="wrap_content"
+			android:text="@string/giftcard_number"
+			android:layout_height="wrap_content"
+			android:id="@+id/textView2"
+			style="@style/RiverBedRegular18"></TextView>
+		<EditText
+			android:layout_width="match_parent"
+			android:id="@+id/giftCardNumber"
+			android:layout_height="wrap_content" 
+			android:singleLine="true"
+			style="@style/FormEdit">
+			<requestFocus></requestFocus>
+		</EditText>
+		<TextView
+			android:text="@string/pin"
+			android:id="@+id/textView3"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			style="@style/RiverBedRegular18"></TextView>
+		<EditText
+			android:layout_width="match_parent"
+			android:id="@+id/giftCardPin"
+			android:layout_height="wrap_content" 
+			android:singleLine="true" 
+			android:password="true"
+			android:numeric="integer"
+			style="@style/FormEdit"></EditText>
+	</LinearLayout>
+	<View
+		android:layout_width="wrap_content"
+		android:id="@+id/view1"
+		android:layout_height="36dp"></View>
+	<TextView
+		android:text="@string/enter_promotion"
+		android:id="@+id/textView4"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="5dip"
+		android:textColor="@color/black"
+		android:visibility="gone"></TextView>
+	<LinearLayout
+		android:id="@+id/linearLayout2"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:background="@drawable/rounded_boundary"
+		android:padding="10dip"
+		android:layout_margin="5dip"
+		android:visibility="gone">
+		<TextView
+			android:text="@string/promotion_coupon"
+			android:id="@+id/textView5"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textColor="@color/black"></TextView>
+		<EditText
+			android:layout_width="match_parent"
+			android:id="@+id/promotionCode"
+			android:layout_height="wrap_content" 
+			android:singleLine="true"
+			style="@style/FormEdit"></EditText>
+	</LinearLayout>
+
+</LinearLayout>
+<LinearLayout
+		android:gravity="center"
+		android:id="@+id/loadingDialog"
+		android:layout_height="match_parent"
+		android:layout_gravity="center_vertical|center_horizontal|center"
+		android:visibility="gone"
+		android:layout_width="match_parent"
+		android:orientation="vertical">
+		<ProgressBar
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			style="@android:style/Widget.ProgressBar.Small.Inverse"></ProgressBar>
+		<TextView
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			style="@style/RiverBedRegular20"
+			android:text="@string/processing"></TextView>
+	</LinearLayout>
+</LinearLayout>

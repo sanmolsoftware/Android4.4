@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/layout_margin"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_login_white"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/heading"
+        style="@style/login_dialog_heading"
+        android:layout_marginTop="15dp"
+        android:text="@string/rate_ulta" />
+
+    <TextView
+        android:id="@+id/rate_ulta_message"
+        style="@style/rate_ulta_message"
+        android:layout_marginTop="12dp"
+        android:text="@string/rate_ulta_meassge" />
+
+    <Button
+        android:id="@+id/rate_ulta"
+        style="@style/Button_rate_ulta"
+        android:layout_marginTop="15dp"
+        android:text="@string/rate_ulta_caps" >
+    </Button>
+
+    <Button
+        android:id="@+id/remind_me_later"
+        style="@style/Button_rate_ulta"
+        android:layout_marginTop="15dp"
+        android:text="@string/remind_me_later" >
+    </Button>
+
+    <Button
+        android:id="@+id/no_thanks"
+        style="@style/Button_rate_ulta"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/no_thanks_caps" >
+    </Button>
+
+</LinearLayout>

@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_list_item"
+    android:orientation="vertical" >
+
+    <LinearLayout
+         android:baselineAligned="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:weightSum="100" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="27"
+            android:orientation="vertical" >
+
+            <FrameLayout
+                android:id="@+id/product_list_grid_frame_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <ProgressBar
+                    android:id="@+id/product_list_title_Progress_Bar"
+                    style="@android:style/Widget.ProgressBar.Small.Inverse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="visible" >
+                </ProgressBar>
+
+                <ImageView
+                    android:id="@+id/beauty_list_image"
+                    android:layout_width="90dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="3dip"
+                    android:layout_marginTop="3dip"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/description"
+                    android:padding="4dip" >
+                </ImageView>
+            </FrameLayout>
+        </LinearLayout>
+
+        <LinearLayout
+             android:baselineAligned="false"
+            android:id="@+id/linearLayout6"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="73" >
+
+            <LinearLayout
+                android:id="@+id/productListSortSaleLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="48"
+                android:orientation="vertical"
+                android:paddingLeft="5dip"
+                android:paddingRight="3dip"
+                android:paddingTop="3dip" >
+
+                <TextView
+                    android:id="@+id/beauty_list_txt_product_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dip"
+                    android:ellipsize="end"
+                    android:maxLength="50"
+                    android:textColor="#45545F"
+                    android:textSize="12sp"
+                    android:textStyle="bold" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/beauty_list_txt_brand_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:textColor="#45545F"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/tvPromotionalAdBugInFav"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/LightBlue"
+                    android:textSize="10sp" >
+                </TextView>
+
+                <LinearLayout
+                    android:id="@+id/llSalePrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/imgRating1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dip"
+                        android:layout_weight="50"
+                        android:contentDescription="@string/description"
+                        android:background="@drawable/icon_star_gray" >
+                    </ImageView>
+
+                    <ImageView
+                        android:id="@+id/imgRating2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="50"
+                        android:contentDescription="@string/description"
+                        android:background="@drawable/icon_star_gray" >
+                    </ImageView>
+
+                    <ImageView
+                        android:id="@+id/imgRating3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="50"
+                        android:contentDescription="@string/description"
+                        android:background="@drawable/icon_star_gray" >
+                    </ImageView>
+
+                    <ImageView
+                        android:id="@+id/imgRating4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="50"
+                        android:contentDescription="@string/description"
+                        android:background="@drawable/icon_star_gray" >
+                    </ImageView>
+
+                    <ImageView
+                        android:id="@+id/imgRating5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="50"
+                        android:contentDescription="@string/description"
+                        android:background="@drawable/icon_star_gray" >
+                    </ImageView>
+
+                    <TextView
+                        android:id="@+id/tvReviewNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginTop="-3dip"
+                        android:layout_weight="50"
+                        android:textColor="@color/jaffa"
+                        android:textSize="10sp" >
+                    </TextView>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvActualPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="3dip"
+                    android:layout_marginRight="5dip"
+                    android:textColor="#45545F"
+                    android:textSize="10sp" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/txtItemStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/item_not_available"
+                    android:textAppearance="@style/RiverBedBold16"
+                    android:visibility="gone" >
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:gravity="center_vertical"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/description"
+                    android:src="@drawable/chevron" >
+                </ImageView>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp" 
+        android:paddingRight="16dp">
+
+        <Button
+            android:id="@+id/btnBasket"
+            style="@style/Button_Full_width"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_marginRight="5dp"
+            android:textSize="14sp"
+            android:text="@string/add_to_basket_btn" >
+        </Button>
+
+        <Button
+            android:id="@+id/btnRemove"
+            style="@style/Button_Full_width"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textSize="14sp"
+            android:layout_marginLeft="5dip"
+            android:text="@string/remove_btn_caps" >
+        </Button>
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.1dp"
+        android:background="@drawable/divider" />
+
+</LinearLayout>

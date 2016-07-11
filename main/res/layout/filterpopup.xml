@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginLeft="30dp"
+    android:layout_marginRight="30dp" >
+
+    <LinearLayout
+        android:id="@+id/tracks"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_patch_white"
+        android:orientation="vertical"
+        android:weightSum="100" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dip" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/filter"
+                android:textColor="@color/primaryColor"
+                android:textSize="22sp" >
+            </TextView>
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/primaryColor" />
+
+        <LinearLayout
+            android:id="@+id/llFilterByCategory"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/white"
+            android:padding="5dip"
+            android:visibility="gone"
+            android:weightSum="100" >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="90"
+                android:text="@string/filter_by_cat"
+                android:textColor="@color/black" >
+            </TextView>
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="0dip"
+                android:layout_height="20dip"
+                android:layout_marginLeft="30dip"
+                android:layout_weight="10"
+                android:src="@drawable/chevron" >
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llFilterByBrand"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:background="@color/white"
+            android:padding="5dip"
+            android:visibility="gone"
+            android:weightSum="100" >
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="90"
+                android:text="@string/filter_by_brand"
+                android:textColor="@color/black" >
+            </TextView>
+
+            <ImageView
+                android:layout_width="0dip"
+                android:layout_height="20dip"
+                android:layout_marginLeft="30dip"
+                android:layout_weight="10"
+                android:contentDescription="@string/description"
+                android:src="@drawable/chevron" >
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llFilterByPromotions"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:background="@color/white"
+            android:padding="5dip"
+            android:visibility="gone"
+            android:weightSum="100" >
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="90"
+                android:text="@string/by_promotions"
+                android:textColor="@color/black" >
+            </TextView>
+
+            <ImageView
+                android:layout_width="0dip"
+                android:layout_height="20dip"
+                android:layout_marginLeft="30dip"
+                android:layout_weight="10"
+                android:src="@drawable/chevron" >
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llFilterByFormFacets"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:background="@color/white"
+            android:padding="5dip"
+            android:visibility="gone"
+            android:weightSum="100" >
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="90"
+                android:text="@string/by_form"
+                android:textColor="@color/black" >
+            </TextView>
+
+            <ImageView
+                android:layout_width="0dip"
+                android:layout_height="20dip"
+                android:layout_marginLeft="30dip"
+                android:layout_weight="10"
+                android:src="@drawable/chevron" >
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llFilterBySkinTypeFacets"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:background="@color/white"
+            android:padding="5dip"
+            android:visibility="gone"
+            android:weightSum="100" >
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="90"
+                android:text="@string/by_skin_type"
+                android:textColor="@color/black" />
+
+            <ImageView
+                android:layout_width="0dip"
+                android:layout_height="20dip"
+                android:layout_marginLeft="30dip"
+                android:layout_weight="10"
+                android:src="@drawable/chevron" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llFilterBenefitFacets"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:background="@color/white"
+            android:padding="5dip"
+            android:visibility="gone"
+            android:weightSum="100" >
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="90"
+                android:text="@string/by_benefit"
+                android:textColor="@color/black" >
+            </TextView>
+
+            <ImageView
+                android:layout_width="0dip"
+                android:layout_height="20dip"
+                android:layout_marginLeft="30dip"
+                android:layout_weight="10"
+                android:src="@drawable/chevron" >
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llFilterByPurposeFacets"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:background="@color/white"
+            android:padding="5dip"
+            android:visibility="gone"
+            android:weightSum="100" >
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="90"
+                android:text="@string/by_purpose"
+                android:textColor="@color/black" >
+            </TextView>
+
+            <ImageView
+                android:layout_width="0dip"
+                android:layout_height="20dip"
+                android:layout_marginLeft="30dip"
+                android:layout_weight="10"
+                android:src="@drawable/chevron" >
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llFilterByConcernsFacets"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:background="@color/white"
+            android:padding="5dip"
+            android:visibility="gone"
+            android:weightSum="100" >
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="90"
+                android:text="@string/by_concerns"
+                android:textColor="@color/black" >
+            </TextView>
+
+            <ImageView
+                android:layout_width="0dip"
+                android:layout_height="20dip"
+                android:layout_marginLeft="30dip"
+                android:layout_weight="10"
+                android:src="@drawable/chevron" >
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llFilterByTypeFacets"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:background="@color/white"
+            android:padding="5dip"
+            android:visibility="gone"
+            android:weightSum="100" >
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="90"
+                android:text="@string/by_type"
+                android:textColor="@color/black" >
+            </TextView>
+
+            <ImageView
+                android:layout_width="0dip"
+                android:layout_height="20dip"
+                android:layout_marginLeft="30dip"
+                android:layout_weight="10"
+                android:src="@drawable/chevron" >
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llFilterByCoverageFacets"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:background="@color/white"
+            android:padding="5dip"
+            android:visibility="gone"
+            android:weightSum="100" >
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="90"
+                android:text="@string/by_coverage"
+                android:textColor="@color/black" >
+            </TextView>
+
+            <ImageView
+                android:layout_width="0dip"
+                android:layout_height="20dip"
+                android:layout_marginLeft="30dip"
+                android:layout_weight="10"
+                android:src="@drawable/chevron" >
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llFilterByFinishFacets"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:background="@color/white"
+            android:padding="5dip"
+            android:visibility="gone"
+            android:weightSum="100" >
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="90"
+                android:text="@string/by_finish"
+                android:textColor="@color/black" >
+            </TextView>
+
+            <ImageView
+                android:layout_width="0dip"
+                android:layout_height="20dip"
+                android:layout_marginLeft="30dip"
+                android:layout_weight="10"
+                android:src="@drawable/chevron" >
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llFilterByScentFacets"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:background="@color/white"
+            android:padding="5dip"
+            android:visibility="gone"
+            android:weightSum="100" >
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="90"
+                android:text="@string/by_sent"
+                android:textColor="@color/black" >
+            </TextView>
+
+            <ImageView
+                android:layout_width="0dip"
+                android:layout_height="20dip"
+                android:layout_marginLeft="30dip"
+                android:layout_weight="10"
+                android:src="@drawable/chevron" >
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llFilterByTreatmentFacets"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:background="@color/white"
+            android:padding="5dip"
+            android:visibility="gone"
+            android:weightSum="100" >
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="90"
+                android:text="@string/by_treatment"
+                android:textColor="@color/black" >
+            </TextView>
+
+            <ImageView
+                android:layout_width="0dip"
+                android:layout_height="20dip"
+                android:layout_marginLeft="30dip"
+                android:layout_weight="10"
+                android:src="@drawable/chevron" >
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llFilterBySpfFacets"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:background="@color/white"
+            android:padding="5dip"
+            android:visibility="gone"
+            android:weightSum="100" >
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="90"
+                android:text="@string/by_spf"
+                android:textColor="@color/black" >
+            </TextView>
+
+            <ImageView
+                android:layout_width="0dip"
+                android:layout_height="20dip"
+                android:layout_marginLeft="30dip"
+                android:layout_weight="10"
+                android:src="@drawable/chevron" >
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llFilterByIngredientsFacets"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:background="@color/white"
+            android:padding="5dip"
+            android:visibility="gone"
+            android:weightSum="100" >
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="90"
+                android:text="@string/by_ingredient"
+                android:textColor="@color/black" >
+            </TextView>
+
+            <ImageView
+                android:layout_width="0dip"
+                android:layout_height="20dip"
+                android:layout_marginLeft="30dip"
+                android:layout_weight="10"
+                android:src="@drawable/chevron" >
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llFilterByBrand_root"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:background="@color/white"
+            android:padding="5dip"
+            android:visibility="gone"
+            android:weightSum="100" >
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="90"
+                android:text="@string/by_brand"
+                android:textColor="@color/black" >
+            </TextView>
+
+            <ImageView
+                android:layout_width="0dip"
+                android:layout_height="20dip"
+                android:layout_marginLeft="30dip"
+                android:layout_weight="10"
+                android:src="@drawable/chevron" >
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llFilterByPromotions_root"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:background="@color/white"
+            android:padding="5dip"
+            android:visibility="gone"
+            android:weightSum="100" >
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="90"
+                android:text="@string/by_promotions"
+                android:textColor="@color/black" >
+            </TextView>
+
+            <ImageView
+                android:layout_width="0dip"
+                android:layout_height="20dip"
+                android:layout_marginLeft="30dip"
+                android:layout_weight="10"
+                android:src="@drawable/chevron" >
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llFilterByColorFacets"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:background="@color/white"
+            android:padding="5dip"
+            android:visibility="gone"
+            android:weightSum="100" >
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="90"
+                android:text="@string/by_color"
+                android:textColor="@color/black" >
+            </TextView>
+
+            <ImageView
+                android:layout_width="0dip"
+                android:layout_height="20dip"
+                android:layout_marginLeft="30dip"
+                android:layout_weight="10"
+                android:src="@drawable/chevron" >
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llFilterByPrice"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:background="@color/white"
+            android:padding="5dip"
+            android:visibility="gone"
+            android:weightSum="100" >
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="90"
+                android:text="@string/by_price"
+                android:textColor="@color/black" >
+            </TextView>
+
+            <ImageView
+                android:layout_width="0dip"
+                android:layout_height="20dip"
+                android:layout_marginLeft="30dip"
+                android:layout_weight="10"
+                android:src="@drawable/chevron" >
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:orientation="horizontal"
+            android:padding="5dip"
+            android:weightSum="3" >
+
+            <Button
+                android:id="@+id/btnCancel"
+                style="@style/buttonStyle_prelollipop_wrapped_width"
+                android:layout_width="wrap_content"
+                android:layout_height="35dip"
+                android:layout_weight="1"
+                android:text="@string/btn_cancel" >
+            </Button>
+
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnReset"
+                style="@style/buttonStyle_prelollipop_wrapped_width"
+                android:layout_width="wrap_content"
+                android:layout_height="35dip"
+                android:layout_weight="1"
+                android:text="@string/btn_reset_all" >
+            </Button>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

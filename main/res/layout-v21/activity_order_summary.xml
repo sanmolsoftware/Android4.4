@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightgrey"
+    android:orientation="vertical">
+
+    <com.ulta.core.widgets.flyin.TitleBar
+        android:id="@+id/titlebar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        custom:done_visible="false"
+        custom:logo_ulta="false"
+        custom:title_ulta="Order Successful"></com.ulta.core.widgets.flyin.TitleBar>
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/thankyouImageView"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/orderconfirmation_header" />
+
+                    <TextView
+                        android:id="@+id/order_confirmation_msg"
+                        style="@style/orderSummaryemailIdTextStyle"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/thankyouImageView"
+                        android:gravity="center"
+                        android:text="@string/order_summary_estimated_del_msg" />
+
+                    <TextView
+                        android:id="@+id/emailId"
+                        style="@style/orderSummaryemailIdTextStyle"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/order_confirmation_msg"
+                        android:gravity="center"
+                        android:paddingTop="3dp" />
+
+
+                    <View
+                        android:id="@+id/viewAboveorderSummary"
+                        android:layout_width="fill_parent"
+                        android:layout_height="10dp"
+                        android:layout_below="@id/emailId"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/lightgrey" />
+
+                    <LinearLayout
+                        android:id="@+id/orderSummaryDeatils"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/viewAboveorderSummary"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/orderSummaryTitle"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/order_summary_title"></TextView>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingBottom="10dp">
+
+                            <TextView
+                                android:id="@+id/itemsPurchasedTV"
+                                style="@style/orderSummaryemailIdTextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"></TextView>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="#565656"></View>
+
+                            <TextView
+                                android:id="@+id/orderIDTV"
+                                style="@style/orderSummaryemailIdTextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"></TextView>
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/orderSubtotalLayout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:visibility="gone"
+                            android:weightSum="100">
+
+                            <TextView
+                                style="@style/orderSummaryemailIdTextStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="80"
+                                android:gravity="start"
+                                android:text="@string/order_summary_order_subtotal"></TextView>
+
+                            <TextView
+                                android:id="@+id/tvorderSubtotal"
+                                style="@style/orderSummaryemailIdTextStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_weight="20"
+                                android:gravity="end"
+                                android:text="@string/dollar_five"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/couponDiscountLayout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal"
+                            android:visibility="gone"
+                            android:weightSum="100">
+
+                            <TextView
+                                style="@style/orderSummaryemailIdTextStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="80"
+                                android:gravity="start"
+                                android:text="@string/coupon_discount"></TextView>
+
+                            <TextView
+                                android:id="@+id/tvCouponDiscount"
+                                style="@style/orderSummaryemailIdTextStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_weight="20"
+                                android:gravity="end"
+                                android:text="@string/dollar_five"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/additionalDiscountLayout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal"
+                            android:visibility="gone"
+                            android:weightSum="100">
+
+                            <TextView
+                                style="@style/orderSummaryemailIdTextStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="80"
+                                android:gravity="start"
+                                android:text="@string/additional_discount"></TextView>
+
+                            <TextView
+                                android:id="@+id/tvAdditionalDiscount"
+                                style="@style/orderSummaryemailIdTextStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_weight="20"
+                                android:gravity="end"
+                                android:text="@string/dollar_five"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/loyaltyDiscountLayout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal"
+                            android:visibility="gone"
+                            android:weightSum="100">
+
+                            <TextView
+                                style="@style/orderSummaryemailIdTextStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="80"
+                                android:gravity="start"
+                                android:text="@string/order_summary_loyalty_discount"></TextView>
+
+                            <TextView
+                                android:id="@+id/tvLoyaltyDiscount"
+                                style="@style/orderSummaryemailIdTextStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_weight="20"
+                                android:gravity="end"
+                                android:text="@string/dollar_five"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/shippingLayout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal"
+                            android:visibility="gone"
+                            android:weightSum="100">
+
+                            <TextView
+                                style="@style/orderSummaryemailIdTextStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="80"
+                                android:gravity="start"
+                                android:text="@string/my_acc_shipping"></TextView>
+
+                            <TextView
+                                android:id="@+id/tvShipping"
+                                style="@style/orderSummaryemailIdTextStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_weight="20"
+                                android:gravity="end"
+                                android:text="@string/dollar_five"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/taxLayout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal"
+                            android:visibility="gone"
+                            android:weightSum="100">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="80"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/orderSummaryemailIdTextStyle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="start"
+                                    android:text="@string/tax"></TextView>
+
+                                <TextView
+                                    style="@style/orderSummaryTaxSubTextStyle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="start"
+                                    android:text="@string/tax_subtext"></TextView>
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tvTax"
+                                style="@style/orderSummaryemailIdTextStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_weight="20"
+                                android:gravity="end"
+                                android:text="@string/dollar_five"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/totalLayout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal"
+                            android:visibility="gone"
+                            android:weightSum="100">
+
+                            <TextView
+                                style="@style/orderSummaryTitle"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="80"
+                                android:gravity="start"
+                                android:text="@string/submit_total"></TextView>
+
+                            <TextView
+                                android:id="@+id/tvTotal"
+                                style="@style/orderSummaryTitle"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_weight="20"
+                                android:gravity="end"
+                                android:text="@string/dollar_five"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/earn_rewards_for_futureLayout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingBottom="10dp"
+                            android:paddingTop="10dp">
+
+                            <TextView
+                                android:id="@+id/earnrewardsForFuture"
+                                style="@style/orderSummaryRewardsMessageStule"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingBottom="5dp"
+                                android:text="@string/order_summary_earn_rewards_msg"
+                                android:textStyle="bold"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/creditMessage"
+                                style="@style/orderSummaryemailIdTextStyle"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/order_summary_creditMessage"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/viewBeloworderSummary"
+                        android:layout_width="fill_parent"
+                        android:layout_height="10dp"
+                        android:layout_below="@id/orderSummaryDeatils"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/lightgrey" />
+
+
+                    <LinearLayout
+                        android:id="@+id/loggedinUsersButtonLayout"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/viewBeloworderSummary"
+                        android:orientation="horizontal"
+                        android:paddingBottom="20dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="10dp"
+                        android:visibility="visible">
+
+                        <ImageButton
+                            android:id="@+id/loggedInOrderHistory"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/ripple_effect"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/view_order_history"></ImageButton>
+
+                        <ImageButton
+                            android:id="@+id/loggedinContinueShopping"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/ripple_effect"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/continue_shopping_thankyou_page"></ImageButton>
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <include
+            android:id="@+id/navigation_drawer"
+            layout="@layout/navigation_menu"
+            android:layout_width="@dimen/side_menu_width"
+            android:layout_height="match_parent"
+            android:layout_gravity="start" />
+    </android.support.v4.widget.DrawerLayout>
+
+</LinearLayout>

@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.ulta.core.widgets.flyin.TitleBar
+        android:id="@+id/titlebar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        custom:done_visible="true"
+        custom:menu_option="false"
+        custom:title_ulta="Shipping Options" >
+    </com.ulta.core.widgets.flyin.TitleBar>
+
+    <FrameLayout
+        android:id="@+id/loadingDialog"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/bg_patch_white"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="50dp" >
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/description"
+            android:padding="5dp"
+            android:src="@drawable/logo_spinner" />
+
+        <ProgressBar
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:indeterminateTint="#F00"
+            android:indeterminateTintMode="src_in" />
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/bg_patch_white" >
+
+        <include
+            android:id="@+id/shippingMethodHeader"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            layout="@layout/checkout_header" />
+
+        <ScrollView
+            android:id="@+id/shippingMethodScrollViewLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/shippingMethodHeader"
+            android:layout_marginBottom="130dp" >
+
+            <LinearLayout
+                android:id="@+id/shippingMethodCentreLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/shippingtypeHeader"
+                    style="@style/basket_footerTextView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="#DDDDDDDD"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/checkout_shipping_type" />
+
+                <TextView
+                    android:id="@+id/choosePreferredShippingType"
+                    style="@style/basket_ItemNumber"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="16dp"
+                    android:text="@string/checkout_choose_shipping_type" />
+
+                <RadioGroup
+                    android:id="@+id/shippingMethod"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp" >
+
+                    <LinearLayout
+                        android:id="@+id/standardGroundShippingLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingTop="15dp"
+                        android:visibility="invisible" >
+
+                        <RelativeLayout
+                            android:id="@+id/groundShippingRelativeLayout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/shippingtype_relative_bg" >
+
+                            <RadioButton
+                                android:id="@+id/standardRadioButton"
+                                style="@style/RiverBedRegular16"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left"
+                                android:background="@drawable/custom_radio_button_checkout_shippingtype"
+                                android:button="@android:color/transparent"
+                                android:checked="true"
+                                android:visibility="gone" />
+
+                            <ImageView
+                                android:id="@+id/shipping_truckIcon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:contentDescription="@string/description"
+                                android:paddingTop="5dp"
+                                android:src="@drawable/truck"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/groundShipping"
+                                style="@style/checkoutShippingTypePriceStyle"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/shipping_truckIcon"
+                                android:gravity="center"
+                                android:paddingTop="10dp"
+                                android:visibility="gone" />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:background="@color/shippingtype_linear_bg"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:id="@+id/textGroundShipping"
+                                style="@style/checkoutdeliveryTypeStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingTop="10dp"
+                                android:text="@string/estimated_delivery_msg"
+                                android:textColor="@color/textColor"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/defaultGroundmessageTextView"
+                                style="@style/checkoutdeliveryTypeStyle"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingBottom="5dp"
+                                android:paddingTop="5dp"
+                                android:text="@string/checkout_standard_shipping_type"
+                                android:textColor="@color/textColor"
+                                android:visibility="gone" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ups2dayAirLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingTop="15dp"
+                        android:visibility="invisible" >
+
+                        <RelativeLayout
+                            android:id="@+id/ups2ndDayAirRelativeLayout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/shippingtype_relative_bg" >
+
+                            <RadioButton
+                                android:id="@+id/UPS2ndDayAirRadioButton"
+                                style="@style/RiverBedRegular16"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/custom_radio_button_checkout_shippingtype"
+                                android:button="@android:color/transparent"
+                                android:checked="false"
+                                android:visibility="gone" />
+
+                            <ImageView
+                                android:id="@+id/shipping_ups2ndDayAirIcon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_gravity="center"
+                                android:contentDescription="@string/description"
+                                android:paddingTop="5dp"
+                                android:src="@drawable/plane"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/upsTwoDayAir"
+                                style="@style/checkoutShippingTypePriceStyle"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/shipping_ups2ndDayAirIcon"
+                                android:gravity="center"
+                                android:paddingTop="10dp"
+                                android:visibility="gone" />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:background="@color/shippingtype_linear_bg"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:id="@+id/textSecondDayAir"
+                                style="@style/checkoutdeliveryTypeStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingTop="10dp"
+                                android:text="@string/estimated_delivery_3to4"
+                                android:textColor="@color/textColor"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/default2dayssageTextView"
+                                style="@style/checkoutdeliveryTypeStyle"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingBottom="5dp"
+                                android:paddingTop="5dp"
+                                android:text="@string/checkout_standard_Ups_2nd_day_type"
+                                android:textColor="@color/textColor"
+                                android:visibility="gone" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/upsNextDayAirLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingTop="15dp"
+                        android:visibility="invisible" >
+
+                        <RelativeLayout
+                            android:id="@+id/upsNextDayAirRelativelayout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/shippingtype_relative_bg" >
+
+                            <RadioButton
+                                android:id="@+id/UPSNextDayAirRadioButton"
+                                style="@style/RiverBedRegular16"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/custom_radio_button_checkout_shippingtype"
+                                android:button="@android:color/transparent"
+                                android:checked="false"
+                                android:text=""
+                                android:visibility="gone" />
+
+                            <ImageView
+                                android:id="@+id/shipping_upsNextDayAirIcon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_gravity="center"
+                                android:contentDescription="@string/description"
+                                android:paddingTop="5dp"
+                                android:src="@drawable/plane"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/upsNextDayAir"
+                                style="@style/checkoutShippingTypePriceStyle"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/shipping_upsNextDayAirIcon"
+                                android:gravity="center"
+                                android:paddingTop="10dp"
+                                android:visibility="gone" />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:background="@color/shippingtype_linear_bg"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:id="@+id/textNextDayAir"
+                                style="@style/checkoutdeliveryTypeStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingTop="10dp"
+                                android:text="@string/estimated_del_2to3"
+                                android:textColor="@color/textColor"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/defaultnextDaymessageTextView"
+                                style="@style/checkoutdeliveryTypeStyle"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:paddingBottom="5dp"
+                                android:paddingTop="5dp"
+                                android:text="@string/checkout_standard_Ups_next_day_type"
+                                android:textColor="@color/textColor"
+                                android:visibility="gone" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/hazmatTextView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:text="@string/shippingMethod_hazmatText"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/footerAndButtonLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bg_patch_white"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/estimatedDelivaryTV"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/shippingMethodEstimatedDeliveryMsg" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp" >
+
+                <ImageButton
+                    android:id="@+id/backBtn"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/checkout_address_enabled"
+                    android:contentDescription="@string/description" />
+
+                <ImageButton
+                    android:id="@+id/giftBoxdetailsBtn"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/checkout_giftbox_enabled"
+                    android:contentDescription="@string/description"
+                    android:paddingRight="5dp" />
+            </LinearLayout>
+
+            <include
+                android:id="@+id/shippingMethodFooter"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/checkout_footer" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</FrameLayout>

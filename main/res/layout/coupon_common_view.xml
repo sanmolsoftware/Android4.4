@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/carouselImageLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/coupenPositionLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="5dp"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        android:background="@color/blackgrey" >
+
+        <ImageView
+            android:id="@+id/arrow_left"
+            android:layout_width="0dp"
+            android:layout_weight="10"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/description"
+            android:src="@drawable/white_left_arrow" />
+
+        <TextView
+            android:id="@+id/coupenPosition"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:text="@string/add_new_card_text"
+            android:layout_weight="80"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/arrow_right"
+             android:layout_width="0dp"
+            android:layout_weight="10"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/description"
+            android:src="@drawable/white_right_arrow" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/carouselImage"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/coupenPositionLayout"
+        android:contentDescription="@string/description"
+        android:scaleType="fitXY"
+        />
+
+</RelativeLayout>

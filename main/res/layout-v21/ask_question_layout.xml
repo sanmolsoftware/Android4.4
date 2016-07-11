@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <com.ulta.core.widgets.flyin.TitleBar
+        android:id="@+id/titlebar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        custom:done_visible="false"
+        custom:menu_option="true"
+        custom:title_ulta="Ask ULTA" >
+    </com.ulta.core.widgets.flyin.TitleBar>
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <include
+                android:id="@+id/toolbar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/toolbar" />
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent" >
+
+                <ScrollView
+                    android:id="@+id/llQ_mainLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@color/white" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:id="@+id/textView3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_margin="5dp"
+                                android:text="@string/question"
+                                android:textColor="@color/black"
+                                android:textSize="15sp" />
+
+                            <LinearLayout
+                                android:id="@+id/llTypeOfQuestions"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:background="@drawable/rectangular_boarder"
+                                android:orientation="vertical"
+                                android:paddingLeft="3dp" >
+
+                                <RadioGroup
+                                    android:id="@+id/radioGrpForTypeOfQ"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:textColor="@color/textColor" >
+
+                                    <RadioButton
+                                        android:id="@+id/rd_aboutService"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/textColor" />
+
+                                    <RadioButton
+                                        android:id="@+id/rd_aboutProduct"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/textColor" />
+                                </RadioGroup>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/thankyou_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:orientation="vertical"
+                            android:visibility="gone" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_margin="5dp"
+                                android:text="@string/ques_thankyou"
+                                android:textColor="@color/black"
+                                android:textSize="15sp" />
+
+                            <LinearLayout
+                                android:id="@+id/ll123"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:background="@drawable/rectangular_boarder"
+                                android:orientation="vertical"
+                                android:paddingLeft="3dp" >
+
+                                <LinearLayout
+                                    android:id="@+id/ll12"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp"
+                                    android:orientation="horizontal"
+                                    android:paddingLeft="3dp" >
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingRight="5dp"
+                                        android:paddingTop="3dp"
+                                        android:src="@drawable/bg_pattern" />
+
+                                    <TextView
+                                        android:id="@+id/contactus_text"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="2dp"
+                                        android:text="@string/qna_contact"
+                                        android:textColor="@color/textColor"
+                                        android:textSize="13sp" >
+                                    </TextView>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp"
+                                    android:orientation="horizontal"
+                                    android:paddingLeft="3dp" >
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingRight="5dp"
+                                        android:paddingTop="3dp"
+                                        android:src="@drawable/bg_pattern" />
+
+                                    <TextView
+                                        android:id="@+id/shipping_info"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="2dp"
+                                        android:text="@string/shipping_info"
+                                        android:textColor="@color/textColor"
+                                        android:textSize="13sp" >
+                                    </TextView>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp"
+                                    android:orientation="horizontal"
+                                    android:paddingLeft="3dp" >
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingRight="5dp"
+                                        android:paddingTop="3dp"
+                                        android:src="@drawable/bg_pattern" />
+
+                                    <TextView
+                                        android:id="@+id/qna_guidelines"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="2dp"
+                                        android:text="@string/qna_guidelines"
+                                        android:textColor="@color/textColor"
+                                        android:textSize="13sp" >
+                                    </TextView>
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/enter_question_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:orientation="vertical"
+                            android:visibility="gone" >
+
+                            <TextView
+                                android:id="@+id/textView2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_margin="5dp"
+                                android:text="@string/question_header"
+                                android:textColor="@color/black"
+                                android:textSize="15sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:background="@drawable/rectangular_boarder"
+                                android:orientation="vertical"
+                                android:paddingLeft="3dp" >
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical|center_horizontal"
+                                    android:orientation="horizontal" >
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="left|center_vertical|center_horizontal"
+                                        android:layout_marginBottom="2dp"
+                                        android:text="@string/type_of_que_text"
+                                        android:textColor="@color/textColor"
+                                        android:textSize="13sp" >
+                                    </TextView>
+
+                                    <Spinner
+                                        android:id="@+id/typeOfQ_spinner"
+                                        style="@style/Widget.AppCompat.Spinner.Underlined"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="56dp"
+                                        android:layout_gravity="right"
+                                        android:overlapAnchor="false"
+                                        android:paddingTop="@dimen/normal_text_padding_top"
+                                        android:visibility="visible" />
+                                </LinearLayout>
+
+                                <EditText
+                                    android:id="@+id/edtQ_text"
+                                    style="@style/FormEdit"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="70dp"
+                                    android:layout_marginRight="2dp"
+                                    android:inputType="textMultiLine"
+                                    android:singleLine="true"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:textSize="12sp" >
+                                </EditText>
+
+                                <TextView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical|right"
+                                    android:layout_marginBottom="2dp"
+                                    android:text="@string/ask_question_disclaimer"
+                                    android:textColor="@color/textColor"
+                                    android:textSize="12sp" >
+                                </TextView>
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_margin="5dp"
+                                android:text="@string/que_notification_email"
+                                android:textColor="@color/black"
+                                android:textSize="15sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:background="@drawable/rectangular_boarder"
+                                android:orientation="vertical"
+                                android:paddingLeft="3dp"
+                                android:showDividers="beginning" >
+
+                                <LinearLayout
+                                    android:id="@+id/linearLayout5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:orientation="vertical" >
+
+                                    <TextView
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="2dp"
+                                        android:text="@string/qAnda_email"
+                                        android:textColor="@color/textColor"
+                                        android:textSize="13sp" >
+                                    </TextView>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/lightgrey"
+                                        android:orientation="horizontal" >
+
+                                        <EditText
+                                            android:id="@+id/edtQ_Email"
+                                            style="@style/FormEdit"
+                                            android:layout_width="180dp"
+                                            android:layout_height="30dp"
+                                            android:layout_marginBottom="2dp"
+                                            android:layout_marginRight="2dp"
+                                            android:inputType="textEmailAddress"
+                                            android:singleLine="true"
+                                            android:text=""
+                                            android:textColor="@color/black"
+                                            android:textSize="12sp" >
+                                        </EditText>
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/email_example"
+                                            android:textColor="@color/textColor"
+                                            android:textSize="12sp" >
+                                        </TextView>
+                                    </LinearLayout>
+
+                                    <TextView
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="2dp"
+                                        android:text="@string/to_receive_answer"
+                                        android:textColor="@color/textColor"
+                                        android:textSize="12sp" >
+                                    </TextView>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_margin="5dp"
+                                android:text="@string/about_yourself"
+                                android:textColor="@color/black"
+                                android:textSize="15sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:background="@drawable/rectangular_boarder"
+                                android:orientation="vertical"
+                                android:paddingLeft="3dp" >
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="2dp"
+                                    android:gravity="center_vertical"
+                                    android:orientation="vertical" >
+
+                                    <TextView
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="2dp"
+                                        android:text="@string/qanda_nickname"
+                                        android:textColor="@color/textColor"
+                                        android:textSize="13sp" >
+                                    </TextView>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/lightgrey"
+                                        android:orientation="horizontal" >
+
+                                        <EditText
+                                            android:id="@+id/edtQ_nickName"
+                                            style="@style/FormEdit"
+                                            android:layout_width="180dp"
+                                            android:layout_height="30dp"
+                                            android:layout_marginBottom="2dp"
+                                            android:layout_marginRight="2dp"
+                                            android:singleLine="true"
+                                            android:text=""
+                                            android:textColor="@color/black"
+                                            android:textSize="12sp" >
+                                        </EditText>
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/nickname_example"
+                                            android:textColor="@color/textColor"
+                                            android:textSize="12sp" >
+                                        </TextView>
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="2dp"
+                                    android:gravity="center_vertical"
+                                    android:orientation="vertical" >
+
+                                    <TextView
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="2dp"
+                                        android:text="@string/qanda_location"
+                                        android:textColor="@color/textColor"
+                                        android:textSize="13sp" >
+                                    </TextView>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/lightgrey"
+                                        android:orientation="horizontal" >
+
+                                        <EditText
+                                            android:id="@+id/edtQ_location"
+                                            style="@style/FormEdit"
+                                            android:layout_width="180dp"
+                                            android:layout_height="30dp"
+                                            android:layout_marginRight="2dp"
+                                            android:singleLine="true"
+                                            android:text=""
+                                            android:textColor="@color/black"
+                                            android:textSize="12sp" >
+                                        </EditText>
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/optional_text"
+                                            android:textColor="@color/textColor"
+                                            android:textSize="12sp" >
+                                        </TextView>
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <Button
+                                android:id="@+id/previewButton"
+                                style="@style/Button_Full_width"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:text="@string/ask_ulta_previewButton"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </ScrollView>
+
+                <FrameLayout
+                    android:id="@+id/llLoading"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingBottom="50dp"
+                    android:visibility="gone" >
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/description"
+                        android:padding="5dp"
+                        android:src="@drawable/logo_spinner" />
+
+                    <ProgressBar
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:indeterminate="true"
+                        android:indeterminateTint="#F00"
+                        android:indeterminateTintMode="src_in" />
+                </FrameLayout>
+            </FrameLayout>
+        </LinearLayout>
+
+        <include
+            android:id="@+id/navigation_drawer"
+            android:layout_width="@dimen/side_menu_width"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            layout="@layout/navigation_menu" />
+    </android.support.v4.widget.DrawerLayout>
+
+</LinearLayout>

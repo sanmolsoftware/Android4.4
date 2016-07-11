@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_patch_white"
+    android:orientation="vertical"
+    android:weightSum="1" >
+
+    <com.ulta.core.widgets.flyin.TitleBar
+        android:id="@+id/titlebar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:visibility="gone"
+        custom:done_visible="false"
+        custom:logo_ulta="false"
+        custom:title_ulta="Beauty Preference" >
+    </com.ulta.core.widgets.flyin.TitleBar>
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <include
+                android:id="@+id/toolbar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/toolbar" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:weightSum="1" >
+
+                <ScrollView
+                    android:id="@+id/slytMain_Beauty_Pref"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.85" >
+
+                    <LinearLayout
+                        android:id="@+id/lytMain_Beauty_Pref"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:id="@+id/lytGender"
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_list_item"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:weightSum="100" >
+
+                            <TextView
+                                android:id="@+id/fn"
+                                style="@style/RiverBedBold22"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="6dip"
+                                android:layout_weight="50"
+                                android:gravity="center_vertical|left"
+                                android:paddingLeft="10dp"
+                                android:text="@string/beauty_pref_gender" />
+
+                            <TextView
+                                android:id="@+id/txtGender"
+                                style="@style/RiverBedRegular18"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="6dip"
+                                android:layout_weight="48"
+                                android:gravity="center_vertical"
+                                android:paddingRight="5dp"
+                                android:text="@string/beauty_pref_male" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginRight="10dip"
+                                android:layout_marginTop="3dip"
+                                android:background="@drawable/chevron" >
+                            </ImageView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lytSkinType"
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_list_item"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:weightSum="100" >
+
+                            <TextView
+                                style="@style/RiverBedBold22"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="6dip"
+                                android:layout_weight="50"
+                                android:gravity="center_vertical|left"
+                                android:paddingLeft="10dp"
+                                android:text="@string/beauty_pref_skin_type" />
+
+                            <TextView
+                                android:id="@+id/txtSkinType"
+                                style="@style/RiverBedRegular18"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="6dip"
+                                android:layout_weight="48"
+                                android:gravity="center_vertical"
+                                android:paddingRight="5dp"
+                                android:text="@string/beauty_pref_male" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginRight="10dip"
+                                android:layout_marginTop="3dip"
+                                android:background="@drawable/chevron" >
+                            </ImageView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lytHairColor"
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_list_item"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:weightSum="100" >
+
+                            <TextView
+                                style="@style/RiverBedBold22"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="6dip"
+                                android:layout_weight="50"
+                                android:gravity="center_vertical|left"
+                                android:paddingLeft="10dp"
+                                android:text="@string/beauty_pref_hair_color" />
+
+                            <TextView
+                                android:id="@+id/txtHairColor"
+                                style="@style/RiverBedRegular18"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="6dip"
+                                android:layout_weight="48"
+                                android:gravity="center_vertical"
+                                android:paddingRight="5dp"
+                                android:text="@string/beauty_pref_male" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginRight="10dip"
+                                android:layout_marginTop="3dip"
+                                android:background="@drawable/chevron" >
+                            </ImageView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lytCategoriesOfInterest"
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_list_item"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:weightSum="100" >
+
+                            <TextView
+                                style="@style/RiverBedBold22"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="6dip"
+                                android:layout_weight="50"
+                                android:gravity="center_vertical|left"
+                                android:paddingLeft="10dp"
+                                android:text="@string/beauty_pref_interest_category" />
+
+                            <TextView
+                                android:id="@+id/txtCategoriesOfInterest"
+                                style="@style/RiverBedRegular18"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="6dip"
+                                android:layout_weight="48"
+                                android:gravity="center_vertical"
+                                android:paddingRight="5dp"
+                                android:text="@string/beauty_pref_male" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginRight="10dip"
+                                android:layout_marginTop="3dip"
+                                android:background="@drawable/chevron" >
+                            </ImageView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lytSkinCareConcern"
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_list_item"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:weightSum="100" >
+
+                            <TextView
+                                style="@style/RiverBedBold22"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="6dip"
+                                android:layout_weight="50"
+                                android:gravity="center_vertical|left"
+                                android:paddingLeft="10dp"
+                                android:text="@string/beauty_pref_skin_concern" />
+
+                            <TextView
+                                android:id="@+id/txtSkinCareConcern"
+                                style="@style/RiverBedRegular18"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="6dip"
+                                android:layout_weight="48"
+                                android:gravity="center_vertical"
+                                android:paddingRight="5dp"
+                                android:text="@string/beauty_pref_male" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginRight="10dip"
+                                android:layout_marginTop="3dip"
+                                android:background="@drawable/chevron" >
+                            </ImageView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lytHairType"
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_list_item"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:weightSum="100" >
+
+                            <TextView
+                                style="@style/RiverBedBold22"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="6dip"
+                                android:layout_weight="50"
+                                android:gravity="center_vertical|left"
+                                android:paddingLeft="10dp"
+                                android:text="@string/beauty_pref_hair_type" />
+
+                            <TextView
+                                android:id="@+id/txtHairType"
+                                style="@style/RiverBedRegular18"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="6dip"
+                                android:layout_weight="48"
+                                android:gravity="center_vertical"
+                                android:paddingRight="5dp"
+                                android:text="@string/beauty_pref_male" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginRight="10dip"
+                                android:layout_marginTop="3dip"
+                                android:background="@drawable/chevron" >
+                            </ImageView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lytSkinTone"
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_list_item"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:weightSum="100" >
+
+                            <TextView
+                                style="@style/RiverBedBold22"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="6dip"
+                                android:layout_weight="50"
+                                android:gravity="center_vertical|left"
+                                android:paddingLeft="10dp"
+                                android:text="@string/beauty_pref_skin_tone" />
+
+                            <TextView
+                                android:id="@+id/txtSkinTone"
+                                style="@style/RiverBedRegular18"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="6dip"
+                                android:layout_weight="48"
+                                android:gravity="center_vertical|left"
+                                android:paddingRight="5dp"
+                                android:text="@string/beauty_pref_male" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginRight="10dip"
+                                android:layout_marginTop="3dip"
+                                android:background="@drawable/chevron" >
+                            </ImageView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lytHairConcerns"
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_list_item"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:weightSum="100" >
+
+                            <TextView
+                                style="@style/RiverBedBold22"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="6dip"
+                                android:layout_weight="50"
+                                android:gravity="center_vertical|left"
+                                android:paddingLeft="10dp"
+                                android:text="@string/beauty_pref_hair_concern" />
+
+                            <TextView
+                                android:id="@+id/txtHairConcern"
+                                style="@style/RiverBedRegular18"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="6dip"
+                                android:layout_weight="48"
+                                android:gravity="center_vertical"
+                                android:paddingRight="5dp"
+                                android:text="@string/beauty_pref_male" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginRight="10dip"
+                                android:layout_marginTop="3dip"
+                                android:background="@drawable/chevron" >
+                            </ImageView>
+                        </LinearLayout>
+                    </LinearLayout>
+                </ScrollView>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.15"
+                    android:gravity="center"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp" >
+
+                    <Button
+                        android:id="@+id/doneBtn"
+                        style="@style/buttonStyle"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/done" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/loadingDialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical|center_horizontal|center"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingBottom="50dp"
+                    android:paddingTop="15dip"
+                    android:visibility="visible" >
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center"
+                            android:padding="5dp"
+                            android:src="@drawable/logo_spinner" />
+
+                        <ProgressBar
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:indeterminate="true"
+                            android:indeterminateTint="#F00"
+                            android:indeterminateTintMode="src_in" />
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <include
+            android:id="@+id/navigation_drawer"
+            android:layout_width="@dimen/side_menu_width"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            layout="@layout/navigation_menu" />
+    </android.support.v4.widget.DrawerLayout>
+
+</LinearLayout>

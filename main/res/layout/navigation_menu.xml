@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/side_menu_margin"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/menu_repeater"
+    android:orientation="vertical">
+
+
+    <ListView
+        android:id="@+id/naviagtion_list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/menu_repeater"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@null"
+        android:headerDividersEnabled="true"
+        android:orientation="vertical"></ListView>
+
+</LinearLayout>

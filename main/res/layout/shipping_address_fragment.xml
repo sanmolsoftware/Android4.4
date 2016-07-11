@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RadioGroup
+        android:id="@+id/default_addresses_radiogroup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/select_different_address"
+        style="@style/textview_sipping_checkout_form_sub_header"
+        android:layout_marginTop="15dp"
+        android:drawableEnd="@drawable/shop_arrow_down"
+        android:drawablePadding="5dp"
+        android:drawableRight="@drawable/shop_arrow_down"
+        android:gravity="center_vertical"
+        android:text="@string/select_different_address"
+        android:visibility="gone" />
+
+    <RadioGroup
+        android:id="@+id/addresses_radiogroup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" >
+    </RadioGroup>
+
+</LinearLayout>

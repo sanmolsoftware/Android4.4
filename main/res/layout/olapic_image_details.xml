@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <com.ulta.core.widgets.flyin.TitleBar
+        android:id="@+id/titlebar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        custom:done_visible="false"
+        custom:logo_ulta="false"
+        custom:title_ulta="" >
+    </com.ulta.core.widgets.flyin.TitleBar>
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <include
+                android:id="@+id/toolbar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/toolbar" />
+
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:fillViewport="true" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <FrameLayout
+                            android:id="@+id/olapic_details_frame_layout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="3dp" >
+
+                            <ProgressBar
+                                android:id="@+id/olapic_image_Progress_Bar1"
+                                style="@android:style/Widget.ProgressBar.Small.Inverse"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:visibility="visible" >
+                            </ProgressBar>
+
+                            <ImageView
+                                android:id="@+id/olapic_details_image"
+                                style="@style/olapic_details_product_image"
+                                android:contentDescription="@string/description"
+                                android:scaleType="fitXY" />
+
+                            <ImageView
+                                android:id="@+id/shareIcon"
+                                style="@style/olapic_details_share_image"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom|end"
+                                android:contentDescription="@string/description"
+                                android:src="@drawable/share_gallery" />
+                        </FrameLayout>
+
+                        <LinearLayout
+                            style="@style/layout_margin"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content" >
+
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent" >
+
+                                <ProgressBar
+                                    android:id="@+id/olapic_image_Progress_Bar"
+                                    style="@android:style/Widget.ProgressBar.Small.Inverse"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="top|center"
+                                    android:paddingEnd="7dp"
+                                    android:paddingLeft="7dp"
+                                    android:paddingStart="7dp"
+                                    android:paddingTop="7dp"
+                                    android:visibility="visible" >
+                                </ProgressBar>
+
+                                <ImageView
+                                    android:id="@+id/avatar_image"
+                                    android:layout_width="@dimen/olapic_detail_user_image_size"
+                                    android:layout_height="@dimen/olapic_detail_user_image_size"
+                                    android:layout_gravity="top|start"
+                                    android:contentDescription="@string/description" />
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:id="@+id/olapic_details_nick_name"
+                                    style="@style/olapic_details_user_name"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="top|start"
+                                    android:gravity="start" />
+
+                                <TextView
+                                    android:id="@+id/caption_textView"
+                                    style="@style/olapic_details_caption"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="start" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/shop_this_look_heading"
+                            style="@style/olapic_details_shop_look_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/shop_this_look"
+                            android:visibility="gone" />
+
+                        <HorizontalScrollView
+                            style="@style/layout_margin"
+                            android:layout_width="fill_parent"
+                            android:layout_height="60dp"
+                            android:visibility="gone" >
+
+                            <LinearLayout
+                                android:id="@+id/shop_this_look_layout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal" >
+                            </LinearLayout>
+                        </HorizontalScrollView>
+
+                        <LinearLayout
+                            android:id="@+id/shopThisLookLayout"
+                            style="@style/layout_margin"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical" >
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/olapicDialog"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical|center_horizontal|center"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingBottom="50dp"
+                        android:visibility="gone" >
+
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" >
+
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_gravity="center"
+                                android:padding="5dp"
+                                android:src="@drawable/logo_spinner" />
+
+                            <ProgressBar
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:indeterminate="true"
+                                android:indeterminateTint="#F00"
+                                android:indeterminateTintMode="src_in" />
+                        </FrameLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <include
+            android:id="@+id/navigation_drawer"
+            android:layout_width="@dimen/side_menu_width"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            layout="@layout/navigation_menu" />
+    </android.support.v4.widget.DrawerLayout>
+
+</LinearLayout>

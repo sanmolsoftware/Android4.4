@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="5dip" >
+
+    <LinearLayout
+         android:baselineAligned="false"
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dip" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="75"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvReviewTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/riverBed"
+                android:textSize="10sp"
+                android:textStyle="bold" >
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvReviewDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/riverBed"
+                android:textSize="10sp" >
+            </TextView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imgReviewRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/description"
+        android:layout_marginBottom="2dip" >
+    </ImageView>
+
+    <TextView
+        android:id="@+id/tvPersonName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dip"
+        android:textColor="@color/riverBed"
+        android:textSize="10sp" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/tvReviewDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/riverBed"
+        android:textSize="10sp" >
+    </TextView>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:layout_marginTop="5dip"
+        android:background="@color/slategrey" >
+    </View>
+
+</LinearLayout>

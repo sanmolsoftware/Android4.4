@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:baselineAligned="false"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="2dp"
+    android:background="@color/pampas"
+    android:orientation="horizontal"
+    android:weightSum="100" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="8dp"
+        android:layout_weight="45"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/order_history_orderNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/order_num"
+            android:textColor="@color/roseBudCherry"
+            android:textSize="15sp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/order_history_item_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/item_name_type"
+            android:textColor="@color/roseBudCherry"
+            android:textSize="15sp" >
+        </TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="8dp"
+        android:layout_weight="45"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/order_history_order_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:text="@string/my_acc_points"
+            android:textColor="@color/roseBudCherry"
+            android:textSize="15sp" >
+        </TextView>
+    </LinearLayout>
+
+
+</LinearLayout>

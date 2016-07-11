@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<item
+		android:state_focused="true"
+		android:drawable="@drawable/button_orange_focussed" />
+	<item
+		android:state_pressed="true"
+		android:drawable="@drawable/button_orange_pressed" />
+	<item
+		android:state_enabled="false"
+		android:drawable="@drawable/button_orange_disabled" />
+	<item
+		android:drawable="@drawable/button_orange_normal" /> 
+</selector>
+
+
+
+
+
+
+
+<!-- <selector xmlns:android="http://schemas.android.com/apk/res/android"> 
+	<item > <shape> <gradient android:startColor="#88F9AF6E" android:endColor="#EE883C" 
+	android:angle="270" android:type="linear" /> <stroke android:width="3dp" 
+	android:color="#DF7401" /> <corners android:radius="3dp" /> <padding android:left="5dp" 
+	android:top="5dp" android:right="5dp" android:bottom="5dp" /> </shape> </item> 
+	</selector> -->
