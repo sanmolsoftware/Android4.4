@@ -12,10 +12,13 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.preference.PreferenceManager;
 import android.support.multidex.MultiDex;
+import android.util.Log;
 
 import com.crashlytics.android.Crashlytics;
+import com.gimbal.android.Gimbal;
 import com.ulta.R;
 import com.ulta.core.conf.types.LogLevel;
+import com.ulta.core.pushnotification.UAGimbalAdapter;
 import com.ulta.core.util.ConversantUtility;
 import com.ulta.core.util.CryptoUtil;
 import com.ulta.core.util.caching.UltaDataCache;
@@ -140,6 +143,7 @@ public class Ulta extends Application {
             UAirship.takeOff(this, options);
          */
 
+		Gimbal.setApiKey(this, "2c1ad9b2-3c45-4e84-80a9-bbaad32a38f6");
 
 		UAirship.takeOff(this, new UAirship.OnReadyCallback() {
 			@Override
@@ -149,6 +153,9 @@ public class Ulta extends Application {
 				}
 			}
 		});
+
+        UAGimbalAdapter.shared().start();
+
 	}
 	public static void enableFabric()
 	{

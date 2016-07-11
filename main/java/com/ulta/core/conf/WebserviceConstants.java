@@ -878,6 +878,7 @@ public class WebserviceConstants {
 	public static final String CHECKOUT_ORDER_CONFIRMATION_LOYALITY_MEMBER = "Checkout:Order Confirmation (Reg - Loyalty Member)";
 	public static final String CHECKOUT_ORDER_CONFIRMATION_NON_LOYALITY_MEMBER = "Checkout:Order Confirmation (Reg - Non-Loyalty Member)";
 	public static final String SCAN = "Scan";
+	public static final String MSG = "Message";
 	public static final String SEARCH_SUCCESS = "Search Result";
 	public static final String SEARCH_FAILURE = "Search - No Results";
 	public static final String ORDERCONFIRMATION_GUEST_PAGE = "Checkout:Order Confirmation (Guest)";

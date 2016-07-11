@@ -2821,6 +2821,7 @@ public class UltaBaseActivity extends ActionBarActivity implements
             if (activity instanceof OlapicActivity || activity instanceof WebViewActivity) {
                 // toolbarTop.inflateMenu(R.menu.olapic_menu);
             } else {
+                Log.d("actionbar_menu", "actionbar_menu");
                 toolbarTop.inflateMenu(R.menu.actionbar_menu);
             }
             toolbarTop
@@ -2870,11 +2871,17 @@ public class UltaBaseActivity extends ActionBarActivity implements
                                             AboutUsActivity.class);
                                     startActivity(intentForHelp);
                                 }
-                            } else if (arg0.toString().equals("Scan")) {
+                            } else if (arg0.toString().equals("Message")) {
+
                                 trackAppState(UltaBaseActivity.this,
-                                        WebserviceConstants.SCAN);
-                                //check camera permission
-                                checkForAppPermissions(UltaBaseActivity.this, WebserviceConstants.PERMISSION_CAMERA, WebserviceConstants.CAMERA_REQUEST_CODE, WebserviceConstants.PERMISSION_CAMERA_DIALOG_TITLE, WebserviceConstants.PERMISSION_CAMERA_DIALOG_MESSAGE);
+                                        WebserviceConstants.MSG);
+
+                                Toast.makeText(UltaBaseActivity.this, "Message clicked", Toast.LENGTH_SHORT).show();
+
+//                                trackAppState(UltaBaseActivity.this,
+//                                        WebserviceConstants.SCAN);
+//                                //check camera permission
+//                                checkForAppPermissions(UltaBaseActivity.this, WebserviceConstants.PERMISSION_CAMERA, WebserviceConstants.CAMERA_REQUEST_CODE, WebserviceConstants.PERMISSION_CAMERA_DIALOG_TITLE, WebserviceConstants.PERMISSION_CAMERA_DIALOG_MESSAGE);
 
 
 //                                ScanIntentIntegrator

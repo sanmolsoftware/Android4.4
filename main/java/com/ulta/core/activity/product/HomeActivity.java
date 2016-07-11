@@ -206,7 +206,7 @@ public class HomeActivity extends UltaBaseActivity implements OnClickListener, O
         mStaySignedInSharedPreferences = getSharedPreferences(WebserviceConstants.STAY_SIGNED_IN_SHAREDPREF,
                 MODE_PRIVATE);
 
-      //  getNotificationRegistrationId();
+        //  getNotificationRegistrationId();
         invokeSlideShow();
 
         isRewardMember = Utility.retrieveBooleanFromSharedPreference(UltaConstants.REWARD_MEMBER, UltaConstants.IS_REWARD_MEMBER, getApplicationContext());
@@ -1892,15 +1892,15 @@ public class HomeActivity extends UltaBaseActivity implements OnClickListener, O
         String channelId = UAirship.shared().getPushManager().getChannelId();
         channelId = UAStringUtil.isEmpty(channelId) ? "" : channelId;
 
-        Toast.makeText(HomeActivity.this, "register for notification "+channelId, Toast.LENGTH_SHORT).show();
-
         if (channelId == null || channelId.equals("")) {
-            Toast.makeText(HomeActivity.this, "Not register for notification", Toast.LENGTH_SHORT).show();
+            Log.i("Not register", "Not register for notification ");
         } else {
             SharedPreferences prefs = getActivity().getSharedPreferences(
                     WebserviceConstants.CHANNEL_ID_PREF, 0);
             int appVersion = getAppVersion(getActivity());
-            Log.i("PROPERTY_APP_VERSION", "Saving regId on app version " + appVersion);
+
+            Log.i("Register", "Registered for notification ");
+
             SharedPreferences.Editor editor = prefs.edit();
             editor.putString(WebserviceConstants.PUSH_CHANNEL_ID, channelId);
             editor.putInt(PROPERTY_APP_VERSION, appVersion);
