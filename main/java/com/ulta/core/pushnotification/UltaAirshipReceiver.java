@@ -31,7 +31,6 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.urbanairship.AirshipReceiver;
 import com.urbanairship.push.PushMessage;
@@ -73,7 +72,7 @@ public class UltaAirshipReceiver extends AirshipReceiver {
     protected boolean onNotificationOpened(@NonNull Context context, @NonNull NotificationInfo notificationInfo) {
         Log.i(TAG, "Notification opened. Alert: " + notificationInfo.getMessage().getAlert() + ". NotificationId: " + notificationInfo.getNotificationId());
 
-        Toast.makeText(context, "Hello Opened", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(context, "Hello Opened", Toast.LENGTH_SHORT).show();
         // Return false here to allow Urban Airship to auto launch the launcher activity
         return false;
     }
