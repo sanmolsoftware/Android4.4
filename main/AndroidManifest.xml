@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-        package="com.ulta"
+    package="com.ulta"
     android:installLocation="auto"
     android:versionCode="0"
     android:versionName="4.2(build#26)">
@@ -15,12 +15,10 @@
         android:glEsVersion="0x00020000"
         android:required="true" />
 
-
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <!-- required for Conversant Tag SDK-->
+    <!-- required for Conversant Tag SDK -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <!-- Needed for Core-Geofences for location lookup -->
@@ -28,24 +26,21 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.VIBRATE" />
 
-    <!--Dangerous permission -->
+    <!-- Dangerous permission -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.CAMERA" />
-
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-
     <uses-permission
         android:name="android.permission.CALL_PHONE"
-        android:required="false"></uses-permission>
+        android:required="false" />
 
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
-
 
     <!-- permission for GCM -->
     <permission
@@ -60,6 +55,9 @@
     <uses-feature
         android:name="android.hardware.telephony"
         android:required="false" />
+
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name=".core.Ulta"
@@ -76,11 +74,18 @@
 
         <uses-library android:name="com.google.android.maps" />
 
+        <intent-filter>
+            <action android:name="com.urbanairship.VIEW_RICH_PUSH_INBOX" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+
         <activity
             android:name=".core.activity.SplashActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <intent-filter>
@@ -91,151 +96,146 @@
 
                 <data android:scheme="ulta" />
             </intent-filter>
-
         </activity>
-        <activity android:name=".core.activity.product.HomeActivity"></activity>
-        <activity android:name=".core.activity.CarouselActivity"></activity>
+        <activity android:name=".core.activity.product.HomeActivity" />
+        <activity android:name=".core.activity.CarouselActivity" />
         <!-- Product Activities -->
         <activity
             android:name=".core.activity.product.PinchZoomActivity"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".core.activity.product.UltaProductDetailsActivity"></activity>
-        <activity android:name=".core.activity.product.UltaProductListActivity"></activity>
-        <activity android:name=".core.activity.product.ViewItemsInBasketActivity"></activity>
-        <activity android:name=".core.activity.product.FreeSamplesActivity"></activity>
-
-
+            android:screenOrientation="portrait" />
+        <activity android:name=".core.activity.product.UltaProductDetailsActivity" />
+        <activity android:name=".core.activity.product.UltaProductListActivity" />
+        <activity android:name=".core.activity.product.ViewItemsInBasketActivity" />
+        <activity android:name=".core.activity.product.FreeSamplesActivity" />
         <activity
             android:name=".core.activity.product.ScanActivity"
-            android:screenOrientation="landscape"></activity>
-        <activity android:name=".core.activity.product.ReviewAndRatingActivity"></activity>
-        <activity android:name=".core.activity.product.BrandsActivity"></activity>
+            android:screenOrientation="landscape" />
+        <activity android:name=".core.activity.product.ReviewAndRatingActivity" />
+        <activity android:name=".core.activity.product.BrandsActivity" />
 
         <!-- Product Activites End -->
 
 
         <!-- Rewards Activities -->
 
-        <activity android:name=".core.activity.rewards.MyBonusOffersActivity"></activity>
-        <activity android:name=".core.activity.rewards.RewardsActivity"></activity>
-        <activity android:name=".core.activity.rewards.EarningRedeemingActivity"></activity>
-        <activity android:name=".core.activity.rewards.PlatinumProgramActivity"></activity>
-        <activity android:name=".core.activity.rewards.AlertsActivity"></activity>
-        <activity android:name=".core.activity.rewards.MyPointsActivity"></activity>
-        <activity android:name=".core.activity.rewards.GiftCardsTabActivity"></activity>
-        <activity android:name=".core.activity.rewards.CouponActivity"></activity>
+        <activity android:name=".core.activity.rewards.MyBonusOffersActivity" />
+        <activity android:name=".core.activity.rewards.RewardsActivity" />
+        <activity android:name=".core.activity.rewards.EarningRedeemingActivity" />
+        <activity android:name=".core.activity.rewards.PlatinumProgramActivity" />
+        <activity android:name=".core.activity.rewards.AlertsActivity" />
+        <activity android:name=".core.activity.rewards.MyPointsActivity" />
+        <activity android:name=".core.activity.rewards.GiftCardsTabActivity" />
+        <activity android:name=".core.activity.rewards.CouponActivity" />
         <!-- Rewards Activities ends -->
 
 
         <!-- Stores Activity -->
-        <activity android:name=".core.activity.stores.MapBaseActivity"></activity>
-        <activity android:name=".core.activity.stores.StoresActivity"></activity>
-        <activity android:name=".core.activity.stores.StoreDetailsActivity"></activity>
+        <activity android:name=".core.activity.stores.MapBaseActivity" />
+        <activity android:name=".core.activity.stores.StoresActivity" />
+        <activity android:name=".core.activity.stores.StoreDetailsActivity" />
         <!-- Stores Activity end -->
 
 
         <!-- Checkout Activities -->
         <activity
             android:name=".core.activity.checkout.GiftOptionActivity"
-            android:windowSoftInputMode="adjustPan"></activity>
-        <activity android:name=".core.activity.checkout.ShippingMethodActivity"></activity>
-        <activity android:name=".core.activity.checkout.ReviewOrderActivity"></activity>
-        <activity android:name=".core.activity.checkout.PromoCodeActivity"></activity>
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".core.activity.checkout.ShippingMethodActivity" />
+        <activity android:name=".core.activity.checkout.ReviewOrderActivity" />
+        <activity android:name=".core.activity.checkout.PromoCodeActivity" />
         <activity
             android:name=".core.activity.checkout.PaymentMethodActivity"
-            android:windowSoftInputMode="stateHidden|adjustPan"></activity>
-        <activity android:name=".core.activity.checkout.OrderSummaryActivity"></activity>
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity android:name=".core.activity.checkout.OrderSummaryActivity" />
         <!-- Checkout Activities End -->
 
 
         <!-- About Activities -->
-        <activity android:name=".core.activity.about.AboutUsActivity"></activity>
-        <activity android:name=".core.activity.about.ContactUsActivity"></activity>
-        <activity android:name=".core.activity.about.LegalActivity"></activity>
-        <activity android:name=".core.activity.about.PrivacyPolicyActivity"></activity>
+        <activity android:name=".core.activity.about.AboutUsActivity" />
+        <activity android:name=".core.activity.about.ContactUsActivity" />
+        <activity android:name=".core.activity.about.LegalActivity" />
+        <activity android:name=".core.activity.about.PrivacyPolicyActivity" />
         <!-- About Activities End -->
 
 
         <!-- My Account activities -->
-        <activity android:name=".core.activity.account.MyAccountActivity"></activity>
-        <activity android:name=".core.activity.account.ChangePasswordActivity"></activity>
+        <activity android:name=".core.activity.account.MyAccountActivity" />
+        <activity android:name=".core.activity.account.ChangePasswordActivity" />
         <activity
             android:name=".core.activity.account.LoginActivity"
             android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustPan"></activity>
-        <activity android:name=".core.activity.account.ForgotLoginActivity"></activity>
-        <activity android:name=".core.activity.account.RegisterDetailsActivity"></activity>
-        <activity android:name=".core.activity.account.MyPrefferedShippingAddressActvity"></activity>
-        <activity android:name=".core.activity.account.PaymentMethodListActvity"></activity>
-        <activity android:name=".core.activity.account.EditShippingaddessActivity"></activity>
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".core.activity.account.ForgotLoginActivity" />
+        <activity android:name=".core.activity.account.RegisterDetailsActivity" />
+        <activity android:name=".core.activity.account.MyPrefferedShippingAddressActvity" />
+        <activity android:name=".core.activity.account.PaymentMethodListActvity" />
+        <activity android:name=".core.activity.account.EditShippingaddessActivity" />
 
         <!-- My Account activities end -->
-        <activity android:name=".core.activity.account.AddShippingAddressActivity"></activity>
-        <activity android:name=".core.activity.account.AddCreditCardActivity"></activity>
+        <activity android:name=".core.activity.account.AddShippingAddressActivity" />
+        <activity android:name=".core.activity.account.AddCreditCardActivity" />
         <activity
             android:name=".core.activity.SearchActivity"
-            android:windowSoftInputMode="stateVisible"></activity>
+            android:windowSoftInputMode="stateVisible" />
         <activity
             android:name=".core.activity.product.WriteReviewActivity"
-            android:windowSoftInputMode="adjustPan"></activity>
-        <activity android:name=".core.activity.myprofile.FavoritesActivity"></activity>
-        <activity android:name=".core.activity.rewards.ClubUltaActivity"></activity>
-
-        <activity android:name=".core.activity.account.MyOrderHistoryActivity"></activity>
-        <activity android:name=".core.activity.account.MyOrderDetailsActivity"></activity>
-        <activity android:name=".core.activity.account.JoinRewardsActivity"></activity>
-        <activity android:name=".core.activity.AppRater"></activity>
-        <activity android:name=".core.activity.product.PromotionsListActivity"></activity>
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".core.activity.myprofile.FavoritesActivity" />
+        <activity android:name=".core.activity.rewards.ClubUltaActivity" />
+        <activity android:name=".core.activity.account.MyOrderHistoryActivity" />
+        <activity android:name=".core.activity.account.MyOrderDetailsActivity" />
+        <activity android:name=".core.activity.account.JoinRewardsActivity" />
+        <activity android:name=".core.activity.AppRater" />
+        <activity android:name=".core.activity.product.PromotionsListActivity" />
         <!-- Activities added for 3.2 release -->
-        <activity android:name=".core.activity.rewards.ViewMyRewardsCardActivity"></activity>
-        <activity android:name=".core.activity.account.OrderTrackingActivity"></activity>
-        <activity android:name="com.ulta.core.activity.account.BeautyPreferrencesActivity"></activity>
-
-
-        <activity android:name=".core.activity.product.ExtendedActivity"></activity>
-        <activity android:name=".core.activity.checkout.PayPalWebviewActivity"></activity>
-        <activity android:name="com.ulta.core.activity.product.QuestionsAndAnswersActivity"></activity>
-        <activity android:name=".core.activity.product.AskQuestionActivity"></activity>
-        <activity android:name=".core.activity.product.StoreRTIActivity"></activity>
-        <activity android:name=".core.activity.product.ProductQnAGuidelinesActivity"></activity>
-        <activity android:name=".core.activity.product.PreviewQuestionActivity"></activity>
-        <activity android:name=".core.activity.product.QnAThankyouActivity"></activity>
-        <activity android:name=".core.activity.account.GuestLoginActivity"></activity>
-        <activity android:name=".core.activity.checkout.ChooseFreeGiftActivity"></activity>
+        <activity android:name=".core.activity.rewards.ViewMyRewardsCardActivity" />
+        <activity android:name=".core.activity.account.OrderTrackingActivity" />
+        <activity android:name=".core.activity.account.BeautyPreferrencesActivity" />
+        <activity android:name=".core.activity.product.ExtendedActivity" />
+        <activity android:name=".core.activity.checkout.PayPalWebviewActivity" />
+        <activity android:name=".core.activity.product.QuestionsAndAnswersActivity" />
+        <activity android:name=".core.activity.product.AskQuestionActivity" />
+        <activity android:name=".core.activity.product.StoreRTIActivity" />
+        <activity android:name=".core.activity.product.ProductQnAGuidelinesActivity" />
+        <activity android:name=".core.activity.product.PreviewQuestionActivity" />
+        <activity android:name=".core.activity.product.QnAThankyouActivity" />
+        <activity android:name=".core.activity.account.GuestLoginActivity" />
+        <activity android:name=".core.activity.checkout.ChooseFreeGiftActivity" />
         <activity
             android:name=".core.activity.account.OlapicActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".core.activity.account.ShopListActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".core.activity.account.OlapicImageDetailsActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".core.activity.account.OlapicUploadActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".core.activity.about.PhotoSharingGuidelines"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
 
-        <!--&lt;!&ndash; production key &ndash;&gt;
+        <!--
+        &lt;!&ndash; production key &ndash;&gt;
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyDu7CNyCEZAwy4ap953lZynltZ10bRnb9c" />-->
+            android:value="AIzaSyDu7CNyCEZAwy4ap953lZynltZ10bRnb9c" />
+        -->
+
 
         <!-- dev key -->
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyAj-9gTQqK9RnjJNxDlCqldcvd9I2lTJ4E" />
 
-
-        <activity android:name=".core.activity.rewards.MobileOffersActivity"></activity>
-        <activity android:name=".core.activity.account.WebViewActivity"></activity>
+        <activity android:name=".core.activity.rewards.MobileOffersActivity" />
+        <activity android:name=".core.activity.account.WebViewActivity" />
         <!-- Core-GCM manifest entries below -->
         <receiver
-            android:name="com.ulta.core.pushnotification.UltaAirshipReceiver"
+            android:name=".core.pushnotification.UltaAirshipReceiver"
             android:exported="false">
-
             <intent-filter>
                 <action android:name="com.urbanairship.push.CHANNEL_UPDATED" />
                 <action android:name="com.urbanairship.push.OPENED" />
@@ -247,44 +247,45 @@
         </receiver>
 
         <!-- End Core-GCM manifest entries -->
-        <activity android:name=".core.activity.rewards.NonSignedInRewardsActivity"></activity>
+        <activity android:name=".core.activity.rewards.NonSignedInRewardsActivity" />
         <activity
             android:name=".core.activity.checkout.AddShippingAddressGuestUserActivity"
             android:configChanges="screenSize"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".core.activity.checkout.AddShippingAddressLogginUserActivity"
             android:configChanges="screenSize"
-            android:windowSoftInputMode="adjustPan"></activity>
-        <activity android:name=".core.activity.checkout.ShippingAddressVerification"></activity>
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".core.activity.checkout.ShippingAddressVerification" />
         <activity
             android:name=".core.activity.SetEnvironmentActivity"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".core.activity.product.SpecialOffersActivity"></activity>
-        <activity android:name=".core.activity.product.BuyMoreSaveMoreLandingActivity"></activity>
-        <activity android:name=".core.activity.product.GWPLandingActivity"></activity>
+            android:screenOrientation="portrait" />
+        <activity android:name=".core.activity.product.SpecialOffersActivity" />
+        <activity android:name=".core.activity.product.BuyMoreSaveMoreLandingActivity" />
+        <activity android:name=".core.activity.product.GWPLandingActivity" />
 
         <receiver android:name=".core.activity.AlarmReceiver" />
 
-        <activity android:name=".core.activity.account.BeautyPreferenceActivity"></activity>
-        <activity android:name=".core.activity.rewards.RewardsWebViewActivity"></activity>
-        <activity android:name=".core.activity.rewards.UltaMateCreditCardActivity"></activity>
-        <activity android:name=".core.activity.about.LearnMoreActivity"></activity>
+        <activity android:name=".core.activity.account.BeautyPreferenceActivity" />
+        <activity android:name=".core.activity.rewards.RewardsWebViewActivity" />
+        <activity android:name=".core.activity.rewards.UltaMateCreditCardActivity" />
+        <activity android:name=".core.activity.about.LearnMoreActivity" />
 
-        <!--cash start ui activity-->
+        <!-- cash start ui activity -->
 
         <activity android:name=".core.activity.product.CashStarHomeUI">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <action android:name="cashstar.intent.action.ULTA" />
             </intent-filter>
         </activity>
-        <!--Fabric distribution params-->
+        <!-- Fabric distribution params -->
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="45978378b6fd292ca9061cadf0a6103c079ab479" />
 
-        <!-- required for Conversant Tag SDK-->
+        <!-- required for Conversant Tag SDK -->
         <meta-data
             android:name="conversantSiteId"
             android:value="2180" />
@@ -293,7 +294,13 @@
             android:name="conversant.tagmanager.sdk.CNVRTagService"
             android:exported="false" />
 
-
+        <activity android:name=".core.pushnotification.CustomMessageActivity">
+            <intent-filter>
+                <action android:name="com.urbanairship.VIEW_RICH_PUSH_MESSAGE" />
+                <data android:scheme="message" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

@@ -72,6 +72,11 @@ public class UltaAirshipReceiver extends AirshipReceiver {
     protected boolean onNotificationOpened(@NonNull Context context, @NonNull NotificationInfo notificationInfo) {
         Log.i(TAG, "Notification opened. Alert: " + notificationInfo.getMessage().getAlert() + ". NotificationId: " + notificationInfo.getNotificationId());
 
+
+//        Intent intentForHome = new Intent(context, HomeActivity.class);
+//        intentForHome.putExtra("fromSideMenu", true);
+//        intentForHome.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//        context.startActivity(intentForHome);
 //        Toast.makeText(context, "Hello Opened", Toast.LENGTH_SHORT).show();
         // Return false here to allow Urban Airship to auto launch the launcher activity
         return false;

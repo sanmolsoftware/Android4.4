@@ -197,9 +197,6 @@ public class HomeActivity extends UltaBaseActivity implements OnClickListener, O
         setContentView(R.layout.activity_home);
         AppRater.app_launched(this);
 
-        String channelId = UAirship.shared().getPushManager().getChannelId();
-        Log.d("Channel ID", "" + channelId);
-
         initViews();
         trackAppState(this, WebserviceConstants.HOME_PAGE);
         setTitle("");
@@ -1892,6 +1889,7 @@ public class HomeActivity extends UltaBaseActivity implements OnClickListener, O
         String channelId = UAirship.shared().getPushManager().getChannelId();
         channelId = UAStringUtil.isEmpty(channelId) ? "" : channelId;
 
+        Log.i("channelId", ""+channelId);
         if (channelId == null || channelId.equals("")) {
             Log.i("Not register", "Not register for notification ");
         } else {

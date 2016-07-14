@@ -124,6 +124,7 @@ import com.ulta.core.widgets.flyin.OnScanPressedListener;
 import com.ulta.core.widgets.flyin.OnSearchPressedListener;
 import com.ulta.core.widgets.flyin.OnTitleBarPressed;
 import com.ulta.core.widgets.flyin.TitleBar;
+import com.urbanairship.messagecenter.MessageCenterActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -2875,8 +2876,25 @@ public class UltaBaseActivity extends ActionBarActivity implements
 
                                 trackAppState(UltaBaseActivity.this,
                                         WebserviceConstants.MSG);
+//                                Intent intentForHelp = new Intent(
+//                                        UltaBaseActivity.this,
+//                                        CustomMessageActivity.class);
+//                                startActivity(intentForHelp);
+//                                UAirship.shared().getInbox().fetchMessages();
+//                                RichPushInbox inbox = UAirship.shared().getInbox();
+//                                UAirship.shared().getInbox().startInboxActivity();
 
-                                Toast.makeText(UltaBaseActivity.this, "Message clicked", Toast.LENGTH_SHORT).show();
+
+                                Intent intent = (new Intent("com.urbanairship.VIEW_RICH_PUSH_INBOX")).setPackage(getPackageName()).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                if(intent.resolveActivity(getPackageManager()) == null) {
+                                    if(Build.VERSION.SDK_INT < 14) {
+                                        com.urbanairship.Logger.error("Failed to display inbox. No activities available.");
+                                    }
+
+                                    intent.setClass(UltaBaseActivity.this, MessageCenterActivity.class);
+                                }
+
+                                startActivity(intent);
 
 //                                trackAppState(UltaBaseActivity.this,
 //                                        WebserviceConstants.SCAN);

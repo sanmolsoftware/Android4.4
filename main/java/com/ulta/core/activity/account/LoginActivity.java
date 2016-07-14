@@ -28,6 +28,7 @@ import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
+import android.widget.Toast;
 
 import com.ulta.R;
 import com.ulta.core.activity.UltaBaseActivity;
@@ -51,6 +52,7 @@ import com.ulta.core.util.UltaException;
 import com.ulta.core.util.Utility;
 import com.ulta.core.util.caching.UltaDataCache;
 import com.ulta.core.util.log.Logger;
+import com.urbanairship.UAirship;
 
 import java.util.HashMap;
 import java.util.List;
@@ -524,14 +526,18 @@ public class LoginActivity extends UltaBaseActivity implements OnClickListener,
                                 .get_beautyClubNumber()) {
                             UltaDataCache.getDataCacheInstance()
                                     .setRewardMember(true);
+                             Toast.makeText(LoginActivity.this, "rewards_member", Toast.LENGTH_SHORT).show();
+                            // set group notification
+                            UAirship.shared().getPushManager().editTagGroups()
+                                    .addTag("reward", "rewards_member")
+                                    .apply();
+
                             Utility.saveToSharedPreference(UltaConstants.REWARD_MEMBER, UltaConstants.IS_REWARD_MEMBER, true, getApplicationContext());
                             Utility.saveToSharedPreference(
                                     UltaConstants.REWARD_MEMBER,
                                     UltaConstants.BEAUTY_CLUB_NUMBER, ultaBean.getComponent().get_beautyClubNumber(),
                                     getApplicationContext());
-                        } else
-
-                        {
+                        } else  {
                             UltaDataCache.getDataCacheInstance()
                                     .setRewardMember(false);
                             Utility.saveToSharedPreference(UltaConstants.REWARD_MEMBER, UltaConstants.IS_REWARD_MEMBER, false, getApplicationContext());

@@ -16,6 +16,7 @@ import android.os.Message;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -23,13 +24,11 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -39,7 +38,6 @@ import com.ulta.core.activity.UltaBaseActivity;
 import com.ulta.core.activity.checkout.AddShippingAddressLogginUserActivity;
 import com.ulta.core.activity.product.FreeSamplesActivity;
 import com.ulta.core.activity.product.HomeActivity;
-import com.ulta.core.bean.StatusOnlyResponseBean;
 import com.ulta.core.bean.account.LoginBean;
 import com.ulta.core.bean.account.StateListBean;
 import com.ulta.core.bean.checkout.CheckoutShippmentMethodBean;
@@ -58,6 +56,7 @@ import com.ulta.core.util.Utility;
 import com.ulta.core.util.caching.UltaDataCache;
 import com.ulta.core.util.log.Logger;
 import com.ulta.core.widgets.flyin.OnDoneClickedListener;
+import com.urbanairship.UAirship;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -216,6 +215,7 @@ public class RegisterDetailsActivity extends UltaBaseActivity implements
     private String loginPassword;
 
     private String loginUsername;
+
     /*
      * (non-Javadoc)
      *
@@ -741,13 +741,11 @@ public class RegisterDetailsActivity extends UltaBaseActivity implements
             } catch (WindowManager.BadTokenException e) {
             } catch (Exception e) {
             }
-        }
-        else if (null != origin
+        } else if (null != origin
                 && origin
-                .equalsIgnoreCase("isfromApplyUltamateCard")&&!member&&!sign) {
-            notifyUser("Please sign up for Ultamate Rewards in order to apply for the Ultamate Rewards Credit Card.",RegisterDetailsActivity.this);
-        }
-        else {
+                .equalsIgnoreCase("isfromApplyUltamateCard") && !member && !sign) {
+            notifyUser("Please sign up for Ultamate Rewards in order to apply for the Ultamate Rewards Credit Card.", RegisterDetailsActivity.this);
+        } else {
             phone1 = phone;
             pd.show();
             invokeUserCreation();
@@ -936,26 +934,22 @@ public class RegisterDetailsActivity extends UltaBaseActivity implements
                                 .startsWith(
                                         "Whoops. Your Ulta.com profile information ")) {
                             errorMessage = "Your Ulta.com profile information does not match the Rewards Membership records we have for you, therefore we could not complete the activation of your membership.If you need further assistance please call Guest Services at 1-866-983-8582.";
-                        }
-                        else if (result
+                        } else if (result
                                 .get(0)
                                 .toString()
                                 .startsWith("The rewards membership number you are")) {
                             errorMessage = "The rewards membership number you are trying to use is already associated with another online account. If you need further assistance please call Guest Services at 1-866-983-8582.";
-                        }
-                        else if (result
+                        } else if (result
                                 .get(0)
                                 .toString()
                                 .startsWith("System Error adding Rewards member account, please try again later.")) {
                             errorMessage = "System Error adding Rewards member account, please try again later.";
-                        }
-                        else if (result
+                        } else if (result
                                 .get(0)
                                 .toString()
                                 .startsWith("System Error, please try again later")) {
                             errorMessage = "System Error adding Rewards member account, please try again later.";
-                        }
-                        else if (result.get(0).toString()
+                        } else if (result.get(0).toString()
                                 .startsWith("System Error while adding BC member Id To your profile, please try again later")) {
                             errorMessage = "System Error while adding BC member Id To your profile, please try again later.";
                         } else {
@@ -1035,9 +1029,7 @@ public class RegisterDetailsActivity extends UltaBaseActivity implements
                     String message = WebserviceConstants.CREATE_ACCOUNT_SUCCESS;
                     if (sign) {
                         message = WebserviceConstants.CREATE_ACCOUNT_JOIN_REWARDS_SUCCESS;
-                    }
-                    else if( member)
-                    {
+                    } else if (member) {
                         message = WebserviceConstants.CREATE_ACCOUNT_ACTIVATE_REWARDS_SUCCESS;
                     }
                     if (!errorMessage.isEmpty()) {
@@ -1143,12 +1135,12 @@ public class RegisterDetailsActivity extends UltaBaseActivity implements
                                     && origin.equalsIgnoreCase("basket")
                                     && fromCehckout != 2) {
                                 /*
-								 * setResult(RESULT_OK); finish();
+                                 * setResult(RESULT_OK); finish();
 								 */
                                 if (UltaDataCache.getDataCacheInstance()
                                         .isOnlyEgiftCard()) {
-									/*
-									 * Intent intentForActivity = new Intent(
+                                    /*
+                                     * Intent intentForActivity = new Intent(
 									 * RegisterDetailsActivity.this,
 									 * ShippingAdressActivity.class);
 									 * startActivity(intentForActivity);
@@ -1176,8 +1168,7 @@ public class RegisterDetailsActivity extends UltaBaseActivity implements
                                     .equalsIgnoreCase("isfromApplyUltamateCard")) {
                                 setResult(RESULT_OK);
                                 finish();
-                            }
-                            else if (null != origin
+                            } else if (null != origin
                                     && origin
                                     .equalsIgnoreCase("fromProductFavotitesTap")) {
                                 setResult(RESULT_OK);
@@ -1235,8 +1226,8 @@ public class RegisterDetailsActivity extends UltaBaseActivity implements
                                                 "thankyou");
                                     }
                                 }
-								/*
-								 * else if (null != result) { if (result .get(0)
+                                /*
+                                 * else if (null != result) { if (result .get(0)
 								 * .startsWith(
 								 * "System Error adding Rewards member account, please try again later"
 								 * )) { myrewardsIntent.putExtra( "result3",
@@ -1257,7 +1248,7 @@ public class RegisterDetailsActivity extends UltaBaseActivity implements
                     });
 
 					/*
-					 * alertDialog = new AlertDialog.Builder(
+                     * alertDialog = new AlertDialog.Builder(
 					 * RegisterDetailsActivity.this).create();
 					 * 
 					 * alertDialog.setTitle("Registration Successful");
@@ -1279,6 +1270,15 @@ public class RegisterDetailsActivity extends UltaBaseActivity implements
                     } catch (WindowManager.BadTokenException e) {
                     } catch (Exception e) {
                     }
+                }
+
+                Log.d("sign", "" + sign);
+
+                if (sign) {
+                    // Add a set of tags to a Tag Group and apply the change.
+                    UAirship.shared().getPushManager().editTagGroups()
+                            .addTag("reward", "rewards_member")
+                            .apply();
                 }
             }
         }
