@@ -1,6 +1,7 @@
 package com.ulta.core.pushnotification;
 
 
+import android.location.Location;
 import android.util.Log;
 
 import com.gimbal.android.PlaceEventListener;
@@ -49,13 +50,21 @@ public class UAGimbalAdapter {
             RegionEvent exit = new RegionEvent(visit.getPlace().getIdentifier(), SOURCE, RegionEvent.BOUNDARY_EVENT_EXIT);
             UAirship.shared().getAnalytics().addEvent(exit);
         }
+
+        @Override
+        public void locationDetected(Location location) {
+            super.locationDetected(location);
+
+            Log.d(TAG, "" + location.getLongitude());
+        }
     };
 
 
     /**
      * Hidden to support the singleton pattern.
      */
-    UAGimbalAdapter() {}
+    UAGimbalAdapter() {
+    }
 
     /**
      * GimbalAdapter shared instance.
@@ -74,9 +83,11 @@ public class UAGimbalAdapter {
 
         isStarted = true;
 
+
         PlaceManager.getInstance().addListener(placeEventListener);
         PlaceManager.getInstance().startMonitoring();
-        Log.d(TAG, "Adapter Started");
+        Log.d(TAG, "Gimbal Started");
+        Log.d(TAG, "" + PlaceManager.getInstance().currentVisits());
     }
 
     /**

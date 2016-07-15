@@ -56,8 +56,8 @@
         android:name="android.hardware.telephony"
         android:required="false" />
 
-    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name=".core.Ulta"
@@ -72,7 +72,7 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <uses-library android:name="com.google.android.maps" />
+        <!--<uses-library android:name="com.google.android.maps" />-->
 
         <intent-filter>
             <action android:name="com.urbanairship.VIEW_RICH_PUSH_INBOX" />
@@ -301,6 +301,26 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name="com.gimbal.internal.service.GimbalService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.gimbal.android.sample.service.GIMBAL_SERVICE" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name="com.gimbal.internal.service.GimbalServiceStartStopReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_SHUTDOWN" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>

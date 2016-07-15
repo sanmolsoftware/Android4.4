@@ -49,6 +49,7 @@ import com.ulta.core.util.UltaException;
 import com.ulta.core.util.Utility;
 import com.ulta.core.util.caching.UltaDataCache;
 import com.ulta.core.util.log.Logger;
+import com.urbanairship.UAirship;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -68,7 +69,7 @@ public class MyAccountActivity extends UltaBaseActivity implements
      */
     LinearLayout llAddressLine2, main_layout, lytGiftCard, lytRewards,
             lytMyOrderHistory, lytMybeautyList, lytPreferredShippingAddress,
-             lytPaymentMethod, lytChangePassword,
+            lytPaymentMethod, lytChangePassword,
             lytMember, lytCoupons, lytPurchase, lytBeautyPreference;
     FrameLayout loadingDialog;
 
@@ -279,7 +280,7 @@ public class MyAccountActivity extends UltaBaseActivity implements
             if (getIntent().getExtras().getString("result3")
                     .equalsIgnoreCase("System")) {
                 /*
-				 * final AlertDialog alertDialog = new AlertDialog.Builder(
+                 * final AlertDialog alertDialog = new AlertDialog.Builder(
 				 * MyAccountActivity.this).create();
 				 * alertDialog.setTitle("Sorry"); alertDialog .setMessage(
 				 * "System Error adding Rewards member account, please try again later."
@@ -427,10 +428,10 @@ public class MyAccountActivity extends UltaBaseActivity implements
         loadingDialog = (FrameLayout) findViewById(R.id.loadingDialog);
         tvUserNameText = (TextView) findViewById(R.id.tvUserNameText);
         lytMybeautyList.setVisibility(View.VISIBLE);
-       // tvFirstname.setTypeface(setHelveticaRegulartTypeFace());
-        tvFirstname.setTypeface(null,Typeface.BOLD);
-       // tvLastname.setTypeface(setHelveticaRegulartTypeFace());
-        tvLastname.setTypeface(null,Typeface.BOLD);
+        // tvFirstname.setTypeface(setHelveticaRegulartTypeFace());
+        tvFirstname.setTypeface(null, Typeface.BOLD);
+        // tvLastname.setTypeface(setHelveticaRegulartTypeFace());
+        tvLastname.setTypeface(null, Typeface.BOLD);
         tvPhoneNumber.setTypeface(setHelveticaRegulartTypeFace());
         tvUserName.setTypeface(setHelveticaRegulartTypeFace());
         tvAddline1.setTypeface(setHelveticaRegulartTypeFace());
@@ -440,9 +441,9 @@ public class MyAccountActivity extends UltaBaseActivity implements
         tvCountryName.setTypeface(setHelveticaRegulartTypeFace());
         tvCityName.setTypeface(setHelveticaRegulartTypeFace());
         tvMember.setTypeface(setHelveticaRegulartTypeFace());
-       // tvMembershipAccount.setTypeface(setHelveticaRegulartTypeFace());
-        tvMembershipAccount.setTypeface(null,Typeface.BOLD);
-       // tvUserNameText.setTypeface(setHelveticaRegulartTypeFace());
+        // tvMembershipAccount.setTypeface(setHelveticaRegulartTypeFace());
+        tvMembershipAccount.setTypeface(null, Typeface.BOLD);
+        // tvUserNameText.setTypeface(setHelveticaRegulartTypeFace());
         tvUserNameText.setTypeface(null, Typeface.BOLD);
         signOutBtn = (Button) findViewById(R.id.signOutBtn);
         mGiftCardBalDividerView = (View) findViewById(R.id.giftCardBaldividerView);
@@ -495,9 +496,7 @@ public class MyAccountActivity extends UltaBaseActivity implements
                         intentForRewards.putExtra("PlanDescription", planDesc);
 
                         startActivity(intentForRewards);
-                    }
-                    else
-                    {
+                    } else {
                         Intent intentMyAccount = new Intent(MyAccountActivity.this, NonSignedInRewardsActivity.class);
                         intentMyAccount.putExtra("from",
                                 "fromRewards");
@@ -595,8 +594,6 @@ public class MyAccountActivity extends UltaBaseActivity implements
     }
 
 
-
-
     // My Profile Webservice Part
 
     /**
@@ -659,6 +656,7 @@ public class MyAccountActivity extends UltaBaseActivity implements
             } else {
                 loadingDialog.setVisibility(View.GONE);
                 main_layout.setVisibility(View.VISIBLE);
+
                 Logger.Log("<RetrieveMyProfileDetailsHandler><handleMessage><getResponseBean>>"
                         + (getResponseBean()));
                 profileBean = (ProfileBean) getResponseBean();
@@ -671,6 +669,7 @@ public class MyAccountActivity extends UltaBaseActivity implements
                     beautyClubNumber = profileBean.getBeautyClubNumber();
                     UltaDataCache.getDataCacheInstance().setLoyaltyClubId(
                             beautyClubNumber);
+
                     if (null != profileBean.getBalancePoints()) {
                         UltaDataCache.getDataCacheInstance()
                                 .setRewardsBalancePoints(
@@ -692,7 +691,7 @@ public class MyAccountActivity extends UltaBaseActivity implements
                             beautyClubNumber);
 
                     balancePoints = profileBean.getBalancePoints();
-					/* gender = profileBean.getGender(); */
+                    /* gender = profileBean.getGender(); */
                     dateOfBirth = profileBean.getDateOfBirth();
                     firstName = profileBean.getFirstName();
                     homeAddress = profileBean.getHomeAddress();
@@ -921,6 +920,12 @@ public class MyAccountActivity extends UltaBaseActivity implements
                 staySignedInEditor.putString(
                         WebserviceConstants.STAY_SIGNED_IN_SECRET_KEY, " ");
                 staySignedInEditor.commit();
+
+                // Remove The Tags for Notification
+                UAirship.shared().getPushManager().editTagGroups()
+                        .removeTag("reward", "rewards_member")
+                        .apply();
+
                 finish();
             }
 
@@ -944,7 +949,7 @@ public class MyAccountActivity extends UltaBaseActivity implements
     }
 
 	/*
-	 * void toggleGcmRegistration(boolean isEnabled) { final boolean
+     * void toggleGcmRegistration(boolean isEnabled) { final boolean
 	 * isRegistered = !TextUtils.isEmpty(GCMRegistrar .getRegistrationId(this));
 	 * if (isEnabled) { if (!isRegistered) { // Register to GCM if we haven't
 	 * registered already GCMRegistrar.register(this,

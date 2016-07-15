@@ -137,7 +137,7 @@ public class Ulta extends Application {
             UAirship.takeOff(this, options);
          */
 
-        Gimbal.setApiKey(this, "1bc08bece09d3a18a60fdf1689fdbdfb");
+        Gimbal.setApiKey(this, "b6ea20ae-58c9-4a6d-a671-8839a087017a");
 
         UAirship.takeOff(this, new UAirship.OnReadyCallback() {
             @Override

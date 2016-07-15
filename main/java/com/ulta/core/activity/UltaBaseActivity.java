@@ -124,6 +124,7 @@ import com.ulta.core.widgets.flyin.OnScanPressedListener;
 import com.ulta.core.widgets.flyin.OnSearchPressedListener;
 import com.ulta.core.widgets.flyin.OnTitleBarPressed;
 import com.ulta.core.widgets.flyin.TitleBar;
+import com.urbanairship.UAirship;
 import com.urbanairship.messagecenter.MessageCenterActivity;
 
 import java.util.ArrayList;
@@ -1826,6 +1827,12 @@ public class UltaBaseActivity extends ActionBarActivity implements
                                 getApplicationContext());
                     }
                     if (null != ultaBean.getComponent().get_beautyClubNumber()) {
+                        Log.d("get_beautyClubNumber", ""+ultaBean.getComponent().get_beautyClubNumber());
+
+                        UAirship.shared().getPushManager().editTagGroups()
+                                .addTag("reward", "rewards_member")
+                                .apply();
+
                         UltaDataCache.getDataCacheInstance().setRewardMember(
                                 true);
                         Utility.saveToSharedPreference(
